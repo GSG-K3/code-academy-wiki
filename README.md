@@ -1,4 +1,5 @@
 # GSG Code Academy Wiki
+[Figma Design](https://www.figma.com/file/DGkBLGal9IYhEDyjqpflsj/GSG-CA-Wiki?node-id=0%3A1)
 
 ## Challenge
 
@@ -27,7 +28,7 @@ User will use our website to to view all cohorts that have been enrolled in Code
 - I want to go to the student's GitHub page so that I can visit their account.
 
 ## How To Use Our Website
-- Clone this repo to your local machine using:
+- Clone this repo to your local machine using terminal:
 ```shell
 $ git clone https://github.com/GSG-K3/code-academy-wiki.git
 ```
