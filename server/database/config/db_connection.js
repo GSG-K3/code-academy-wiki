@@ -9,6 +9,6 @@ if (!connectionString) {
 }
 
 module.exports = new Pool({
-  connectionString,
-  ssl: !connectionString.includes("localhost")
+  connectionString: connectionString,
+  ssl: true
 });
