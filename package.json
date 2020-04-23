@@ -1,7 +1,7 @@
 {
   "name": "code-academy-wiki",
   "version": "1.0.0",
-  "description": "",
+  "description": "[Figma Design](https://www.figma.com/file/DGkBLGal9IYhEDyjqpflsj/GSG-CA-Wiki?node-id=0%3A1)",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/index.js",
@@ -23,8 +23,14 @@
   "dependencies": {
     "concurrently": "^5.1.0",
     "dotenv": "^8.2.0",
+    "env": "0.0.2",
+    "env2": "^2.2.2",
     "express": "^4.17.1",
-    "nodemon": "^2.0.3"
+    "includes": "0.0.7",
+    "nodemon": "^2.0.3",
+    "pg": "^8.0.3",
+    "pgsql": "^1.0.0",
+    "uninstall": "0.0.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
