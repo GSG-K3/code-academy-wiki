@@ -1,0 +1,41 @@
+.main-footer {
+  position: relative;
+  width: 1290px;
+  height: 61px;
+  left: 0px;
+  top: 425px;
+  bottom: 0em;
+  background: #eceff1;
+}
+.container{
+ 
+ padding-top: 20px;
+
+}
+.footer-icons {
+  position: absolute;
+  width: 200px;
+  height: 38px;
+  left: 117px;
+  size: 10px;
+  /* top: 19px; */
+  display: flex;
+  justify-content: space-between; 
+}
+.footer-text {
+  position: absolute;
+  width: 243px;
+  height: 24px;
+  left: 561px;
+  top: 19px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #405f73;
+}
