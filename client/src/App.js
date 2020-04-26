@@ -5,9 +5,9 @@ import Footer from './SharedComponent/Footer/Footer';
 function App() {
   return (
     <div>
-      <Footer />
       <NavBar />
+      <Footer />
     </div>
   );
-  }
+}
 export default App;
