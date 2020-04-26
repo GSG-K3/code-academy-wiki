@@ -1,8 +1,9 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import NavBar from "./SharedComponents/NavBar/NavBar";
 
 function App() {
-  return <div></div>;
+  return <NavBar />;
 }
 
 export default App;
