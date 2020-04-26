@@ -1,15 +1,13 @@
-import React from "react";
-import "./App.css";
-import Footer from "./SharedComponent/Footer/Footer"
-import StudentCard from "./SharedComponent/StudentCard/StudentCard";
-import ProjectView from "./SharedComponent/ProjectView/ProjectView";
+import React from 'react';
+import './App.css';
+import Footer from './SharedComponent/Footer/Footer';
+
 function App() {
-  return <div>
-    <StudentCard/>
-    <Footer/>
-    <ProjectView/>
-  </div>
- 
+  return (
+    <div>
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
