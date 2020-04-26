@@ -12,11 +12,14 @@
   align-items: center;
 }
 .footer-icons {
-  width: 100px;
+  width: 150px;
   height: 30px;
   margin-left: 117px;
   display: flex;
   justify-content: space-between;
+}
+.icon-img{
+  width: 30px;
 }
 .footer-text {
   position: absolute;
