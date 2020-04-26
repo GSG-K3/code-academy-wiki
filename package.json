@@ -30,6 +30,7 @@
     "nodemon": "^2.0.3",
     "pg": "^8.0.3",
     "pgsql": "^1.0.0",
+    "react-slideshow-image": "^1.4.2",
     "uninstall": "0.0.0"
   },
   "devDependencies": {
