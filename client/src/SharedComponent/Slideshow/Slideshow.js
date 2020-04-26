@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import "./Slideshow.css";
-import facebook from "../../images/facebook.jpeg";
-import google from "../../images/google.png";
-import website from "../../images/website.jpg";
+
 import { Slide } from "react-slideshow-image";
 
-import StudentCard from '../StudentCard'
-
-const allStudents = [<StudentCard />, <StudentCard />, <StudentCard />, <StudentCard />]
-const allProjects = [facebook, website, "", google, google, facebook, google, website];
+const allStudents = ["", "", "", "", "", ""];
+const allProjects = ["", "", "", "", ""];
 
 const properties = {
   duration: 5000000000000000,
@@ -40,7 +36,6 @@ class Slideshow extends Component {
           ? <div></div>
           : <img className='project' src={allProjects[i + 2]} alt="" />
         }
-
       </div>)
     }
     for (let i = 0; i < allStudents.length; i += 3) {
@@ -48,7 +43,6 @@ class Slideshow extends Component {
         <div className='student'>{allStudents[i]}</div>
         <div className='student'>{allStudents[i + 1]}</div>
         <div className='student'>{allStudents[i + 2]}</div>
-
       </div>)
     }
 
