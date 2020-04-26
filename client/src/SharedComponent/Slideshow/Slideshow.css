@@ -1,6 +1,10 @@
-.slideshow {
+.projects-slide {
   width: 1080px;
   height: 200px;
+}
+
+.one-slide{
+  display: flex;
 }
 .website {
   width: 300px;
