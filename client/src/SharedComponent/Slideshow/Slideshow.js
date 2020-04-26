@@ -4,7 +4,12 @@ import facebook from "../../images/facebook.jpeg";
 import google from "../../images/google.png";
 import website from "../../images/website.jpg";
 import { Slide } from "react-slideshow-image";
+
+import StudentCard from '../StudentCard'
+
+const allStudents = [<StudentCard />, <StudentCard />, <StudentCard />, <StudentCard />]
 const allProjects = [facebook, website, "", google, google, facebook, google, website];
+
 const properties = {
   duration: 5000000000000000,
   transitionDuration: 500,
@@ -16,37 +21,54 @@ const properties = {
 class Slideshow extends Component {
   state = {
     projects: [],
+    students: []
   }
   componentDidMount = () => {
     let projectsSlide = [];
+    let studentsSlide = [];
     for (let i = 0; i < allProjects.length; i += 3) {
       projectsSlide.push(<div className="one-slide" key={Date.now()}>
         {!allProjects[i]
           ? <div></div>
-          : <img className='website' src={allProjects[i]} alt="" />
+          : <img className='project' src={allProjects[i]} alt="" />
         }
         {!allProjects[i + 1]
           ? <div></div>
-          : <img className='website' src={allProjects[i + 1]} alt="" />
+          : <img className='project' src={allProjects[i + 1]} alt="" />
         }
         {!allProjects[i + 2]
           ? <div></div>
-          : <img className='website' src={allProjects[i + 2]} alt="" />
+          : <img className='project' src={allProjects[i + 2]} alt="" />
         }
 
       </div>)
     }
+    for (let i = 0; i < allStudents.length; i += 3) {
+      studentsSlide.push(<div className="one-slide" key={Date.now()}>
+        <div className='student'>{allStudents[i]}</div>
+        <div className='student'>{allStudents[i + 1]}</div>
+        <div className='student'>{allStudents[i + 2]}</div>
+
+      </div>)
+    }
+
     this.setState(prevState => ({
-      projects: prevState.projects.concat(projectsSlide)
+      projects: prevState.projects.concat(projectsSlide),
+      students: prevState.students.concat(studentsSlide)
     }))
   }
 
   render() {
     return (
-      <div>
+      <div className="slideshow-container">
         <div className="projects-slide">
           <Slide {...properties}>
             {this.state.projects}
+          </Slide>
+        </div>
+        <div className="students-slide">
+          <Slide {...properties}>
+            {this.state.students}
           </Slide>
         </div>
       </div>
