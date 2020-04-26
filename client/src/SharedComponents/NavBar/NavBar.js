@@ -3,7 +3,7 @@ import "./NavBar.css";
 
 function NavBar(props) {
   return (
-    <nav>
+    <nav className="header">
       <div className="nav_bar">
         <div>
           <ul className="list ">
