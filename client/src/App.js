@@ -6,8 +6,8 @@ function App() {
   return (
     <div>
       <Footer />
+      <NavBar />
     </div>
   );
-}
-
+  }
 export default App;
