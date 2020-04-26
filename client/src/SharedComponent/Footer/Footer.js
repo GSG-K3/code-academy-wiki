@@ -12,10 +12,10 @@ class Footer extends Component {
         <div className="container">
           <div className="footer-text"> © 2020 Gaza Sky Geeks.</div>
           <div className="footer-icons">
-            <img className="facebook-img" src={facebookicon} alt="" />
-            <img className="instagram-img" src={instagramicon} alt="" />
-            <img className="twitter-img" src={twittericon} alt="" />
-            <img className="youtube-img" src={youtubeicon} alt="" />
+            <img className="facebook-img" src={facebookicon} alt="facebook icon" />
+            <img className="instagram-img" src={instagramicon} alt=" instagrm icon" />
+            <img className="twitter-img" src={twittericon} alt=" twitter icon" />
+            <img className="youtube-img" src={youtubeicon} alt="youtube icon" />
           </div>
         </div>
       </div>
