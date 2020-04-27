@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Slide } from "react-slideshow-image";
-import "./Slideshow.css";
 import ProjectView from '../ProjectView'
 import StudentCard from '../StudentCard'
-import adele from '../../images/adele.jpeg'
+import "./Slideshow.css";
+
 
 const dbProjects = ["","","","",""]
 const allProjects = dbProjects.map(project =>{
