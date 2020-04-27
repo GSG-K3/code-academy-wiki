@@ -63,11 +63,11 @@ BEGIN;
         ('4', '1');
 
     INSERT INTO projects
-        (id,title,github ,heroku)
+        (id,title,github ,heroku,image,description)
     VALUES
-        ('1', 'wiki project', 'github', 'heroku'),
-        ('2', 'stopgocont project', 'github', 'heroku'),
-        ('3', 'attendance project', 'github', 'heroku'),
-        ('4', 'news project', 'github', 'heroku');
+        ('1', 'wiki project', 'github', 'heroku','https://g.top4top.io/p_1578upbwv1.png','This is project about code academy students,projects,cohorts'),
+        ('2', 'stopgocont project', 'github', 'heroku','https://g.top4top.io/p_1578upbwv1.png','This project build for Stop-Go-Continue game in code academy'),
+        ('3', 'attendance project', 'github', 'heroku','https://g.top4top.io/p_1578upbwv1.png','This project made for student attendance in code academy cohorts'),
+        ('4', 'news project', 'github', 'heroku','https://g.top4top.io/p_1578upbwv1.png','This project made to get all news from NewsApi and translate them to arabic');
 
     COMMIT ;
