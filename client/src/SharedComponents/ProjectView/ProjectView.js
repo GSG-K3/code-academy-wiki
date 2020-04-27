@@ -1,13 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './ProjectView.css';
-class ProjectView extends Component {
-    render() {
-      return (
-        // we will get project image 
-        <img className='project-view' src='' alt="" />
-      );
-    }
-  }
-  
-  export default ProjectView;
-  
+
+const ProjectView = ({ projectImg }) => {
+  return (
+    <img className='project-view' src={projectImg} alt="" />
+  )
+}
+
+export default ProjectView;

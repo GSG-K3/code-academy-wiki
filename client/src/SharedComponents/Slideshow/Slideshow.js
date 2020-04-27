@@ -1,10 +1,23 @@
 import React, { Component } from "react";
+import { Slide } from "react-slideshow-image";
+import ProjectView from '../ProjectView'
+import StudentCard from '../StudentCard'
 import "./Slideshow.css";
 
-import { Slide } from "react-slideshow-image";
 
-const allStudents = ["", "", "", "", "", ""];
-const allProjects = ["", "", "", "", ""];
+const dbProjects = ["","","","",""]
+const allProjects = dbProjects.map(project =>{
+return <ProjectView
+  projectImg={project}
+/>
+})
+
+const dbStudents = ["","","","",""]
+const allStudents = dbStudents.map(student =>{
+  return <StudentCard
+  studentImg= {student.img}
+   studentname={student.name}  />
+  })
 
 const properties = {
   duration: 5000000000000000,
@@ -26,15 +39,16 @@ class Slideshow extends Component {
       projectsSlide.push(<div className="one-slide" key={Date.now()}>
         {!allProjects[i]
           ? <div></div>
-          : <img className='project' src={allProjects[i]} alt="" />
+          : allProjects[i]
         }
         {!allProjects[i + 1]
           ? <div></div>
-          : <img className='project' src={allProjects[i + 1]} alt="" />
+          : allProjects[i + 1]
         }
         {!allProjects[i + 2]
           ? <div></div>
-          : <img className='project' src={allProjects[i + 2]} alt="" />
+          : allProjects[i + 2]
+
         }
       </div>)
     }
