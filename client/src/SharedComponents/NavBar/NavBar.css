@@ -11,7 +11,7 @@
   background-image: url(../../images/navbar.svg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 80px;
+  height: 100px;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -20,8 +20,8 @@
 }
 
 .nav_logo {
-  margin: 9px 0px 0px 100px;
-  height: 55px;
+  margin: 9px 0px 0px 120px;
+  height: 70px;
   z-index: 1;
 }
 
@@ -31,8 +31,8 @@
   list-style: none;
   justify-content: flex-end;
   font-family: "Raleway", sans-serif;
-  height: 20px;
-  padding: 0px 0px 0px 60px;
+  height: 40px;
+  padding: 0px 0px 0px 100px;
   font-weight: 700;
   align-items: center;
   text-transform: uppercase;
