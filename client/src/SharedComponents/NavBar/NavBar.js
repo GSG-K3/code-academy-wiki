@@ -26,6 +26,7 @@ function NavItem(props) {
   return (
     <li>
       <a
+        rel="noopener noreferrer"
         href="#"
         className="nav_item"
         onMouseEnter={() => setopen(!open)}
@@ -41,7 +42,7 @@ function NavItem(props) {
 function DropDownMenu() {
   function DropDownItem(props) {
     return (
-      <a href="#" className="menu_items">
+      <a rel="noopener noreferrer" href="#" className="menu_items">
         {props.children}
       </a>
     );
