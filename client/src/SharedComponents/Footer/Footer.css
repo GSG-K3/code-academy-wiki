@@ -1,6 +1,5 @@
 .main-footer {
   display: flex;
-  position: fixed;
   bottom: 0px;
   left: 0;
   width: 100%;
@@ -18,7 +17,7 @@
   display: flex;
   justify-content: space-between;
 }
-.icon-img{
+.icon-img {
   width: 30px;
 }
 .footer-text {
