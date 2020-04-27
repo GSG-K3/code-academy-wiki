@@ -1,16 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import "./StudentCard.css";
 
-class StudentCard extends Component {
-  render() {
-    return (
-      // we will get student image and name from database
-      <div className="student-card">
-        <img className="student-img" src={""} alt="student profile" />
-        <span className="student-name"></span>
-      </div>
-    );
-  }
+const StudentCard = ({ studentImg, studentname }) => {
+  return (
+    <div className="student-card">
+      <img className="student-img" src={studentImg} alt="student profile" />
+      <span className="student-name">{studentname}</span>
+    </div>
+  )
 }
+
 
 export default StudentCard;
