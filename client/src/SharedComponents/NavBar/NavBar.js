@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./NavBar.css";
-import logo from "../../images/logo.svg";
+import logo from "../../images/logo.png";
 
 function NavBar(props) {
   return (

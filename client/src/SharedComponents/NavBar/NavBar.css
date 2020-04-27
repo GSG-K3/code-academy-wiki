@@ -8,10 +8,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-image: url(../../images/nav-container.svg);
+  background-image: url(../../images/navbar.svg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100px;
+  height: 80px;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -20,8 +20,8 @@
 }
 
 .nav_logo {
-  margin: 10px 0px 0px 100px;
-  height: 70px;
+  margin: 9px 0px 0px 100px;
+  height: 55px;
   z-index: 1;
 }
 
@@ -31,7 +31,7 @@
   list-style: none;
   justify-content: flex-end;
   font-family: "Raleway", sans-serif;
-  height: 36px;
+  height: 20px;
   padding: 0px 0px 0px 60px;
   font-weight: 700;
   align-items: center;
