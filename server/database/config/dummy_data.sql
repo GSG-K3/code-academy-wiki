@@ -1,20 +1,20 @@
 BEGIN;
     -- insert to students
     INSERT INTO students
-        (id,name, img, about, project_id, cohort_id)
+        (id,name, img, about,email,phone_no,github, project_id, cohort_id)
     VALUES
         ('1', 'Hussein', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ficons8.com%2Ficon%2F23264%2Fuser&psig=AOvVaw1s1DGCuajeU0dWsuJAm7Cm&ust=1587656696814000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKj4gZyw_OgCFQAAAAAdAAAAABAD',
-            'my name is hussein', '1', '1'),
+            'my name is hussein','hussein@gmail.com','0599503844','Hussein-shahatet97', '1', '1'),
         ('2', 'Rahaf', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ficons8.com%2Ficon%2F23264%2Fuser&psig=AOvVaw1s1DGCuajeU0dWsuJAm7Cm&ust=1587656696814000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKj4gZyw_OgCFQAAAAAdAAAAABAD',
-            'my name is Rahaf', '1', '2'),
+            'my name is Rahaf','Rahaf@gmail.com','0599332354','Rahaf-96', '1', '2'),
         ('3', 'Bayan', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ficons8.com%2Ficon%2F23264%2Fuser&psig=AOvVaw1s1DGCuajeU0dWsuJAm7Cm&ust=1587656696814000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKj4gZyw_OgCFQAAAAAdAAAAABAD',
-            'my name is Bayan', '1', '1'),
+            'my name is Bayan','Bayan@gmail.com','0599345113','Bayan-short', '1', '1'),
         ('4', 'Khoulod', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ficons8.com%2Ficon%2F23264%2Fuser&psig=AOvVaw1s1DGCuajeU0dWsuJAm7Cm&ust=1587656696814000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKj4gZyw_OgCFQAAAAAdAAAAABAD',
-            'my name is Khoulod', '1', '2');
+            'my name is Khoulod','Khoulod@gmail.com','0599622544','Khoulod-96', '1', '2');
 
     INSERT INTO cohorts
         (id,name, details,city)
-    VALUES
+    VALUE
         ( '1', 'K1', 'this cohort contain on 18 member', 'Kalel'),
         ( '2', 'K2', 'this cohort contain on 10 member', 'Kalel'),
         ( '3', 'K3', 'this cohort contain on 25 member', 'Kalel'),
