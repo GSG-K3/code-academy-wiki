@@ -30,21 +30,20 @@ body {
   color: #405f73;
 }
 .nav_btn:hover {
-  color: orangered;
+  color: #f29422;
+}
+
+.header {
+  position: fixed;
 }
 
 .nav_bar {
+  width: 750px;
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
   height: 80px;
   background-image: url(navbar.svg);
-}
-
-.logo {
-  padding: 0px 0px 0px 30px;
-  height: 90px;
-  width: 120px;
 }
 
 .drop_down {
@@ -63,6 +62,5 @@ body {
   font-size: 9px;
 }
 .menu_items:hover {
-  color: orangered;
-  /* background-color: #f1f3f5; */
+  color: #f29422;
 }
