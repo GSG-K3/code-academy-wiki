@@ -32,11 +32,15 @@ CREATE TABLE students
 (
   id SERIAL PRIMARY KEY,
   name VARCHAR(50) NOT NULL,
-  img TEXT ,
-  about VARCHAR(400),
+  cohort_id INT,
   project_id INT,
   FOREIGN KEY (project_id)  REFERENCES projects(id),
-  FOREIGN KEY (cohort_id)  REFERENCES cohorts(id)
+  FOREIGN KEY (cohort_id)  REFERENCES cohorts(id),
+  email VARCHAR,
+  github VARCHAR,
+  phone_No VARCHAR,
+  img TEXT ,
+  about VARCHAR(400)
 );
 
 
