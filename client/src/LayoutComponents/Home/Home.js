@@ -1,8 +1,8 @@
 import React from "react";
-import computer from '../../images/computer.png';
-import girl from '../../images/girl.png';
-import boy from '../../images/boy.png';
-import technologies from '../../images/technologies.png';
+import computer from '../../images/home-illustrations/computer.svg';
+import girl from '../../images/home-illustrations/girl.png';
+import boy from '../../images/home-illustrations/boy.png';
+import technologies from '../../images/home-illustrations/technologies.png';
 import "./Home.css";
 
 const Home = () => {
