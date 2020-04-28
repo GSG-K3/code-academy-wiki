@@ -1,4 +1,88 @@
 *{
-    padding: 0;
-    margin: 0;
+    text-align: center;
 }
+
+.home-container{
+margin: 150px 0; 
+display: flex;
+justify-content: space-around;
+}
+
+.home-intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-title{
+    font-family:'Montserrat', sans-serif;
+    font-size: 50px;
+    color: #405F73;
+}
+
+.description{
+    width: 520px;
+    font-family:'Montserrat', sans-serif;
+    font-size: 24px;
+    color: #405F73;
+    margin: 15px 0;
+}
+
+.join-btn,.cohort-btn{
+width: 200px;
+padding: 15px 0;
+background: #F29422;
+border: none;
+box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+border-radius: 4px;
+font-family: 'Lato', sans-serif;
+font-weight: bold;
+font-size: 30px;
+color: #FFFFFF;
+cursor: pointer;
+transition: transform 0.25s ease-out;
+outline: none;
+}
+
+.join-btn:hover,
+.join-btn:focus,
+.cohort-btn:hover,
+.cohort-btn:focus {
+  transform: scale(1.05);
+}
+.cohorts-container{
+ width: 100%;
+height: 300px;
+background: rgba(64, 95, 115, 0.0738);
+padding-top: 15px;
+}
+.cohorts-title,.technologies-title{
+    font-family:'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: #405F73;
+    }
+.cohorts{
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+.cohorts-btns{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+    width: 300px;
+}
+
+.cohorts-btns .cohort-btn {
+    margin: 10px 0 ;
+}
+
+.technologies{
+    padding-top: 50px ;
+}
+
