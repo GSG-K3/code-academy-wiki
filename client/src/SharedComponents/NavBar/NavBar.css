@@ -1,66 +1,102 @@
-body {
-  margin: 0;
-  padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
+
+.nav_container {
+  display: flex;
+  flex-direction: row;
+}
+.nav_bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url(../../images/navbar.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100px;
+  display: flex;
   width: 100%;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  z-index: 1;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
-.list {
+.nav_logo {
+  margin: 9px 0px 0px 120px;
+  height: 70px;
+  z-index: 1;
+}
+
+.list_items {
   display: flex;
   flex-direction: row;
   list-style: none;
   justify-content: flex-end;
-  padding: 0px 60px 0px 0px;
-  margin: 0px;
   font-family: "Raleway", sans-serif;
-  font-style: normal;
+  height: 60px;
+  padding: 0px 0px 0px 200px;
   font-weight: 700;
-  font-size: 8px;
-  line-height: 30px;
   align-items: center;
-  text-align: center;
   text-transform: uppercase;
-
   color: #405f73;
 }
 
-.nav_btn {
-  padding: 0px 25px 0px 25px;
+.nav_item {
+  padding: 0px 50px;
   text-decoration: none;
   color: #405f73;
 }
-.nav_btn:hover {
+.nav_item:hover {
   color: #f29422;
 }
 
-.header {
-  position: fixed;
-}
-
-.nav_bar {
-  width: 750px;
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 80px;
-  background-image: url(navbar.svg);
-}
-
 .drop_down {
+  display: flex;
+  top: 55px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   position: absolute;
-  top: 27px;
-  width: 60px;
-  transform: translate(23%);
+  width: 100px;
+  transform: translate(38%);
   background-color: #fff;
   overflow: hidden;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
 }
 .menu_items {
-  padding: 0px 7px 0px 7px;
+  padding: 10px 7px;
   text-decoration: none;
   color: #405f73;
-  font-size: 9px;
+  font-size: 15px;
 }
 .menu_items:hover {
   color: #f29422;
+}
+
+@media (max-width: 900px) {
+  .nav_bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    background: #f1f3f5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+  }
+  .header {
+    position: fixed;
+    width: 100%;
+  }
+}
+
+@media (min-width: 290px) and (max-width: 450px) {
+  .nav_bar {
+    justify-content: center;
+    height: 45px;
+    background: #f1f3f5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+  }
+  .list {
+    justify-content: center;
+    padding: 12px 0 0 0;
+    font-weight: 750;
+    font-size: 15px;
+  }
 }
