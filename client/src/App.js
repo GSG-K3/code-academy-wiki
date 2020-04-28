@@ -3,13 +3,16 @@ import './App.css';
 import Footer from './SharedComponents/Footer';
 import NavBar from './SharedComponents/NavBar/NavBar';
 import Home from './LayoutComponents/Home';
+import { Route, BrowserRouter as Router } from 'react-router-dom'
+
 function App() {
   return (
-    <div>
+    <Router>
       <NavBar />
-      <Home />
+      <Route exact path="/" component={Home} />      
       <Footer />
-    </div>
+    </Router>
+
   );
 }
 export default App;
