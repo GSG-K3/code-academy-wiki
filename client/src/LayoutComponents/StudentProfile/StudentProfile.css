@@ -1,3 +1,87 @@
 .profile-container{
-    margin-top: 150px;
+    margin: 150px 0 40px ;
+    display: flex;
+    justify-content: space-around;
+}
+
+.student-card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+    padding-bottom: 15px;
+}
+.student-projects{
+    width: 600px;
+    height: 500px;
+    padding: 0 50px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+
+}
+.projects-title{
+    font-family:'Montserrat', sans-serif;
+    font-size: 50px;
+    color: #405F73;
+    
+}
+.card-bg{
+    width:400px;
+    height: 150px;
+    background: linear-gradient(247.94deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 36.28%), #FF8F07;
+    border-radius: 6px 6px 0px 0px;
+}
+
+.student-img{
+    position: absolute;
+    top: 80px;
+    border-radius: 50%;
+    width: 150px;
+    height:150px;
+    align-self: center;
+}
+
+.student-name{
+    padding-top: 90px;
+    font-family:'Montserrat', sans-serif;
+font-size: 30px;
+color: #405F73;
+}
+.student-role{
+    font-family:'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #405F73;
+}
+
+.contact-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.contact-info{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin: 5px ;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: #405F73;
+}
+
+.contact-icon{
+    width: 40px;
+    height: 40px;
+    margin: 0 20px 0 40px;
 }
