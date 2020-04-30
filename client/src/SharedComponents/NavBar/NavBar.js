@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./NavBar.css";
 import logo from "../../images/navbar-images/logo.png";
+import { Link } from "react-router-dom";
 
 function NavBar(props) {
   return (
@@ -39,6 +40,10 @@ function NavItem(props) {
   );
 }
 
+const menuStyle = {
+  padding: "10px ",
+};
+
 function DropDownMenu() {
   function DropDownItem(props) {
     return (
@@ -49,8 +54,12 @@ function DropDownMenu() {
   }
   return (
     <div className="drop_down">
-      <DropDownItem> Gaza </DropDownItem>
-      <DropDownItem> khalil</DropDownItem>
+      <Link to="/cohorts" style={menuStyle}>
+        <DropDownItem> Gaza </DropDownItem>
+      </Link>
+      <Link to="/cohorts">
+        <DropDownItem> khalil</DropDownItem>
+      </Link>
     </div>
   );
 }
