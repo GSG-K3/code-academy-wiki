@@ -16,17 +16,19 @@
 }
 .student-projects{
     width: 600px;
-    height: 500px;
-    padding: 0 50px 15px;
+    padding: 0 50px 35px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 15px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
 
+}
+.student-projects > *{
+    margin-top: 35px;
 }
 .projects-title{
     font-family:'Montserrat', sans-serif;

@@ -8,12 +8,7 @@ import Project from '../../SharedComponents/ProjectView'
 import "./StudentProfile.css";
 
 
-/*use query to get all student projects images then save them in an array, and display them using map*/
-const dbProjects = ['', '', '']
-const projects = dbProjects.map((project, i) => {
-    return <Project key={i} projectImg={project} />
-}
-)
+
 class StudentProfile extends Component {
     state = {
         studentInfo: null,
@@ -23,13 +18,23 @@ class StudentProfile extends Component {
         const { id } = this.props;
         axios
             .get(`/api/students/${id}`)
-            .then((res) => this.setState({ studentInfo: res.data[0] }))
+            .then((res) => {
+                const studentProjects = res.data.map(student => student.image)
+                this.setState({
+                    studentInfo: res.data[0],
+                    studentProjects
+                })
+            })
             .catch((err) => console.log(err));
     }
 
     render() {
         const { studentInfo, studentProjects } = this.state;
         console.log(studentInfo)
+        const projects = studentProjects.map((project, i) => {
+            return <Project key={i} projectImg={project} />
+        }
+        )
         return (
             <div>
                 {!studentInfo ? (<div style={{ marginTop: '200px' }}>Loading...</div>)
@@ -43,13 +48,14 @@ class StudentProfile extends Component {
                                 <div className='contact-info'><img className='contact-icon' src={email} alt='' /><span>{studentInfo.email}</span></div>
                                 <div className='contact-info'><img className='contact-icon' src={github} alt='' /><span>{studentInfo.github}</span></div>
                                 <div className='contact-info'><img className='contact-icon' src={phone} alt='' /><span>{studentInfo.phone_no}</span></div>
-                                <div className='contact-info'><img className='contact-icon' src={house} alt='' /><span>{studentInfo.address}</span></div>
+                                <div className='contact-info'><img className='contact-icon' src={house} alt='' /><span>{studentInfo.adress}</span></div>
                             </div>
                         </div>
 
                         <div className="student-projects">
                             <p className="projects-title">Student's Projects</p>
                             {projects}
+                            {/* <Project projectImg={''} /> */}
                         </div>
 
                     </div>)
