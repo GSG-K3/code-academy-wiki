@@ -2,10 +2,9 @@
   position: fixed;
   bottom: 0px;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 50px;
   background: #eceff1;
-  margin-top: 200px;
 }
 .container {
   display: flex;
