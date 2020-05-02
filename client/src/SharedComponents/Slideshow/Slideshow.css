@@ -1,22 +1,3 @@
-.slideshow-container{
-  display: flex;
-  flex-direction: column;
-  margin: 180px 100px 0 50px;
-
-}
-
-.projects-slide,.students-slide {
-  width: 70vw;
-  height: 200px;
-  z-index: 0;
-
-}
-
-.one-slide{
-  display: flex;
-  padding:0 25px ;
-}
-
-.student{
-  margin: 0 80px;
+.slide-container{
+  margin: 150px 100px;
 }
