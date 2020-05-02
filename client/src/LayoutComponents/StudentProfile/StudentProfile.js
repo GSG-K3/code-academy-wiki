@@ -40,7 +40,6 @@ class StudentProfile extends Component {
                 {!studentInfo ? (<div style={{ marginTop: '200px' }}>Loading...</div>)
                     : (<div className='profile-container'>
                         <div className="student-card">
-                            <div className='card-bg'></div>
                             <img className='student-img' src={studentInfo.img} alt='' />
                             <span className='student-name'>{studentInfo.name} </span>
                             <span className='student-role'> {studentInfo.about} </span>
@@ -55,7 +54,7 @@ class StudentProfile extends Component {
                         <div className="student-projects">
                             <p className="projects-title">Student's Projects</p>
                             {projects}
-                            {/* <Project projectImg={''} /> */}
+                            <Project projectImg={''} />
                         </div>
 
                     </div>)
