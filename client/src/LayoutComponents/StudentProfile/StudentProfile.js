@@ -7,37 +7,35 @@ import house from '../../images/contact-icons/house.svg'
 import Project from '../../SharedComponents/ProjectView'
 import "./StudentProfile.css";
 
-
-
 class StudentProfile extends Component {
     state = {
         studentInfo: null,
         studentProjects: []
     }
     componentDidMount() {
+        // student information will be fetch from database based on student id that passed to this component as a props
         const { id } = this.props;
         axios
             .get(`/api/students/${id}`)
-            .then((res) => {
+            .then(res => {
                 const studentProjects = res.data.map(student => student.image)
                 this.setState({
                     studentInfo: res.data[0],
                     studentProjects
                 })
             })
-            .catch((err) => console.log(err));
+            .catch(err => err);
     }
 
     render() {
         const { studentInfo, studentProjects } = this.state;
-        console.log(studentInfo)
         const projects = studentProjects.map((project, i) => {
             return <Project key={i} projectImg={project} />
         }
         )
         return (
             <div>
-                {!studentInfo ? (<div style={{ marginTop: '200px' }}>Loading...</div>)
+                {!studentInfo ? (<div className='loading'>Loading...</div>)
                     : (<div className='profile-container'>
                         <div className="student-card">
                             <img className='student-img' src={studentInfo.img} alt='' />
@@ -50,18 +48,12 @@ class StudentProfile extends Component {
                                 <div className='contact-info'><img className='contact-icon' src={house} alt='' /><span>{studentInfo.adress}</span></div>
                             </div>
                         </div>
-
                         <div className="student-projects">
-                            <p className="projects-title">Student's Projects</p>
+                            <p className="projects-title">{studentInfo.name} Projects</p>
                             {projects}
-                            <Project projectImg={''} />
                         </div>
-
                     </div>)
-
                 }
-
-
             </div>);
     }
 }
