@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import Footer from "./SharedComponents/Footer";
 import NavBar from "./SharedComponents/NavBar/NavBar";
@@ -12,8 +12,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/cohorts" component={Cohorts} />
-        <Route path="/cohorts/:city" component={Cohorts} />
+        <Route exact path="/cohorts/:city" component={Cohorts} />
       </Switch>
       <Footer />
     </Router>
