@@ -40,9 +40,7 @@ class ProjectDetails extends Component {
             <section className='projects-details'>
               <div className='projects-info'>
                 <h2 className='project-title'>{projects[0].title}</h2>
-                <p className='project-desc'>
-                  {projects[0].description}
-                </p>
+                <p className='project-desc'>{projects[0].description}</p>
                 <div className='icon-images'>
                   <div className='github-name'>
                     <a
