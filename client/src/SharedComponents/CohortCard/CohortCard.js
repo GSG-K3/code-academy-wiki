@@ -1,14 +1,13 @@
 import React,{Component} from 'react';
 import "./CohortCard.css";
 
-class CohortCard extends Component {
-  render() {
+  const CohortCard = (props) => {
     return (
       <div>
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-              <h1>K#</h1>
+              <h1>{props.name}</h1>
             </div>
             <div className="flip-card-back">
               <a className="read-more" href="#">
@@ -20,5 +19,5 @@ class CohortCard extends Component {
       </div>
     );
   }
-}
+
 export default CohortCard;
