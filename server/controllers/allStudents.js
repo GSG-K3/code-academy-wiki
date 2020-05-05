@@ -1,7 +1,7 @@
-const getAllstudents = require("../database/queries/getAllStudents");
+const getAllstudentsQuery = require("../database/queries/getAllStudents");
 
 exports.getAllStudents = (req, res, next) => {
-    getAllstudents()
+    getAllstudentsQuery()
         .then(data => res.json(data))
         .catch(err => next(err));
 };
