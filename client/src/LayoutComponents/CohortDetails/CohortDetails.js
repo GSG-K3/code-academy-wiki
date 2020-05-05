@@ -13,7 +13,6 @@ class CohortDetails extends Component {
     axios
       .get(`/api/cohortinfo/${this.props.match.params.cohortID}`)
       .then((result) => {
-        console.log(result.data);
         const resultarray = result.data;
         this.setState({
           cohortInfo: resultarray,
@@ -29,7 +28,7 @@ class CohortDetails extends Component {
                  {!cohortInfo.length ? (
                    <h1>Loading..</h1>
                  ) : (
-                   <div style={{ marginTop: "150px" }}>
+                   <div>
                      <section>
                        <img src={cohortImg} alt="cohort" />
 
