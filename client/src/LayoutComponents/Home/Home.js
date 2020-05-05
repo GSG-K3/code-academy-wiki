@@ -16,7 +16,6 @@ class Home extends Component {
 render() {
   const { city } = this.state;
   const { history } = this.props;
-    console.log(city, 'please work!');
     return (
       <div>
         <section className='home-container'>
@@ -83,5 +82,4 @@ render() {
     );
   }
 }
-
 export default Home;

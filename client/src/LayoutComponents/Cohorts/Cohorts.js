@@ -14,9 +14,9 @@ class Cohorts extends Component {
   componentDidMount() {
     const cityName = this.props.match.params.city;
     axios
-      .get(`/cohorts/${cityName}`)
+      .get(`/api/cohorts/${cityName}`)
       .then((res) => {
-        const resData = res.data.map((e) => e);
+        const resData = res.data;
         this.setState({ cohortInfo: resData });
         console.log(this.state);
       })
@@ -31,14 +31,17 @@ class Cohorts extends Component {
     return (
       
       <div>
-      {!cohortInfo.length? <h1>loading</h1>: <div>
+      {!cohortInfo.length? <h1>loading</h1>: 
+      <div>
         <h1 className='title'>{cityName} Cohorts</h1>
+          {cohortInfo.map((e) =>(
         <div className='cohort'>
           <div className='coh_card'>
-          {cohortInfo.map((e) =>(<CohortCard name={e.name} /> ))}
-          </div>
-          <Slideshow />
+            <CohortCard name={e.name} /> 
         </div>
+          <Slideshow projects = {e.image} />
+        </div>
+          ))}
       </div> }
       </div>
     );

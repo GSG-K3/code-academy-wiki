@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "client": "cd client && npm start",
-    "server": "nodemon server/app.js",
+    "server": "nodemon server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/GSG-K3/code-academy-wiki#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "concurrently": "^5.1.0",
     "dotenv": "^8.2.0",
     "env": "0.0.2",
@@ -28,9 +29,8 @@
     "express": "^4.17.1",
     "includes": "0.0.7",
     "nodemon": "^2.0.3",
-    "pg": "^8.0.3",
+    "pg": "^7.18.2",
     "pgsql": "^1.0.0",
-    "react-slideshow-image": "^1.4.2",
     "uninstall": "0.0.0"
   },
   "devDependencies": {

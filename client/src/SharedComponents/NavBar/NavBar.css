@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
 
-.nav_container {
-  display: flex;
-  flex-direction: row;
-}
 .nav_bar {
   position: fixed;
   top: 0;
@@ -12,35 +8,35 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100px;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+  width: 100vw;
   margin-bottom: 100px;
   z-index: 1;
 }
-
+.nav_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 .nav_logo {
-  margin: 9px 0px 0px 120px;
-  height: 70px;
   z-index: 1;
+  margin: 8px;
 }
 
 .list_items {
   display: flex;
   flex-direction: row;
   list-style: none;
-  justify-content: flex-end;
+  justify-content: space-between;
   font-family: "Raleway", sans-serif;
   height: 60px;
-  padding: 0px 0px 0px 200px;
   font-weight: 700;
   align-items: center;
   text-transform: uppercase;
   color: #405f73;
+  width: 50vw;
 }
 
 .nav_item {
-  padding: 0px 50px;
   text-decoration: none;
   color: #405f73;
 }
@@ -50,11 +46,12 @@
 
 .drop_down {
   display: flex;
-  top: 55px;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   position: absolute;
+  left: 70vw;
+  top: 50px;
   width: 100px;
   transform: translate(38%);
   background-color: #fff;
@@ -71,32 +68,38 @@
   color: #f29422;
 }
 
-@media (max-width: 900px) {
-  .nav_bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100px;
-    background: #f1f3f5;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
-  }
-  .header {
-    position: fixed;
-    width: 100%;
-  }
-}
+@media only screen and (max-width: 1000px)  {
 
-@media (min-width: 290px) and (max-width: 450px) {
-  .nav_bar {
-    justify-content: center;
-    height: 45px;
-    background: #f1f3f5;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+  .nav_bar{
+    background-image: none;
+   background-color: #F1F3F5;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    margin-bottom: 100px;
+    z-index: 1;
+    height: 150px;
   }
-  .list {
+  .nav_container {
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 12px 0 0 0;
-    font-weight: 750;
-    font-size: 15px;
+  }
+  .nav_logo {
+    width: 300px;
+    height: 60px;
+    z-index: 1;
+    margin: 20px 0 0 70px;
+
+  }
+  .list_items {
+    justify-content: space-around;
+    width: 100vw;
+  }
+  
+  .nav_item {
+    font-weight: bold;
+  }
+  .drop_down {
+    left: 54vw;
+    top: 120px;
   }
 }
