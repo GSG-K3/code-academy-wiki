@@ -14,14 +14,16 @@ class ProjectDetails extends Component {
     };
   }
   componentDidMount() {
-    const { id } = this.props;
+    // const { id } = this.props;
     // id coming from cohorts and studentProfile pages
-    axios
-      .get(`api/project/${id}`)
+    axios 
+      .get(`/api/project/${this.props.match.params.id}`)
       .then((res) => {
-        const resultArray = res.data.map((e) => e);
+        const resultArray = res.data;
+        console.log(resultArray)
         this.setState({
           projects: resultArray,
+          
         });
       })
       .catch((error) => error.response);
@@ -38,7 +40,8 @@ class ProjectDetails extends Component {
         ) : (
           <div>
             <section className='projects-details'>
-              <div className='projects-info'>
+              
+              <div className='projects-info' key ={projects.id} >
                 <h2 className='project-title'>{projects[0].title}</h2>
                 <p className='project-desc'>{projects[0].description}</p>
                 <div className='icon-images'>
@@ -81,7 +84,7 @@ class ProjectDetails extends Component {
               <div className='students-info'>
                 {projects.map((student) => {
                   return (
-                    <Link to={'/student/' + student.id} className='text-link'>
+                    <Link to={`/student/${student.id}` } className='text-link'>
                       <StudentCard
                         studentImg={student.img}
                         studentname={student.name}
