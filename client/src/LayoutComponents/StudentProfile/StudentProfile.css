@@ -22,10 +22,11 @@
     margin: 20px 0 ;
 }
 
-.student-name{
+.student-card-name{
     font-family:'Montserrat', sans-serif;
     font-size: 30px;
     color: #405F73;
+    text-align: center;
 }
 
 .student-role{
