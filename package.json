@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/GSG-K3/code-academy-wiki#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "concurrently": "^5.1.0",
     "dotenv": "^8.2.0",
     "env": "0.0.2",
@@ -30,7 +31,6 @@
     "nodemon": "^2.0.3",
     "pg": "^7.18.2",
     "pgsql": "^1.0.0",
-    "react-slideshow-image": "^1.4.2",
     "uninstall": "0.0.0"
   },
   "devDependencies": {

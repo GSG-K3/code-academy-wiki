@@ -13,6 +13,7 @@ justify-content: space-around;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
 }
 
 .page-title{
@@ -51,18 +52,21 @@ outline: none;
 .cohort-btn:focus {
   transform: scale(1.05);
 }
+
 .cohorts-container{
  width: 100%;
 height: 300px;
 background: rgba(64, 95, 115, 0.0738);
 padding-top: 15px;
 }
+
 .cohorts-title,.technologies-title{
     font-family:'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 30px;
     color: #405F73;
-    }
+}
+
 .cohorts{
 display: flex;
 justify-content: space-around;
@@ -83,6 +87,68 @@ align-items: center;
 }
 
 .technologies{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding-top: 50px ;
+    margin-bottom: 80px;
 }
 
+.technologies-img{
+width: 90vw;
+}
+
+@media only screen and (max-width: 1100px)  {
+    .home-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 200px 0 50px 0;
+        }      
+}
+
+@media only screen and (max-width: 700px)  {
+    .page-title{
+        font-size: 30px;
+    }
+
+    .description{
+        width: 300px;
+        font-size: 20px;
+    }
+
+    .computer-img{
+        width: 250px;
+    }
+
+    .girl-img{
+        width: 130px;
+    }
+
+    .boy-img{
+        width: 90px;
+    }
+
+    .join-btn,.cohort-btn{
+        width: 100px;
+        font-size: 15px;
+    }
+
+    .cohorts-btns{
+        height: 200px;
+        width: 100px;
+    }
+
+    .cohorts-btns{
+        margin-top: 0px;
+    }
+
+    .cohorts-container{
+        height: 220px;
+    }
+    
+    .cohorts-title,.technologies-title{
+        font-size: 20px;
+    }
+}
