@@ -1,13 +1,12 @@
-const connection = require("../config/db_connection");
+const dbconnection = require("../config/db_connection");
 
-const sql = "SELECT * FROM students";
-const getallstudents = callback => {
-  connection.query(sql, (err, res) => {
-    if (err) throw err;
-    else {
-      callback(err, res.rows);
-    }
-  });
+
+const getallstudents = () => {
+  const sql = "select * from students;";
+  return dbconnection
+    .query(sql)
+    .then(res => res.rows)
+    .catch(err => err);
 };
 
 module.exports = getallstudents;

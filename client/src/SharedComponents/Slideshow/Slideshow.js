@@ -1,87 +1,94 @@
 import React, { Component } from "react";
-import { Slide } from "react-slideshow-image";
-import ProjectView from '../ProjectView'
 import StudentCard from '../StudentCard'
 import "./Slideshow.css";
+import Slider from "react-slick";
+import ProjectView from '../ProjectView'
 
-
-const dbProjects = ["","","","",""]
-const allProjects = dbProjects.map(project =>{
-return <ProjectView
-  projectImg={project}
-/>
-})
-
-const dbStudents = ["","","","",""]
-const allStudents = dbStudents.map(student =>{
-  return <StudentCard
-  studentImg= {student.img}
-   studentname={student.name}  />
-  })
-
-const properties = {
-  duration: 5000000000000000,
-  transitionDuration: 500,
-  infinite: false,
-  indicators: true,
-  arrows: true,
-};
 
 class Slideshow extends Component {
   state = {
-    projects: [],
-    students: []
+    projectSlide: [],
+    studentSlide: [],
   }
-  componentDidMount = () => {
-    let projectsSlide = [];
-    let studentsSlide = [];
-    for (let i = 0; i < allProjects.length; i += 3) {
-      projectsSlide.push(<div className="one-slide" key={Date.now()}>
-        {!allProjects[i]
-          ? <div></div>
-          : allProjects[i]
-        }
-        {!allProjects[i + 1]
-          ? <div></div>
-          : allProjects[i + 1]
-        }
-        {!allProjects[i + 2]
-          ? <div></div>
-          : allProjects[i + 2]
 
-        }
-      </div>)
-    }
-    for (let i = 0; i < allStudents.length; i += 3) {
-      studentsSlide.push(<div className="one-slide" key={Date.now()}>
-        <div className='student'>{allStudents[i]}</div>
-        <div className='student'>{allStudents[i + 1]}</div>
-        <div className='student'>{allStudents[i + 2]}</div>
-      </div>)
-    }
+  componentDidMount() {
+    const { projects, students } = this.props;
 
-    this.setState(prevState => ({
-      projects: prevState.projects.concat(projectsSlide),
-      students: prevState.students.concat(studentsSlide)
-    }))
+    if (projects) {
+      const projectSlide = projects.map(project => {
+        return <ProjectView
+          projectImg={project.image}
+        />
+      })
+      this.setState({ projectSlide })
+
+    }
+    if (students) {
+      const studentSlide = students.map(student => {
+        return <StudentCard
+          studentImg={student.img}
+          studentname={student.name} />
+      })
+      this.setState({ studentSlide })
+
+    }
   }
 
   render() {
+    const { projectSlide, studentSlide } = this.state;
     return (
-      <div className="slideshow-container">
-        <div className="projects-slide">
-          <Slide {...properties}>
-            {this.state.projects}
-          </Slide>
-        </div>
-        <div className="students-slide">
-          <Slide {...properties}>
-            {this.state.students}
-          </Slide>
-        </div>
+      <div className='slide-container'>
+        {!projectSlide.length && !studentSlide.length
+          ? <h1>Loading ....</h1>
+          : <Slider {...SlideSettings()}>   {projectSlide.length ? projectSlide : studentSlide}   </Slider>
+
+        }
       </div>
-    );
+    )
   }
 }
-
 export default Slideshow;
+function Arrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "grey", borderRadius: '50%' }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SlideSettings() {
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    nextArrow: <Arrow />,
+    prevArrow: <Arrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        }
+      }
+    ]
+  };
+  return settings;
+}
+
