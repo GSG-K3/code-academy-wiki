@@ -108,9 +108,9 @@
 
 @media only screen and (max-width: 450px) {
   .student-projects {
-    width: 350px;
+    width: 300px;
   }
   .student-card {
-    width: 350px;
+    width: 300px;
   }
 }
