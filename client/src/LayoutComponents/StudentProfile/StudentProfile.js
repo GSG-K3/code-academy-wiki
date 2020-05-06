@@ -32,9 +32,9 @@ class StudentProfile extends Component {
 
   render() {
     const { studentInfo, studentProjects } = this.state;
-    const projects = studentProjects.map((project, i) => {
+    const projects = studentProjects.map((project) => {
       return (
-        <Link to={`/project/${project.project_id}`} key={i}>
+        <Link to={`/project/${project.project_id}`} key={project.project_id}>
           <Project
             key={project.project_id}
             projectImg={project.project_image}
