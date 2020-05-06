@@ -12,7 +12,6 @@
   justify-content: center;
   align-items: center;
   height: 50px;
-
 }
 .footer-icons {
   position: fixed;
@@ -34,29 +33,27 @@
   color: #405f73;
 }
 
-@media only screen and (max-width: 1000px)  {
+@media only screen and (max-width: 1000px) {
   .container {
     justify-content: space-around;
     align-items: center;
     height: 50px;
-  
   }
   .footer-icons {
     position: static;
     justify-content: space-around;
   }
-  
 }
 
-@media only screen and (max-width: 450px)  {
+@media only screen and (max-width: 450px) {
   .container {
     flex-direction: column;
-    justify-content: center;  
+    justify-content: center;
   }
-  .main-footer{
+  .main-footer {
     padding: 10px 0;
   }
   .footer-icons {
     margin: 5px 0;
-  }  
+  }
 }

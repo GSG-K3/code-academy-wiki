@@ -1,2 +1,2 @@
-import StudentProfile from "./StudentProfile";
+import StudentProfile from './StudentProfile';
 export default StudentProfile;
