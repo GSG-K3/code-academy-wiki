@@ -1,2 +1,2 @@
-import ProjectView from "./ProjectView";
+import ProjectView from './ProjectView';
 export default ProjectView;

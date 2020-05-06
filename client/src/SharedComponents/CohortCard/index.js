@@ -1,2 +1,2 @@
-import CohortCard from "./CohortCard";
+import CohortCard from './CohortCard';
 export default CohortCard;

@@ -1,82 +1,116 @@
-.profile-container{
-    margin-top: 150px  ;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.profile-container {
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.student-card{
-    display: flex;
-    flex-direction: column;
+.student-card {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 480px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.student-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  align-self: center;
+  margin: 20px 0;
+}
+
+.student-card-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  color: #405f73;
+  text-align: center;
+}
+
+.student-role {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: #405f73;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: 5px;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  color: #405f73;
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 20px 0 40px;
+}
+
+.student-projects {
+  position: relative;
+  width: 600px;
+  padding: 0 50px 35px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+
+.projects-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  height: 100px;
+  margin-top: 10px;
+  color: #405f73;
+}
+
+@media only screen and (max-width: 1110px) {
+  .student-projects {
+    margin: 30px 10px 100px;
+  }
+  .student-card {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .student-projects {
     width: 400px;
-    height: 480px;
-    border-radius: 6px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
-}
-
-.student-img{
-    border-radius: 50%;
-    width: 150px;
-    height:150px;
-    align-self: center;
-    margin: 20px 0 ;
-}
-
-.student-card-name{
-    font-family:'Montserrat', sans-serif;
-    font-size: 30px;
-    color: #405F73;
-    text-align: center;
-}
-
-.student-role{
-    font-family:'Montserrat', sans-serif;
-    font-size: 20px;
-    color: #405F73;
-}
-
-.contact-section{
-    display: flex;
-    flex-direction: column;
+    margin: 30px 0 100px;
+    padding: 0;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
-    width: 100%;
+  }
+  .projects-title {
+    font-size: 40px;
+    height: 50px;
+  }
+  .project-view {
+    margin: 10px 0;
+  }
 }
 
-.contact-info{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    margin: 5px ;
-    font-family: 'Lato', sans-serif;
-    font-size: 15px;
-    color: #405F73;
+@media only screen and (max-width: 450px) {
+  .student-projects {
+    width: 300px;
+  }
+  .student-card {
+    width: 300px;
+  }
 }
-
-.contact-icon{
-    width: 40px;
-    height: 40px;
-    margin: 0 20px 0 40px;
-}
-
-.student-projects{
-    position: relative;
-    width: 600px;
-    padding: 0 50px 35px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 6px
-}
-
-.projects-title{
-    font-family:'Montserrat', sans-serif;
-    font-size: 50px;
-    height: 100px;
-    margin-top: 10px;
-    color: #405F73;
-}
-

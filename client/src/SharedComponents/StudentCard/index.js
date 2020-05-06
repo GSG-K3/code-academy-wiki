@@ -1,2 +1,2 @@
-import StudentCard from "./StudentCard";
+import StudentCard from './StudentCard';
 export default StudentCard;
