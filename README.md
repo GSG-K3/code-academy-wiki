@@ -48,13 +48,13 @@ $ cd ..
    ```
 - Build database table :
 ```
-   node ./server/database/db_bulid.js
+   node server/database/config/db_build.js
  ```
 - If you want initial values for database
 ```
     psql 
     \c {databasename} 
-    \i ./server/database/dummy_data.sql
+    \i server/database/config/dummy_data.sql
 
 ```
 - Run this to start the website:
