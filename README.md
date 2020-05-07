@@ -42,7 +42,7 @@ $ npm i
 $ cd ..
 ```
 - Create database locally
-- Create config.env file in root and put these variables in it:
+- Create config.env file in root and put DATABASE URL in it:
 ```
    DATABASE_URL = postgress://{username}:{password}@localhost:5432/{databasename}
    ```
