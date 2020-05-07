@@ -1,9 +1,15 @@
 BEGIN;
-  DROP TABLE IF EXISTS  
-  students,cohorts,projects,std_projects,coh_members
-  CASCADE;
+  DROP TABLE IF EXISTS  students,cohorts,projects,std_projects,coh_members,gsg_members CASCADE;
 
 
+
+CREATE TABLE cohorts
+(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  details VARCHAR  ,
+  city VARCHAR(50) NOT NULL
+);
 
 CREATE TABLE projects
 (
@@ -11,36 +17,25 @@ CREATE TABLE projects
   cohort_id INT,
   FOREIGN KEY (cohort_id)  REFERENCES cohorts(id),
   title VARCHAR(50) NOT NULL,
-  github VARCHAR (255) NOT NULL,
-  heroku VARCHAR(255) NOT NULL,
-  description VARCHAR(350),
+  github VARCHAR NOT NULL,
+  heroku VARCHAR NOT NULL,
+description VARCHAR,
   image TEXT
 );
 
-
-CREATE TABLE cohorts
-(
-  id SERIAL PRIMARY KEY,
-  project_id INT,
-  FOREIGN KEY (project_id)  REFERENCES projects(id),
-  name VARCHAR(50) NOT NULL,
-  details VARCHAR (255) ,
-  city VARCHAR(50) NOT NULL
-);
 
 CREATE TABLE students
 (
   id SERIAL PRIMARY KEY,
   name VARCHAR(50) NOT NULL,
   cohort_id INT,
-  project_id INT,
-  FOREIGN KEY (project_id)  REFERENCES projects(id),
   FOREIGN KEY (cohort_id)  REFERENCES cohorts(id),
   email VARCHAR,
   github VARCHAR,
   phone_No VARCHAR,
-  img TEXT ,
-  about VARCHAR(400)
+  image TEXT ,
+  address VARCHAR,
+  role VARCHAR
 );
 
 
@@ -49,7 +44,7 @@ CREATE TABLE gsg_members
   id SERIAL PRIMARY KEY,
   name VARCHAR(50) NOT NULL,
   type VARCHAR(50) NOT NULL,
-  about VARCHAR(255) NOT NULL
+  image TEXT
 );
 
 CREATE TABLE coh_members
