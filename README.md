@@ -33,7 +33,7 @@ User will use our website to to view all cohorts that have been enrolled in Code
 $ git clone https://github.com/GSG-K3/code-academy-wiki.git
 ```
 
-- now follow these steps to install node modules
+- Now follow these steps to install node modules
 ```shell
 $ cd code-academy-wiki
 $ npm i
@@ -46,11 +46,11 @@ $ cd ..
 ```
    DATABASE_URL = postgress://{username}:{password}@localhost:5432/{databasename}
    ```
-- build database table :
+- Build database table :
 ```
    node ./server/database/db_bulid.js
  ```
-- if you want initial values for database
+- If you want initial values for database
 ```
     psql 
     \c {databasename} 
