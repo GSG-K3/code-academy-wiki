@@ -1,4 +1,4 @@
-const query = require("../database/queries/getCohortData");
+const query = require('../database/queries/getCohortData');
 exports.getCohortData = (req, res) => {
   const cohortID = req.params.cohortID;
   query(cohortID)

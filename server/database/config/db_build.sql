@@ -1,5 +1,6 @@
 BEGIN;
-  DROP TABLE IF EXISTS  students,cohorts,projects,std_projects,coh_members,gsg_members CASCADE;
+  DROP TABLE IF EXISTS  students,cohorts,projects,std_projects,coh_members,gsg_members
+  CASCADE;
 
 
 
@@ -19,7 +20,7 @@ CREATE TABLE projects
   title VARCHAR(50) NOT NULL,
   github VARCHAR NOT NULL,
   heroku VARCHAR NOT NULL,
-description VARCHAR,
+  description VARCHAR,
   image TEXT
 );
 
