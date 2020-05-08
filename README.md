@@ -33,12 +33,35 @@ User will use our website to to view all cohorts that have been enrolled in Code
 $ git clone https://github.com/GSG-K3/code-academy-wiki.git
 ```
 
-- now follow these steps to run our project
+- Now follow these steps to install node modules
 ```shell
 $ cd code-academy-wiki
 $ npm i
-$ npm run dev
+$ cd client 
+$ npm i
+$ cd ..
 ```
+- Create database locally
+- Create config.env file in root and put DATABASE URL in it:
+```
+   DATABASE_URL = postgress://{username}:{password}@localhost:5432/{databasename}
+   ```
+- Build database table :
+```
+   node server/database/config/db_build.js
+ ```
+- If you want initial values for database
+```
+    psql 
+    \c {databasename} 
+    \i server/database/config/dummy_data.sql
+
+```
+- Run this to start the website:
+       
+       npm run dev
+   
+
 
 ## Database Schema
 ![Untitled Diagram](https://user-images.githubusercontent.com/57197216/79913442-44727280-842c-11ea-94c1-cebac7562d97.png)

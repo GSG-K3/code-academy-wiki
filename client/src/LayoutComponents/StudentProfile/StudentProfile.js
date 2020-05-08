@@ -5,7 +5,7 @@ import github from '../../images/contact-icons/github.svg';
 import phone from '../../images/contact-icons/phone.svg';
 import house from '../../images/contact-icons/house.svg';
 import Project from '../../SharedComponents/ProjectView';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import './StudentProfile.css';
 
 class StudentProfile extends Component {
@@ -15,13 +15,16 @@ class StudentProfile extends Component {
   };
   componentDidMount() {
     // student information will be fetch from database based on student id that passed to this component as a props
-    const { id } = this.props;
+    const {
+      match: { params },
+    } = this.props;
+
     axios
-      .get(`/api/students/${id}`)
+      .get(`/api/students/${params.id}`)
       .then((res) => {
         this.setState({
           studentInfo: res.data[0],
-          studentProjects: res.data
+          studentProjects: res.data,
         });
       })
       .catch((err) => err);
@@ -29,12 +32,15 @@ class StudentProfile extends Component {
 
   render() {
     const { studentInfo, studentProjects } = this.state;
-    const projects = studentProjects.map((project, i) => {
-      return(
-        <Link to={'/project/' + project.project_id} key={i}>
-         <Project key={project.project_id} projectImg={project.project_image} />
-         </Link>
-)
+    const projects = studentProjects.map((project) => {
+      return (
+        <Link to={`/project/${project.project_id}`} key={project.project_id}>
+          <Project
+            key={project.project_id}
+            projectImg={project.project_image}
+          />
+        </Link>
+      );
     });
     return (
       <div>

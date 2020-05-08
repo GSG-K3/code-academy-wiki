@@ -13,13 +13,16 @@ class Slideshow extends Component {
     });
     const studentSlide = students.map((student) => {
       return (
-        <StudentCard studentImg={student.img} studentname={student.name} />
+        <StudentCard
+          studentImg={student.student_image}
+          studentname={student.student_name}
+        />
       );
     });
     const mentorSlide = mentors.map((mentor) => {
       return (
         <StudentCard
-          studentImg={mentor.mentor_img}
+          studentImg={mentor.mentor_image}
           studentname={mentor.mentor_name}
         />
       );
