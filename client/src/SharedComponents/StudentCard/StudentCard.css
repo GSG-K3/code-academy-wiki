@@ -3,13 +3,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 30%;
 }
 
 .student-img {
+  font-family: Montserrat;
+  font-weight: bolder;
   border-radius: 50%;
   width: 160px;
   height: 160px;
   margin-bottom: 10px;
+  color: #405f73;
+  font-size: 50px;
+  background: #eceff1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .student-name {
   font-family: Montserrat;
