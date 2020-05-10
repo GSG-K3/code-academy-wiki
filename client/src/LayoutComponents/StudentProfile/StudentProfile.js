@@ -5,7 +5,7 @@ import github from '../../images/contact-icons/github.svg';
 import phone from '../../images/contact-icons/phone.svg';
 import house from '../../images/contact-icons/house.svg';
 import Project from '../../SharedComponents/ProjectView';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import './StudentProfile.css';
 
 class StudentProfile extends Component {
@@ -15,13 +15,16 @@ class StudentProfile extends Component {
   };
   componentDidMount() {
     // student information will be fetch from database based on student id that passed to this component as a props
-    const { id } = this.props;
+    const {
+      match: { params },
+    } = this.props;
+
     axios
-      .get(`/api/students/${id}`)
+      .get(`/api/students/${params.id}`)
       .then((res) => {
         this.setState({
           studentInfo: res.data[0],
-          studentProjects: res.data
+          studentProjects: res.data,
         });
       })
       .catch((err) => err);
@@ -29,23 +32,31 @@ class StudentProfile extends Component {
 
   render() {
     const { studentInfo, studentProjects } = this.state;
-    const projects = studentProjects.map((project, i) => {
-      return(
-        <Link to={'/project/' + project.project_id} key={i}>
-         <Project key={project.project_id} projectImg={project.project_image} />
-         </Link>
-)
+    const projects = studentProjects.map((project) => {
+      return (
+        <Link to={`/project/${project.project_id}`} key={project.project_id}>
+          <Project
+            key={project.project_id}
+            projectImg={project.project_image}
+          />
+        </Link>
+      );
     });
     return (
       <div>
         {!studentInfo ? (
-          <div className='loading'>Loading...</div>
+          <div className='loading'></div>
         ) : (
           <div className='profile-container'>
             <div className='student-card'>
-              <img className='student-img' src={studentInfo.img} alt='' />
+              {studentInfo.image ? (
+                <img className='student-img' src={studentInfo.image} alt='' />
+              ) : (
+                <div className='student-img'>{studentInfo.name.charAt(0)}</div>
+              )}
+
               <span className='student-card-name'>{studentInfo.name} </span>
-              <span className='student-role'> {studentInfo.about} </span>
+              <span className='student-role'> {studentInfo.role} </span>
               <div className='contact-section'>
                 <div className='contact-info'>
                   <img className='contact-icon' src={email} alt='' />
@@ -53,7 +64,15 @@ class StudentProfile extends Component {
                 </div>
                 <div className='contact-info'>
                   <img className='contact-icon' src={github} alt='' />
-                  <span>{studentInfo.github}</span>
+                  <span>
+                    <a
+                      href={studentInfo.github}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      {studentInfo.name} github
+                    </a>
+                  </span>
                 </div>
                 <div className='contact-info'>
                   <img className='contact-icon' src={phone} alt='' />
@@ -61,7 +80,7 @@ class StudentProfile extends Component {
                 </div>
                 <div className='contact-info'>
                   <img className='contact-icon' src={house} alt='' />
-                  <span>{studentInfo.adress}</span>
+                  <span>{studentInfo.address}</span>
                 </div>
               </div>
             </div>
