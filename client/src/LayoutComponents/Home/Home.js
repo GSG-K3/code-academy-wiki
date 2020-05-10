@@ -13,6 +13,15 @@ class Home extends Component {
       city: null,
     };
   }
+
+     setKhalel = () => {
+      this.setState({ city: 'Khalel' })
+    }
+
+    setGaza = () => {
+      this.setState({ city: 'Gaza' });
+    }
+
   render() {
     const { city } = this.state;
     const { history } = this.props;
@@ -44,27 +53,23 @@ class Home extends Component {
           <div className='cohorts'>
             <img src={girl} alt='' />
             <div className='cohorts-btns'>
-              <Link>
+              
                 <button
                   className='cohort-btn'
-                  onClick={() => {
-                    this.setState({ city: 'gaza' });
-                  }}
+                  onClick = {this.setGaza}
                 >
                   Gaza
                 </button>
-              </Link>
-              <Link>
+            
+             
                 <button
                   className='cohort-btn'
-                  onClick={() => {
-                    this.setState({ city: 'Kalel' });
-                  }}
+                  onClick = {this.setKhalel}
                 >
                   Khalil
                 </button>
-              </Link>
-              {city === 'gaza' || city === 'Kalel'
+              
+              {city === 'Gaza' || city === 'Khalel'
                 ? history.push(`/cohorts/${city}`, { data: city })
                 : console.log(city)}
             </div>
