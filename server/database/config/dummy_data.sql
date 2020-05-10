@@ -36,6 +36,17 @@ BEGIN;
         ('3', '1'),
         ('4', '1');
 
+    INSERT INTO coh_projects
+        (cohort_id,project_id)
+    VALUES
+        ('1', '1'),
+        ('1', '2'),
+        ('1', '16'),
+        ('1', '17'),
+        ('1', '18'),
+        ('1', '19'),
+        ('2', '1');
+
 
     INSERT INTO coh_members
         (mem_id,coh_id)
@@ -69,5 +80,16 @@ BEGIN;
         ('2', 'stopgocont project', 'github', 'heroku','https://g.top4top.io/p_1578upbwv1.png','This project build for Stop-Go-Continue game in code academy'),
         ('3', 'attendance project', 'github', 'heroku','https://g.top4top.io/p_1578upbwv1.png','This project made for student attendance in code academy cohorts'),
         ('4', 'news project', 'github', 'heroku','https://g.top4top.io/p_1578upbwv1.png','This project made to get all news from NewsApi and translate them to arabic');
+
+
+
+
+    INSERT INTO projects
+        (id,title,github ,heroku,image,description,cohort_id)
+    VALUES
+        ('16', 'wiki project', 'github', 'heroku','https://g.top4top.io/p_1578upbwv1.png','This is project about code academy students,projects,cohorts',1),
+        ('17', 'stopgocont project', 'github', 'heroku','https://g.top4top.io/p_1578upbwv1.png','This project build for Stop-Go-Continue game in code academy',1),
+        ('18', 'attendance project', 'github', 'heroku','https://g.top4top.io/p_1578upbwv1.png','This project made for student attendance in code academy cohorts',1),
+        ('19', 'news project', 'github', 'heroku','https://g.top4top.io/p_1578upbwv1.png','This project made to get all news from NewsApi and translate them to arabic',1);
 
     COMMIT ;
