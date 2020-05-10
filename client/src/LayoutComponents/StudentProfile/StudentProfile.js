@@ -45,13 +45,18 @@ class StudentProfile extends Component {
     return (
       <div>
         {!studentInfo ? (
-          <div className='loading'>Loading...</div>
+          <div className='loading'></div>
         ) : (
           <div className='profile-container'>
             <div className='student-card'>
-              <img className='student-img' src={studentInfo.img} alt='' />
+              {studentInfo.image ? (
+                <img className='student-img' src={studentInfo.image} alt='' />
+              ) : (
+                <div className='student-img'>{studentInfo.name.charAt(0)}</div>
+              )}
+
               <span className='student-card-name'>{studentInfo.name} </span>
-              <span className='student-role'> {studentInfo.about} </span>
+              <span className='student-role'> {studentInfo.role} </span>
               <div className='contact-section'>
                 <div className='contact-info'>
                   <img className='contact-icon' src={email} alt='' />
@@ -59,7 +64,15 @@ class StudentProfile extends Component {
                 </div>
                 <div className='contact-info'>
                   <img className='contact-icon' src={github} alt='' />
-                  <span>{studentInfo.github}</span>
+                  <span>
+                    <a
+                      href={studentInfo.github}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      {studentInfo.name} github
+                    </a>
+                  </span>
                 </div>
                 <div className='contact-info'>
                   <img className='contact-icon' src={phone} alt='' />
@@ -67,7 +80,7 @@ class StudentProfile extends Component {
                 </div>
                 <div className='contact-info'>
                   <img className='contact-icon' src={house} alt='' />
-                  <span>{studentInfo.adress}</span>
+                  <span>{studentInfo.address}</span>
                 </div>
               </div>
             </div>
