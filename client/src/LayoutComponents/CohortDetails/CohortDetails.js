@@ -9,35 +9,33 @@ class CohortDetails extends Component {
     cohortInfo: [],
     cohortstd: [],
     cohortMentor: [],
+    cohortProjects: [],
   };
+
   componentDidMount = () => {
-    const requestOne = axios.get(
-      `/api/cohortinfo/${this.props.match.params.cohortID}`
-    );
-    const requestTwo = axios.get(
-      `/api/cohortstd/${this.props.match.params.cohortID}`
-    );
-    const requestThree = axios.get(
-      `/api/cohortMentor/${this.props.match.params.cohortID}`
-    );
+    const { cohortID } = this.props.match.params;
+    const requestOne = axios.get(`/api/cohortinfo/${cohortID}`);
+    const requestTwo = axios.get(`/api/cohortstd/${cohortID}`);
+    const requestThree = axios.get(`/api/cohortMentor/${cohortID}`);
+    const requestfour = axios.get(`/api/cohortProjects/${cohortID}`);
 
     axios
-      .all([requestOne, requestTwo, requestThree])
+      .all([requestOne, requestTwo, requestThree, requestfour])
       .then(
         axios.spread((...responses) => {
           this.setState({
             cohortInfo: responses[0].data,
             cohortstd: responses[1].data,
             cohortMentor: responses[2].data,
+            cohortProjects: responses[3].data,
           });
         })
       )
       .catch((err) => err);
-    console.log(this.state.cohortMentor);
   };
 
   render() {
-    const { cohortInfo, cohortstd, cohortMentor } = this.state;
+    const { cohortInfo, cohortstd, cohortMentor, cohortProjects } = this.state;
     return (
       <div>
         {!cohortInfo.length ? (
@@ -52,7 +50,7 @@ class CohortDetails extends Component {
                 <p className='cohort-details'>{cohortInfo[0].cohort_details}</p>
               </div>
             </section>
-            <Slideshow projects={cohortInfo} />
+            <Slideshow projects={cohortProjects} />
             <Slideshow students={cohortstd} />
             <Slideshow mentors={cohortMentor} />
           </div>
