@@ -1,3 +1,10 @@
+.students-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .search-section {
   display: flex;
   justify-content: center;
@@ -24,14 +31,4 @@
   margin-bottom: 60px;
   width: 80vw;
 }
-.student-link{
-  text-decoration: none;
-  width: 30%;
-}
 
-.students-page-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
