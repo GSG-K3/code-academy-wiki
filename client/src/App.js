@@ -18,7 +18,6 @@ function App() {
         <Route exact path='/project/:id' component={ProjectDetails} />
         <Route exact path='/student/:id' component={StudentProfile} />
         <Route exact path='/cohortinfo/:cohortID' component={CohortDetails} />
-        <Route exact path='/cohortMentor/:cohortID' component={CohortDetails} />
       </Switch>
       <Footer />
     </Router>
