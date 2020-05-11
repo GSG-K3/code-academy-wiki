@@ -24,7 +24,7 @@ class AllStudents extends Component {
 
   // store the input of the search field
   onSearchChange = (event) => {
-    this.setState({ searchfield: event.target.value });
+    this.setState({ searchfield: event.target.value.trim() });
   };
 
   render() {
@@ -53,6 +53,7 @@ class AllStudents extends Component {
           <input
             className='search-box'
             type='search'
+            value={this.state.searchfield}
             placeholder='Search for a student...'
             onChange={this.onSearchChange}
           />
