@@ -22,7 +22,11 @@ class Slideshow extends Component {
 
     const studentSlide = students.map((student) => {
       return (
-        <Link to={`/student/${student.student_id}`} key={student.student_id}>
+        <Link
+          className='student-card-container'
+          to={`/student/${student.student_id}`}
+          key={student.student_id}
+        >
           <StudentCard
             key={student.student_id}
             studentImg={student.student_image}
