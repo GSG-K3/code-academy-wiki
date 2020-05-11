@@ -28,7 +28,7 @@ class AllStudents extends Component {
   };
 
   render() {
-    const { students } = this.state;
+    const { students, searchfield } = this.state;
 
     // compare the search field with student name
     const filterStudents = students.filter((student) => {
@@ -53,7 +53,7 @@ class AllStudents extends Component {
           <input
             className='search-box'
             type='search'
-            value={this.state.searchfield}
+            value={searchfield}
             placeholder='Search for a student...'
             onChange={this.onSearchChange}
           />
