@@ -40,7 +40,7 @@ class AllStudents extends Component {
     // use the filtered students array to display students cards on screen
     const allStudents = filterStudents.map((student) => {
       return (
-        <Link to={`/student/${student.id}`} key={student.id}>
+        <Link to={`/student/${student.id}`} key={student.id} className="student-card-container">
           <StudentCard studentImg={student.image} studentname={student.name} />
         </Link>
       );
@@ -53,7 +53,7 @@ class AllStudents extends Component {
           <input
             className='search-box'
             type='search'
-            placeholder='please enter student name...'
+            placeholder='Search for a student...'
             onChange={this.onSearchChange}
           />
         </div>

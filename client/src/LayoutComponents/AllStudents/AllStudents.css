@@ -12,6 +12,9 @@
   box-sizing: border-box;
   border-radius: 50px;
   outline: none;
+  font-family: Montserrat;
+  font-size: 20px;
+  color: #405f73;
 }
 
 .students-container {
@@ -21,8 +24,9 @@
   margin-bottom: 60px;
   width: 80vw;
 }
-
-.students-container {
+.student-link{
+  text-decoration: none;
+  width: 30%;
 }
 
 .students-page-container {
