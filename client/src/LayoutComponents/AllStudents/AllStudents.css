@@ -1,0 +1,38 @@
+.students-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.search-box {
+  width: 595.32px;
+  height: 81.48px;
+  background: #eceff1;
+  border: 3px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 50px;
+  outline: none;
+  font-family: Montserrat;
+  font-size: 20px;
+  color: #405f73;
+}
+
+.search-icon {
+  width: 120px;
+  height: 100px;
+}
+
+.students-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 60px;
+  width: 80vw;
+}
