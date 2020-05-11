@@ -50,8 +50,12 @@ class CohortDetails extends Component {
                 <p className='cohort-details'>{cohortInfo[0].cohort_details}</p>
               </div>
             </section>
+
+            <h2 className='slide-cohort'> Cohort Projects</h2>
             <Slideshow projects={cohortProjects} />
+            <h2 className='slide-cohort'> Cohort Students</h2>
             <Slideshow students={cohortstd} />
+            <h2 className='slide-cohort'> Cohort Mentors</h2>
             <Slideshow mentors={cohortMentor} />
           </div>
         )}

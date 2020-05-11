@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 10px;
 }
 .cohort-info {
   display: flex;
@@ -17,6 +16,14 @@
   font-weight: bold;
   font-size: 35px;
   color: #405f73;
+}
+.slide-cohort {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  color: #405f73;
+  padding-top: 100px;
 }
 .cohort-details {
   font-family: Montserrat;
