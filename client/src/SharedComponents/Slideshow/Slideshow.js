@@ -8,9 +8,15 @@ class Slideshow extends Component {
   render() {
     const { projects, students, mentors } = this.props;
 
-    const projectSlide = projects.map((project) => {
-      return <ProjectView projectImg={project.project_image} />;
+    // Use new set proparity to remove redundent images of projects that comes from join query
+    const projectImages = projects.map((project) => {
+      return project.project_image;
     });
+    let uniqueProjects = [...new Set(projectImages)];
+    const projectSlide = uniqueProjects.map((image) => {
+      return <ProjectView projectImg={image} />;
+    });
+
     const studentSlide = students.map((student) => {
       return (
         <StudentCard
@@ -19,11 +25,12 @@ class Slideshow extends Component {
         />
       );
     });
+
     const mentorSlide = mentors.map((mentor) => {
       return (
-        <StudentCard
-          studentImg={mentor.mentor_image}
-          studentname={mentor.mentor_name}
+        <StudentCard 
+        studentImg={mentor.image} 
+        studentname={mentor.name} 
         />
       );
     });
