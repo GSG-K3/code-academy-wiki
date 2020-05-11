@@ -22,7 +22,6 @@ class ProjectDetails extends Component {
       .get(`/api/project/${params.id}`)
       .then((res) => {
         const resultArray = res.data;
-        console.log(resultArray);
         this.setState({
           projects: resultArray,
         });
@@ -56,8 +55,8 @@ class ProjectDetails extends Component {
                         src={github}
                         alt='github icon'
                       />
+                      GitHub
                     </a>
-                    GitHub
                   </div>
                   <div className='heroku-name'>
                     <a
@@ -66,8 +65,8 @@ class ProjectDetails extends Component {
                       rel='noopener noreferrer'
                     >
                       <img className='pc-img' src={pc} alt='pc icon' />
+                      LiveView
                     </a>
-                    LiveView
                   </div>
                 </div>
               </div>
@@ -82,12 +81,16 @@ class ProjectDetails extends Component {
             <section className='team-members'>
               <div className='title'> Team Members</div>
               <div className='students-info'>
+                {/* get the student in the same project */}
                 {projects.map((student) => {
                   return (
-                    <Link to={`/student/${student.id}`} className='text-link'>
+                    <Link
+                      to={`/student/${student.student_id}`}
+                      className='text-link'
+                    >
                       <StudentCard
-                        studentImg={student.img}
-                        studentname={student.name}
+                        studentImg={student.student_image}
+                        studentname={student.student_name}
                       />
                     </Link>
                   );

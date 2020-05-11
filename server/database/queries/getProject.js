@@ -2,7 +2,7 @@ const connection = require('../config/db_connection');
 const project = (id) => {
   const sql = {
     text:
-      'SELECT p.* , s.name , s.img , s.id from students s, projects p where  s.project_id = p.id And project_id = $1 ; ',
+      'SELECT p.* , s.name  student_name , s.image  student_image, s.id student_id from students s, projects p , std_projects sp where sp.student_id=s.id AND sp.project_id=p.id  And p.id= $1 ; ',
     values: [id],
   };
   return connection
