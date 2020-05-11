@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 class Home extends Component {
   constructor(props) {
     super(props);
-    console.log(props, 'these are the props');
     this.state = {
       city: null,
     };
