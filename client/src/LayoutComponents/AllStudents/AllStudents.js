@@ -24,7 +24,7 @@ class AllStudents extends Component {
 
   // store the input of the search field
   onSearchChange = (event) => {
-    this.setState({ searchfield: event.target.value.trim() });
+    this.setState({ searchfield: event.target.value });
   };
 
   render() {
@@ -34,20 +34,24 @@ class AllStudents extends Component {
     const filterStudents = students.filter((student) => {
       return student.name
         .toLowerCase()
-        .includes(this.state.searchfield.toLowerCase());
+        .includes(this.state.searchfield.toLowerCase().trim());
     });
 
     // use the filtered students array to display students cards on screen
     const allStudents = filterStudents.map((student) => {
       return (
-        <Link to={`/student/${student.id}`} key={student.id} className="student-card-container">
+        <Link
+          to={`/student/${student.id}`}
+          key={student.id}
+          className='student-card-container'
+        >
           <StudentCard studentImg={student.image} studentname={student.name} />
         </Link>
       );
     });
 
     return (
-      <div className="students-page-container">
+      <div className='students-page-container'>
         <div className='search-section'>
           <img className='search-icon' src={searchIcon} alt='' />
           <input
