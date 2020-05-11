@@ -2,35 +2,43 @@ import React, { Component } from 'react';
 import StudentCard from '../StudentCard';
 import Slider from 'react-slick';
 import ProjectView from '../ProjectView';
+import { Link } from 'react-router-dom';
 import './Slideshow.css';
 
 class Slideshow extends Component {
   render() {
     const { projects, students, mentors } = this.props;
 
-    // Use new set proparity to remove redundent images of projects that comes from join query
-    const projectImages = projects.map((project) => {
-      return project.project_image;
-    });
-    let uniqueProjects = [...new Set(projectImages)];
-    const projectSlide = uniqueProjects.map((image) => {
-      return <ProjectView projectImg={image} />;
+    const projectSlide = projects.map((project) => {
+      return (
+        <Link to={`/project/${project.project_id}`} key={project.project_id}>
+          <ProjectView
+            key={project.project_id}
+            projectImg={project.project_image}
+          />
+        </Link>
+      );
     });
 
     const studentSlide = students.map((student) => {
       return (
-        <StudentCard
-          studentImg={student.student_image}
-          studentname={student.student_name}
-        />
+        <Link to={`/student/${student.student_id}`} key={student.student_id}>
+          <StudentCard
+            key={student.student_id}
+            studentImg={student.student_image}
+            studentname={student.student_name}
+          />
+        </Link>
       );
     });
 
     const mentorSlide = mentors.map((mentor) => {
       return (
-        <StudentCard 
-        studentImg={mentor.image} 
-        studentname={mentor.name} 
+        <StudentCard
+          key={mentor.id}
+          studentImg={mentor.image}
+          studentname={mentor.name}
+          studentrole={mentor.type}
         />
       );
     });
