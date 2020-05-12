@@ -12,17 +12,6 @@ class AllStudents extends Component {
   };
 
     componentDidMount() {
-    this.getStudents();
-   
-  }
-
-  componentDidUpdate(prevProps ,prevState) {
-    const { students } = this.state;
-    if (JSON.stringify(students) !== JSON.stringify(prevState.students) ){
-      this.getStudents();
-    }
-  }
-  getStudents = ()=>{
     axios
     .get(`/api/students`)
     .then((res) => {
@@ -39,9 +28,12 @@ class AllStudents extends Component {
   };
 
   render() {
+    
     const { students, searchfield } = this.state;
+    
 
     // compare the search field with student name
+    
     const filterStudents = students.filter((student) => {
       return student.name
         .toLowerCase()
@@ -73,7 +65,8 @@ class AllStudents extends Component {
             onChange={this.onSearchChange}
           />
         </div>
-        <div className='students-container'>{allStudents}</div>
+        {!allStudents.length?<h1>loading</h1>: <div className='students-container'>{allStudents}</div>}
+       
       </div>
     );
   }
