@@ -10,7 +10,7 @@ const getCohortsByCity = (city) => {
   return dbconnection
     .query(sql.text, sql.value)
     .then((res) => res.rows)
-    .catch((err) => console.log('this is an  error'));
+    .catch((err) => err);
 };
 
 module.exports = { getCohortsByCity };
