@@ -101,7 +101,7 @@ INSERT INTO students
 VALUES
     ('3', 'Abood Swaiti', 'aboodswiti@gmail.com', 'https://github.com/aboodswiti', '0599999999', 'https://avatars0.githubusercontent.com/u/56088971?s=400&u=ee540bbaa7342f0c2667cd2d7170d71fb2bcf38f&v=4', 'hebron-Dura', 'web-developer'),
     ('3', 'Banan Haj', 'bananhaj@gmail.com', 'https://github.com/bananhaj', '0599999999', '', 'hebron-Halhul', 'web-developer'),
-    ('3', 'Bayan Seder', 'Bayanseder@gmail.com', 'https://github.com/bayanseder', '0599999999', 'https://i.top4top.io/p_1593s0fz01.jpg', 'Hebron', 'web-developer'),
+    ('3', 'Bayan Seder', 'Bayanseder@gmail.com', 'https://github.com/bayanseder', '0599999999', 'https://f.top4top.io/p_1593m4s3d1.jpg', 'Hebron', 'web-developer'),
     ('3', 'Duha Balout', 'DuhaBalut@gmail.com', 'https://github.com/Duha96', '0599999999', '', 'Hebron-bani naem', 'web-developer'),
     ('3', 'Hanan awawdeh', 'Hannan@gmail.com', 'https://github.com/Hanan795', '0599999999', '', 'Hebron-Dura', 'web-developer'),
     ('3', 'bayan Jubah', 'bayan.jubah@gmail.com', 'https://github.com/bayan-404', '0599999999', 'https://avatars1.githubusercontent.com/u/57558867?s=460&u=db4fd5911b694af0eab2de654500d0b7cb1c6a8c&v=4', 'Hebron', 'web-developer'),
