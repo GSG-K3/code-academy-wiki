@@ -2,7 +2,7 @@ const db_connection = require('../config/db_connection');
 const getCohortData = (cohortID) => {
   const sql = {
     text:
-      'select  name cohort_name,details cohort_details,id cohort_id  from cohorts where id=$1;',
+      'select s.id student_id,s.name student_name,s.image student_image from  students s ,cohorts c where s.cohort_id=c.id AND c.id=$1;',
     values: [cohortID],
   };
   return db_connection

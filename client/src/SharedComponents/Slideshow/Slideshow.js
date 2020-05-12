@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import StudentCard from '../StudentCard';
 import Slider from 'react-slick';
 import ProjectView from '../ProjectView';
+import { Link } from 'react-router-dom';
 import './Slideshow.css';
 
 class Slideshow extends Component {
@@ -9,21 +10,39 @@ class Slideshow extends Component {
     const { projects, students, mentors } = this.props;
 
     const projectSlide = projects.map((project) => {
-      return <ProjectView projectImg={project.project_image} />;
-    });
-    const studentSlide = students.map((student) => {
       return (
-        <StudentCard
-          studentImg={student.student_image}
-          studentname={student.student_name}
-        />
+        <Link to={`/project/${project.project_id}`} key={project.project_id}>
+          <ProjectView
+            key={project.project_id}
+            projectImg={project.project_image}
+          />
+        </Link>
       );
     });
+
+    const studentSlide = students.map((student) => {
+      return (
+        <Link
+          className='student-card-container'
+          to={`/student/${student.student_id}`}
+          key={student.student_id}
+        >
+          <StudentCard
+            key={student.student_id}
+            studentImg={student.student_image}
+            studentname={student.student_name}
+          />
+        </Link>
+      );
+    });
+
     const mentorSlide = mentors.map((mentor) => {
       return (
         <StudentCard
-          studentImg={mentor.mentor_image}
-          studentname={mentor.mentor_name}
+          key={mentor.id}
+          studentImg={mentor.image}
+          studentname={mentor.name}
+          studentrole={mentor.type}
         />
       );
     });

@@ -1,17 +1,21 @@
 import React from 'react';
 import './StudentCard.css';
 
-const StudentCard = ({ studentImg, studentname }) => {
+const StudentCard = ({ studentImg, studentname, studentrole }) => {
   return (
     <div className='student-card-container'>
       {studentImg ? (
-        <img className='student-img' src={studentImg} alt='student profile' />
+        <img className='student-img' src={studentImg} alt='' />
       ) : (
-        <div className='student-img'>
-          {studentname.charAt(0)}
-        </div>
+        <div className='student-img'>{studentname.charAt(0)}</div>
       )}
-      <span className='student-name'>{studentname}</span>
+      {studentrole == 'cf' ? (
+        <span className='student-name'>
+          {studentname} ({studentrole})
+        </span>
+      ) : (
+        <span className='student-name'>{studentname}</span>
+      )}
     </div>
   );
 };
