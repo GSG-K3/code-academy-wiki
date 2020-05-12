@@ -1,5 +1,6 @@
 # GSG Code Academy Wiki
-[Figma Design](https://www.figma.com/file/DGkBLGal9IYhEDyjqpflsj/GSG-CA-Wiki?node-id=0%3A1)
+- [Click here to visit our website](https://codeacademywiki.herokuapp.com/)
+- [Figma Design](https://www.figma.com/file/DGkBLGal9IYhEDyjqpflsj/GSG-CA-Wiki?node-id=0%3A1)
 
 ## Challenge
 
