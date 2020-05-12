@@ -23,8 +23,6 @@ class Cohorts extends Component {
       .all([requestOne, requestTwo])
       .then(
         axios.spread((...responses) => {
-          console.log(responses[0].data,'name quere')
-          console.log(responses[1].data,'other info quere')
           this.setState({
             cohortInfo: responses[0].data.reverse(),
             cohortsProjects: responses[1].data,

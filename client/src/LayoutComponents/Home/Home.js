@@ -14,6 +14,7 @@ class Home extends Component {
 
      setKhalel = () => {
       this.setState({ city: 'khalel' })
+
     }
 
     setGaza = () => {
@@ -69,7 +70,7 @@ class Home extends Component {
               
               {city === 'gaza' || city === 'khalel'
                 ? history.push(`/cohorts/${city}`, { data: city })
-                : console.log(city)}
+                : null}
             </div>
             <img src={boy} alt='' />
           </div>
