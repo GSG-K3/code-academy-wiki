@@ -11,15 +11,26 @@ class AllStudents extends Component {
     students: [],
   };
 
-  componentDidMount() {
+    componentDidMount() {
+    this.getStudents();
+   
+  }
+
+  componentDidUpdate(prevProps ,prevState) {
+    const { students } = this.state;
+    if (JSON.stringify(students) !== JSON.stringify(prevState.students) ){
+      this.getStudents();
+    }
+  }
+  getStudents = ()=>{
     axios
-      .get(`/api/students`)
-      .then((res) => {
-        this.setState({
-          students: res.data,
-        });
-      })
-      .catch((err) => err);
+    .get(`/api/students`)
+    .then((res) => {
+      this.setState({
+        students: res.data,
+      });
+    })
+    .catch((err) => err);
   }
 
   // store the input of the search field
