@@ -4,7 +4,7 @@ const getCohorts = (city) => {
   console.log("I'm inside the query");
   const sql = {
     text:
-      'select p.id project_id, c.id cohort_id,p.image project_image,c.name cohort_name from cohorts c,projects p where city=$1;',
+      'select p.id project_id,p.image project_image, c.id cohort_id from cohorts c,projects p where c.id=p.cohort_id AND city=$1;',
     value: [city],
   };
 
