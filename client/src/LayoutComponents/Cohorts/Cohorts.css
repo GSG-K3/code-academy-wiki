@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
 
-.title {
+.city_title {
   font-family: "Montserrat", sans-serif;
   text-align: center;
   padding: 100px 0px 0px 20px;
@@ -13,11 +13,17 @@
 }
 
 .cohort {
+  padding-top: 30px;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: 330px;
 }
 .coh_card {
-  padding-top: 122px;
+height: 150px;
+}
+
+.coh_slide_show{
+  align-self: flex-end;
+  width: 80% ;
 }
