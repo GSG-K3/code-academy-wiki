@@ -7,6 +7,7 @@ import house from '../../images/contact-icons/house.svg';
 import Project from '../../SharedComponents/ProjectView';
 import { Link } from 'react-router-dom';
 import './StudentProfile.css';
+import Loading from '../../SharedComponents/Loading';
 
 class StudentProfile extends Component {
   state = {
@@ -45,8 +46,8 @@ class StudentProfile extends Component {
     return (
       <div>
         {!studentInfo ? (
-          <div className='loading'></div>
-        ) : (
+          <Loading />
+          ) : (
           <div className='profile-container'>
             <div className='student-card'>
               {studentInfo.image ? (

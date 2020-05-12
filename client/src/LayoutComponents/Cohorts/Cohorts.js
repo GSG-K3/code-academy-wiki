@@ -3,6 +3,7 @@ import './Cohorts.css';
 import CohortCard from '../../SharedComponents/CohortCard';
 import Slideshow from '../../SharedComponents/Slideshow';
 import axios from 'axios';
+import Loading from '../../SharedComponents/Loading';
 
 class Cohorts extends Component {
   constructor(props) {
@@ -58,10 +59,16 @@ class Cohorts extends Component {
 
     return (
       <div>
+      {!cohortInfo.length ? (
+        <Loading />
+         ):(
+           <div>
       <h1 className = 'city_title'>{`${cityName} cohorts`}</h1>
-    <div>{cohortList}</div>
+      <div>{cohortList}</div>
       </div>
-    );
+    )}
+    </div>
+    )
   }
 }
 

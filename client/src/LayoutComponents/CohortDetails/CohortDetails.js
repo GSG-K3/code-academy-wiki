@@ -3,6 +3,7 @@ import Slideshow from '../../SharedComponents/Slideshow';
 import cohortImg from '../../images/cohort.svg';
 import './CohortDetails.css';
 import axios from 'axios';
+import Loading from '../../SharedComponents/Loading';
 
 class CohortDetails extends Component {
   state = {
@@ -39,8 +40,8 @@ class CohortDetails extends Component {
     return (
       <div>
         {!cohortInfo.length ? (
-          <h1>Loading..</h1>
-        ) : (
+          <Loading />
+          ) : (
           <div>
             <section className='cohort-section'>
               <img src={cohortImg} alt='cohort' />
