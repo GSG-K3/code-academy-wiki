@@ -10,9 +10,11 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import ProjectDetails from './LayoutComponents/ProjectDetails';
 import StudentProfile from './LayoutComponents/StudentProfile';
 
-function App() {
-  return (
+const App = () => 
+   (
     <Router>
+    <React.Fragment>
+
       <NavBar />
       <Switch>
         <Route exact path='/' component={Home} />
@@ -22,7 +24,9 @@ function App() {
         <Route exact path='/cohortinfo/:cohortID' component={CohortDetails} />
       </Switch>
       <Footer />
+    </React.Fragment>
     </Router>
+    
   );
-}
+  
 export default App;
