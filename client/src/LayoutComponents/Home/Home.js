@@ -4,7 +4,6 @@ import girl from '../../images/home-illustrations/girl.png';
 import boy from '../../images/home-illustrations/boy.png';
 import technologies from '../../images/home-illustrations/technologies.png';
 import './Home.css';
-import { Link } from 'react-router-dom';
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -14,11 +13,11 @@ class Home extends Component {
   }
 
      setKhalel = () => {
-      this.setState({ city: 'Khalel' })
+      this.setState({ city: 'khalel' })
     }
 
     setGaza = () => {
-      this.setState({ city: 'Gaza' });
+      this.setState({ city: 'gaza' });
     }
 
   render() {
@@ -68,7 +67,7 @@ class Home extends Component {
                   Khalil
                 </button>
               
-              {city === 'Gaza' || city === 'Khalel'
+              {city === 'gaza' || city === 'khalel'
                 ? history.push(`/cohorts/${city}`, { data: city })
                 : console.log(city)}
             </div>

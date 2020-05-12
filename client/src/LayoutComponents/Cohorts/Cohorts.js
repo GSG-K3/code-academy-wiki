@@ -45,7 +45,9 @@ class Cohorts extends Component {
       return (
         <div className = "cohort">
         <div className = 'coh_card'>
-          <CohortCard  name={cohort.cohort_name} />
+        
+          <CohortCard  id = {cohort.cohort_id} name={cohort.cohort_name} />
+       
         </div>
           <div className = 'coh_slide_show'>
           <Slideshow  projects={projectsSlide}/>
@@ -56,7 +58,7 @@ class Cohorts extends Component {
 
     return (
       <div>
-      <h1 className = 'city_title'>{`cohort ${cityName}`}</h1>
+      <h1 className = 'city_title'>{`${cityName} cohorts`}</h1>
     <div>{cohortList}</div>
       </div>
     );
