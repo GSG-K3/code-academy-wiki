@@ -4,6 +4,7 @@ import axios from 'axios';
 import StudentCard from '../../SharedComponents/StudentCard';
 import './AllStudents.css';
 import { Link } from 'react-router-dom';
+import Loading from '../../SharedComponents/Loading';
 
 class AllStudents extends Component {
   state = {
@@ -11,15 +12,15 @@ class AllStudents extends Component {
     students: [],
   };
 
-    componentDidMount() {
+  componentDidMount() {
     axios
-    .get(`/api/students`)
-    .then((res) => {
-      this.setState({
-        students: res.data,
-      });
-    })
-    .catch((err) => err);
+      .get(`/api/students`)
+      .then((res) => {
+        this.setState({
+          students: res.data,
+        });
+      })
+      .catch((err) => err);
   }
 
   // store the input of the search field
@@ -28,12 +29,8 @@ class AllStudents extends Component {
   };
 
   render() {
-    
     const { students, searchfield } = this.state;
-    
-
     // compare the search field with student name
-    
     const filterStudents = students.filter((student) => {
       return student.name
         .toLowerCase()
@@ -65,8 +62,11 @@ class AllStudents extends Component {
             onChange={this.onSearchChange}
           />
         </div>
-        {!allStudents.length?<h1>loading</h1>: <div className='students-container'>{allStudents}</div>}
-       
+        {!allStudents.length ? (
+          <Loading />
+        ) : (
+          <div className='students-container'>{allStudents}</div>
+        )}
       </div>
     );
   }
