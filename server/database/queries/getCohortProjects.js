@@ -1,8 +1,8 @@
 const db_connection = require('../config/db_connection');
-const getCohortData = (cohortID) => {
+const getCohortProjects = (cohortID) => {
   const sql = {
     text:
-      'select  name cohort_name,details cohort_details,id cohort_id  from cohorts where id=$1;',
+      'select p.id project_id,p.image project_image from projects p,cohorts c where c.id=p.cohort_id AND c.id=$1;',
     values: [cohortID],
   };
   return db_connection
@@ -10,4 +10,4 @@ const getCohortData = (cohortID) => {
     .then((result) => result.rows)
     .catch((error) => error);
 };
-module.exports = getCohortData;
+module.exports = getCohortProjects;
