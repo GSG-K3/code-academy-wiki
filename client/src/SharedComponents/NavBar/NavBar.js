@@ -1,57 +1,78 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import './NavBar.css';
 import logo from '../../images/navbar-images/logo.png';
+import { Link } from 'react-router-dom';
+class NavBar extends Component {
+  state = {
+    openMenu: false,
+  };
 
-function NavBar(props) {
-  return (
-    <nav className='header'>
-      <div className='nav_bar'>
-        <div className='nav_container'>
-          <img className='nav_logo' src={logo} alt='logo' />
-          <ul className='list_items '>
-            <NavItem page='home' />
-            <NavItem page='students' />
-            <NavItem page='cohorts'>
-              <DropDownMenu />
-            </NavItem>
-            <NavItem page='about' />
-          </ul>
-        </div>
-      </div>
-    </nav>
-  );
-}
-function NavItem(props) {
-  const [open, setopen] = useState(false);
-  return (
-    <li>
-      <a
-        rel='noopener noreferrer'
-        href='#'
-        className='nav_item'
-        onMouseEnter={() => setopen(!open)}
-        onMouseOut={() => setopen(open)}
-      >
-        {props.page}
-      </a>
-      {open && props.children}
-    </li>
-  );
-}
+  showMenu = (e) => {
+    this.setState({ openMenu: true });
+  };
 
-function DropDownMenu() {
-  function DropDownItem(props) {
+  hideMenu = (e) => {
+    this.setState({ openMenu: false });
+  };
+  render() {
     return (
-      <a rel='noopener noreferrer' href='#' className='menu_items'>
-        {props.children}
-      </a>
+      <nav className='header'>
+        <div className='nav_bar'>
+          <div className='nav_container'>
+          <Link to = '/'>
+            <img className='nav_logo' src={logo} alt='logo' />
+          </Link>
+            <ul className='list_items '>
+              <Link to='/' className = 'nav_item'>
+                <li className = 'nav_item'>home</li>
+              </Link>
+
+              <Link to='/students' className = 'nav_item'>
+                <li className = 'nav_item'>
+                  <a rel='' href='#' className='nav_item'>
+                    students
+                  </a>
+                </li>
+              </Link>
+              <li
+                className = 'nav_item'
+                page='cohorts'
+                onMouseEnter={(e) => {
+                  this.showMenu(e);
+                }}
+                onMouseLeave={(e) => {
+                  this.hideMenu(e);
+                }}
+              >
+                {this.state.openMenu ? (
+                  <ul className='drop_down'>
+                    <Link to='/cohorts/khalel' className = 'nav_item'>
+                      <li
+                        className='menu_items'
+                        onClick='window.location.reload()'
+                      >
+                        khalel
+                      </li>
+                    </Link>
+                    <Link to='/cohorts/gaza' className = 'nav_item'>
+                      <li 
+                      className='menu_items'
+                      onClick='window.location.reload()'
+                      >gaza</li>
+                    </Link>
+                  </ul>
+                ) : (null)}
+                cohorts
+              </li>
+              <Link to='/About' className = 'nav_item'>
+                <li className = 'nav_item'>about</li>
+              </Link>
+            </ul>
+          </div>
+        </div>
+      </nav>
     );
   }
-  return (
-    <div className='drop_down'>
-      <DropDownItem> Gaza </DropDownItem>
-      <DropDownItem> khalil</DropDownItem>
-    </div>
-  );
 }
+
 export default NavBar;
