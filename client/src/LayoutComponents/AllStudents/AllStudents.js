@@ -4,6 +4,7 @@ import axios from 'axios';
 import StudentCard from '../../SharedComponents/StudentCard';
 import './AllStudents.css';
 import { Link } from 'react-router-dom';
+import Loading from '../../SharedComponents/Loading';
 
 class AllStudents extends Component {
   state = {
@@ -29,7 +30,6 @@ class AllStudents extends Component {
 
   render() {
     const { students, searchfield } = this.state;
-
     // compare the search field with student name
     const filterStudents = students.filter((student) => {
       return student.name
@@ -62,7 +62,11 @@ class AllStudents extends Component {
             onChange={this.onSearchChange}
           />
         </div>
-        <div className='students-container'>{allStudents}</div>
+        {!allStudents.length ? (
+          <Loading />
+        ) : (
+          <div className='students-container'>{allStudents}</div>
+        )}
       </div>
     );
   }

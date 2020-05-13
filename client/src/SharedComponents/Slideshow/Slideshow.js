@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import ProjectView from '../ProjectView';
 import { Link } from 'react-router-dom';
 import './Slideshow.css';
-
+import Loading from '../Loading';
 class Slideshow extends Component {
   render() {
     const { projects, students, mentors } = this.props;
@@ -50,7 +50,7 @@ class Slideshow extends Component {
     return (
       <div className='slide-container'>
         {!projectSlide.length && !studentSlide.length && !mentorSlide.length ? (
-          <h1 className='loading'>Loading ....</h1>
+          <Loading />
         ) : (
           <Slider {...SlideSettings}>
             {projectSlide.length ? (
