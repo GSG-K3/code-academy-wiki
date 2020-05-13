@@ -2,6 +2,12 @@ const query = require('../database/queries/getCohortData');
 exports.getCohortData = (req, res) => {
   const cohortID = req.params.cohortID;
   query(cohortID)
-    .then((data) => res.json(data))
+    .then((data) => {
+      if (data.length != 0) {
+        res.json(data);
+      } else {
+        res.status(404).json({ message: ' Cohort Info Not Found 404' });
+      }
+    })
     .catch((err) => err);
 };
