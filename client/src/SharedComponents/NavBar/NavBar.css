@@ -63,6 +63,7 @@
   text-decoration: none;
   color: #405f73;
   font-size: 15px;
+  list-style: none;
 }
 .menu_items:hover {
   color: #f29422;
