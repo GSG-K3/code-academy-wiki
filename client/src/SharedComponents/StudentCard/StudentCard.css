@@ -3,8 +3,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 30%;
   text-decoration: none;
+  transition: transform 0.25s ease-out;
+  outline: none;
+  padding: 0px 80px;
+}
+.student-card-container:hover,
+.student-card-container:focus {
+  transform: scale(1.02);
 }
 
 .student-img {

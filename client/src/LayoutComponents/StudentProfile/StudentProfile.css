@@ -1,5 +1,5 @@
 .profile-container {
-  margin-top: 150px;
+  margin: 150px 0;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;

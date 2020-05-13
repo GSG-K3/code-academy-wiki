@@ -43,7 +43,7 @@ class AllStudents extends Component {
         <Link
           to={`/student/${student.id}`}
           key={student.id}
-          className='student-card-container'
+          className='student-card-link'
         >
           <StudentCard studentImg={student.image} studentname={student.name} />
         </Link>

@@ -9,7 +9,7 @@ const StudentCard = ({ studentImg, studentname, studentrole }) => {
       ) : (
         <div className='student-img'>{studentname.charAt(0)}</div>
       )}
-      {studentrole == 'cf' ? (
+      {studentrole === 'cf' ? (
         <span className='student-name'>
           {studentname} ({studentrole})
         </span>

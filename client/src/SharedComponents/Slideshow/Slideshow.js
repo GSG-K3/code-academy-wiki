@@ -23,7 +23,7 @@ class Slideshow extends Component {
     const studentSlide = students.map((student) => {
       return (
         <Link
-          className='student-card-container'
+          className='student-card-link'
           to={`/student/${student.student_id}`}
           key={student.student_id}
         >
