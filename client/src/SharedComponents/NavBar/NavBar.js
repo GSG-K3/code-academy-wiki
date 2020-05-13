@@ -9,7 +9,6 @@ class NavBar extends Component {
 
   showMenu = (e) => {
     this.setState({ openMenu: true });
-    console.log(this.state.openMenu, 'hello now it works');
   };
 
   hideMenu = (e) => {
@@ -62,9 +61,7 @@ class NavBar extends Component {
                       >gaza</li>
                     </Link>
                   </ul>
-                ) : (
-                  console.log(this.state.openMenu, 'hello its heddin')
-                )}
+                ) : (null)}
                 cohorts
               </li>
               <Link to='/About' className = 'nav_item'>
