@@ -1,57 +1,77 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import './NavBar.css';
 import logo from '../../images/navbar-images/logo.png';
+class NavBar extends Component {
+  state = {
+    openMenu: false,
+  };
 
-function NavBar(props) {
-  return (
-    <nav className='header'>
-      <div className='nav_bar'>
-        <div className='nav_container'>
-          <img className='nav_logo' src={logo} alt='logo' />
-          <ul className='list_items '>
-            <NavItem page='home' />
-            <NavItem page='students' />
-            <NavItem page='cohorts'>
-              <DropDownMenu />
-            </NavItem>
-            <NavItem page='about' />
-          </ul>
-        </div>
-      </div>
-    </nav>
-  );
-}
-function NavItem(props) {
-  const [open, setopen] = useState(false);
-  return (
-    <li>
-      <a
-        rel='noopener noreferrer'
-        href='#'
-        className='nav_item'
-        onMouseEnter={() => setopen(!open)}
-        onMouseOut={() => setopen(open)}
-      >
-        {props.page}
-      </a>
-      {open && props.children}
-    </li>
-  );
-}
+  showMenu = (e) => {
+    this.setState({ openMenu: true });
+    console.log(this.state.openMenu, 'hello now it works');
+  };
 
-function DropDownMenu() {
-  function DropDownItem(props) {
+  hideMenu = (e) => {
+    this.setState({ openMenu: false });
+  };
+  render() {
     return (
-      <a rel='noopener noreferrer' href='#' className='menu_items'>
-        {props.children}
-      </a>
+      <nav className='header'>
+        <div className='nav_bar'>
+          <div className='nav_container'>
+            <img className='nav_logo' src={logo} alt='logo' />
+            <ul className='list_items '>
+              <li>
+                <a rel='' href='#' className='nav_item'>
+                  home
+                </a>
+              </li>
+              <li>
+                <a rel='' href='#' className='nav_item'>
+                  students
+                </a>
+              </li>
+              <li
+                page='cohorts'
+                onMouseOver={(e) => {
+                  this.showMenu(e);
+                }}
+                onMouseOut={(e) => {
+                  this.hideMenu(e);
+                }}
+              >
+                {this.state.openMenu ? (
+                  <ul className='drop_down'>
+                    <li className='menu_items'>
+                      <a rel='' href='#' className='menu_items'>
+                        khalel
+                      </a>
+                    </li>
+                    <li className='menu_items'>
+                      <a rel='' href='#' className='menu_items'>
+                        Gaza
+                      </a>
+                    </li>
+                  </ul>
+                ) : (
+                  console.log(this.state.openMenu, 'hello its heddin')
+                )}
+                >
+                <a rel='' href='#' className='nav_item'>
+                  cohorts
+                </a>
+              </li>
+              <li>
+                <a rel='' href='#' className='nav_item'>
+                  about
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     );
   }
-  return (
-    <div className='drop_down'>
-      <DropDownItem> Gaza </DropDownItem>
-      <DropDownItem> khalil</DropDownItem>
-    </div>
-  );
 }
+
 export default NavBar;
