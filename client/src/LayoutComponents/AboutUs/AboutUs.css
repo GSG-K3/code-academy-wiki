@@ -1,0 +1,50 @@
+.container{
+     height: 500px;
+    display: flex;
+   flex-direction: row;
+   width: 100%;
+}
+.info{
+    width: 600px;
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  margin-top: 180px;
+
+}
+ .title{
+ display: flex;
+ font-family: sans-serif;
+ font-weight: bold;
+ font-size: 50px;
+ align-items: center;
+ text-align: center;
+
+}
+.description{
+    width: 550px;
+    font-family:'Montserrat', sans-serif;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #405F73;
+}
+.team-img{
+ margin-left:50px ;
+ margin-top: 180px;
+
+} 
+.learnMore-btn{
+    width: 180px;
+    height: 53px;
+   background: #F29422;
+   margin-top: 20px;
+   font-family: 'Lato';
+   font-style: normal;
+   font-weight: bold;
+   font-size: 30px;
+   color: #FFFFFF;
+   text-decoration: none;
+}
