@@ -8,6 +8,6 @@ const project = (id) => {
   return connection
     .query(sql.text, sql.values)
     .then((res) => res.rows)
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };
 module.exports = project;
