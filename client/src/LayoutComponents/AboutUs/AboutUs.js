@@ -6,7 +6,7 @@ import team from '../../images/team.svg';
 
 const AboutUs = () => {
     return (
-        <div>
+        <div className='about-us'>
          <section className='container'>
              <div className='info'>
              <p className='title'>About Us </p>
