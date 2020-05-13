@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './NavBar.css';
 import logo from '../../images/navbar-images/logo.png';
+import { Link } from 'react-router-dom';
 class NavBar extends Component {
   state = {
     openMenu: false,
@@ -19,53 +20,56 @@ class NavBar extends Component {
       <nav className='header'>
         <div className='nav_bar'>
           <div className='nav_container'>
+          <Link to = '/'>
             <img className='nav_logo' src={logo} alt='logo' />
+          </Link>
             <ul className='list_items '>
-              <li>
-                <a rel='' href='#' className='nav_item'>
-                  home
-                </a>
-              </li>
-              <li>
-                <a rel='' href='#' className='nav_item'>
-                  students
-                </a>
-              </li>
+              <Link to='/' className = 'nav_item'>
+                <li className = 'nav_item'>home</li>
+              </Link>
+
+              <Link to='/students' className = 'nav_item'>
+                <li className = 'nav_item'>
+                  <a rel='' href='#' className='nav_item'>
+                    students
+                  </a>
+                </li>
+              </Link>
               <li
+                className = 'nav_item'
                 page='cohorts'
-                onMouseOver={(e) => {
+                onMouseEnter={(e) => {
                   this.showMenu(e);
                 }}
-                onMouseOut={(e) => {
+                onMouseLeave={(e) => {
                   this.hideMenu(e);
                 }}
               >
                 {this.state.openMenu ? (
                   <ul className='drop_down'>
-                    <li className='menu_items'>
-                      <a rel='' href='#' className='menu_items'>
+                    <Link to='/cohorts/khalel' className = 'nav_item'>
+                      <li
+                        className='menu_items'
+                        onClick='window.location.reload()'
+                      >
                         khalel
-                      </a>
-                    </li>
-                    <li className='menu_items'>
-                      <a rel='' href='#' className='menu_items'>
-                        Gaza
-                      </a>
-                    </li>
+                      </li>
+                    </Link>
+                    <Link to='/cohorts/gaza' className = 'nav_item'>
+                      <li 
+                      className='menu_items'
+                      onClick='window.location.reload()'
+                      >gaza</li>
+                    </Link>
                   </ul>
                 ) : (
                   console.log(this.state.openMenu, 'hello its heddin')
                 )}
-                >
-                <a rel='' href='#' className='nav_item'>
-                  cohorts
-                </a>
+                cohorts
               </li>
-              <li>
-                <a rel='' href='#' className='nav_item'>
-                  about
-                </a>
-              </li>
+              <Link to='/About' className = 'nav_item'>
+                <li className = 'nav_item'>about</li>
+              </Link>
             </ul>
           </div>
         </div>
