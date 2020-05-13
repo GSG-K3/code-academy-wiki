@@ -2,7 +2,7 @@ import React from 'react';
 import image from '../../images/error.png';
 import style from './index.css';
 
-const getErrorImage = () => {
+const ErrorImage = () => {
   return <img src={image} />;
 };
-export default getErrorImage;
+export default ErrorImage;
