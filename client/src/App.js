@@ -8,6 +8,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import ProjectDetails from './LayoutComponents/ProjectDetails';
 import StudentProfile from './LayoutComponents/StudentProfile';
 import AllStudents from './LayoutComponents/AllStudents';
+import AboutUs from './LayoutComponents/AboutUs';
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
         <Route exact path='/project/:id' component={ProjectDetails} />
         <Route exact path='/student/:id' component={StudentProfile} />
         <Route exact path='/cohortinfo/:cohortID' component={CohortDetails} />
+        <Route exact path = '/About' component={AboutUs}/>
       </Switch>
-      <Footer />
+    <Footer/>
     </Router>
   );
 }
