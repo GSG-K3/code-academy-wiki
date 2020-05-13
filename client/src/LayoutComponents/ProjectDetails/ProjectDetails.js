@@ -6,6 +6,7 @@ import ProjectView from '../../SharedComponents/ProjectView';
 import StudentCard from '../../SharedComponents/StudentCard';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Loading from '../../SharedComponents/Loading';
 class ProjectDetails extends Component {
   constructor(props) {
     super(props);
@@ -34,9 +35,7 @@ class ProjectDetails extends Component {
     return (
       <div className='projectdetails-container'>
         {!projects.length ? (
-          <div className='loading-container'>
-            <h1 className='loading'> </h1>
-          </div>
+          <Loading />
         ) : (
           <div>
             <section className='projects-details'>

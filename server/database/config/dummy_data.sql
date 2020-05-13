@@ -2,17 +2,17 @@
 INSERT INTO cohorts
     (name,details,city)
 VALUES
-    ('K1', 'this cohort created on khalel city in 2018', 'Khalel'),
-    ('K2', 'this cohort created on khalel city in 2019', 'Khalel'),
-    ('K3', 'this cohort created on khalel city in 2020', 'Khalel'),
-    ('G1', 'this cohort created on gaza city in 2017', 'Gaza'),
-    ('G2', 'this cohort created on gaza city in 2017', 'Gaza'),
-    ('G3', 'this cohort created on gaza city in 2017', 'Gaza'),
-    ('G4', 'this cohort created on gaza city in 2018', 'Gaza'),
-    ('G5', 'this cohort created on gaza city in 2018', 'Gaza'),
-    ('G6', 'this cohort created on gaza city in 2018', 'Gaza'),
-    ('G7', 'this cohort created on gaza city in 2019', 'Gaza'),
-    ('G8', 'this cohort created on gaza city in 2020', 'Gaza');
+    ('K1', 'this cohort created on khalel city in 2018', 'khalel'),
+    ('K2', 'this cohort created on khalel city in 2019', 'khalel'),
+    ('K3', 'this cohort created on khalel city in 2020', 'khalel'),
+    ('G1', 'this cohort created on gaza city in 2017', 'gaza'),
+    ('G2', 'this cohort created on gaza city in 2017', 'gaza'),
+    ('G3', 'this cohort created on gaza city in 2017', 'gaza'),
+    ('G4', 'this cohort created on gaza city in 2018', 'gaza'),
+    ('G5', 'this cohort created on gaza city in 2018', 'gaza'),
+    ('G6', 'this cohort created on gaza city in 2018', 'gaza'),
+    ('G7', 'this cohort created on gaza city in 2019', 'gaza'),
+    ('G8', 'this cohort created on gaza city in 2020', 'gaza');
 
 INSERT INTO projects
     (cohort_id,title,github,heroku,description,image)
@@ -99,34 +99,34 @@ VALUES
 INSERT INTO students
     (cohort_id,name,email,github,phone_No,image,address,role)
 VALUES
-    ('3', 'Abood Swaiti', 'aboodswiti@gmail.com', 'https://github.com/aboodswiti', '0598075496', '', 'hebron-Dura', 'web-developer'),
-    ('3', 'Banan Haj', 'bananhaj@gmail.com', 'https://github.com/bananhaj', '0598884933', '', 'hebron-Halhul', 'web-developer'),
-    ('3', 'Bayan Seder', 'Bayanseder@gmail.com', 'https://github.com/bayanseder', '0599435867', '', 'Hebron', 'web-developer'),
-    ('3', 'Duha Balout', 'DuhaBalut@gmail.com', 'https://github.com/Duha96', '0598075496', '', 'Hebron-bani naem', 'web-developer'),
-    ('3', 'Hanan awawdeh', 'Hannan@gmail.com', 'https://github.com/Hanan795', '0598075496', '', 'Hebron-Dura', 'web-developer'),
-    ('3', 'bayan Jubah', 'bayan.jubah@gmail.com', 'https://github.com/bayan-404', '0598075496', 'https://avatars1.githubusercontent.com/u/57558867?s=460&u=db4fd5911b694af0eab2de654500d0b7cb1c6a8c&v=4', 'Hebron', 'web-developer'),
-    ('3', 'Hussein Shahatet', 'Hussein.sh1997@hotmail.com', 'https://github.com/Hussein-shahatet97', '0599503844', 'https://avatars3.githubusercontent.com/u/57197216?s=400&u=2eb1999d11f1cd5dae891fde56a9e32a30e36f04&v=4', 'Hebron-Dura', 'web-developer'),
-    ('3', 'Nujood Shawar', 'jood@gmail.com', 'https://github.com/Jood80', '0598075496', '', 'Hebron', 'web-developer'),
-    ('3', 'Kholoud Fanoun', 'KholoudF@gmail.com', 'https://github.com/kholoudfann', '0598075496', 'https://avatars0.githubusercontent.com/u/53875090?s=400&u=fbe3ffbdd351c4d106071794baef446df15bc79c&v=4', 'Bethlahem', 'web-developer'),
-    ('3', 'Nidaa Awawdeh', 'NidaaAwawdeh@gmail.com', 'https://github.com/nidaa-awawdeh', '0598075496', '', 'Hebron-Dura', 'web-developer'),
-    ('3', 'Rahaf Hawamdeh', 'Rahafhawamdeh@gmail.com', 'https://github.com/Rahaf-96', '0598075496', 'https://avatars1.githubusercontent.com/u/54964739?s=400&u=373d4003039f3f325985421bbb77491740152bfc&v=4', 'alsamoa', 'web-developer'),
-    ('3', 'SaharFroukh', 'SharFroukh@gmail.com', 'https://github.com/SaharFroukh', '0598075496', '', 'Hebron', 'web-developer'),
-    ('3', 'Yakoob Hammouri', 'YakoobHammouri@gmail.com', ' https://github.com/YakoobHammouri', '0598075434','', 'Hebron', 'web-developer'),
-    ('3', 'Karmel Salah', 'KarmelSalah@gmail.com', 'https://github.com/karmelyoei','0598075231', 'https://avatars3.githubusercontent.com/u/39573452?s=400&u=55ba9a9bb308894a99e569492e7a827c3f743635&v=4',  'Bethlahem', 'web-developer'),
-    ('3', 'Ruba Sider', 'rubasider@gmail.com', 'https://github.com/rubasider', '0594523771','', 'Hebron', 'web-developer'),
-    ('3', 'Tasneem Bhiri', 'tasneembhiri@gmail.com', 'https://github.com/tasneembhiri', '0598075892','https://avatars0.githubusercontent.com/u/55299644?s=400&u=c842c45d449512ac3c4126118a770b26db0ef307&v=4', 'Hebron-Halhul',  'web-developer'),
+    ('3', 'Abood Swaiti', 'aboodswiti@gmail.com', 'https://github.com/aboodswiti', '0599999999', 'https://avatars0.githubusercontent.com/u/56088971?s=400&u=ee540bbaa7342f0c2667cd2d7170d71fb2bcf38f&v=4', 'hebron-Dura', 'web-developer'),
+    ('3', 'Banan Haj', 'bananhaj@gmail.com', 'https://github.com/bananhaj', '0599999999', '', 'hebron-Halhul', 'web-developer'),
+    ('3', 'Bayan Seder', 'Bayanseder@gmail.com', 'https://github.com/bayanseder', '0599999999', 'https://f.top4top.io/p_1593m4s3d1.jpg', 'Hebron', 'web-developer'),
+    ('3', 'Duha Balout', 'DuhaBalut@gmail.com', 'https://github.com/Duha96', '0599999999', '', 'Hebron-bani naem', 'web-developer'),
+    ('3', 'Hanan awawdeh', 'Hannan@gmail.com', 'https://github.com/Hanan795', '0599999999', '', 'Hebron-Dura', 'web-developer'),
+    ('3', 'bayan Jubah', 'bayan.jubah@gmail.com', 'https://github.com/bayan-404', '0599999999', 'https://avatars1.githubusercontent.com/u/57558867?s=460&u=db4fd5911b694af0eab2de654500d0b7cb1c6a8c&v=4', 'Hebron', 'web-developer'),
+    ('3', 'Hussein Shahatet', 'Hussein.sh1997@hotmail.com', 'https://github.com/Hussein-shahatet97', '0599999999', 'https://avatars3.githubusercontent.com/u/57197216?s=400&u=2eb1999d11f1cd5dae891fde56a9e32a30e36f04&v=4', 'Hebron-Dura', 'web-developer'),
+    ('3', 'Nujood Shawar', 'jood@gmail.com', 'https://github.com/Jood80', '0599999999', 'https://avatars0.githubusercontent.com/u/56412800?s=400&u=3e3008a1bd2d0de7728fbb57a62d6455146328f8&v=4', 'Hebron', 'web-developer'),
+    ('3', 'Kholoud Fanoun', 'KholoudF@gmail.com', 'https://github.com/kholoudfann', '0599999999', 'https://avatars0.githubusercontent.com/u/53875090?s=400&u=fbe3ffbdd351c4d106071794baef446df15bc79c&v=4', 'Bethlahem', 'web-developer'),
+    ('3', 'Nidaa Awawdeh', 'NidaaAwawdeh@gmail.com', 'https://github.com/nidaa-awawdeh', '0599999999', '', 'Hebron-Dura', 'web-developer'),
+    ('3', 'Rahaf Hawamdeh', 'Rahafhawamdeh@gmail.com', 'https://github.com/Rahaf-96', '0599999999', 'https://avatars1.githubusercontent.com/u/54964739?s=400&u=373d4003039f3f325985421bbb77491740152bfc&v=4', 'alsamoa', 'web-developer'),
+    ('3', 'SaharFroukh', 'SharFroukh@gmail.com', 'https://github.com/SaharFroukh', '0599999999', '', 'Hebron', 'web-developer'),
+    ('3', 'Yakoob Hammouri', 'YakoobHammouri@gmail.com', ' https://github.com/YakoobHammouri', '0599999999','https://avatars2.githubusercontent.com/u/7718220?s=460&u=e3691d3673c2600ed3114233403952d8d2156dd1&v=4', 'Hebron', 'web-developer'),
+    ('3', 'Karmel Salah', 'KarmelSalah@gmail.com', 'https://github.com/karmelyoei','0599999999', 'https://avatars3.githubusercontent.com/u/39573452?s=400&u=55ba9a9bb308894a99e569492e7a827c3f743635&v=4',  'Bethlahem', 'web-developer'),
+    ('3', 'Ruba Sider', 'rubasider@gmail.com', 'https://github.com/rubasider', '0599999999','https://a.top4top.io/p_1593eil9w1.jpg', 'Hebron', 'web-developer'),
+    ('3', 'Tasneem Bhiri', 'tasneembhiri@gmail.com', 'https://github.com/tasneembhiri', '0599999999','https://avatars0.githubusercontent.com/u/55299644?s=400&u=c842c45d449512ac3c4126118a770b26db0ef307&v=4', 'Hebron-Halhul',  'web-developer'),
 
-    ('2', 'Rawan A-Rajabi', 'rawan@gmail.com', 'https://github.com/95Rawan', '0599365893','', 'Hebron', 'web-developer'),
-    ('2', 'Duaa Halaiqa', 'duaah@gmail.com', 'https://github.com/DuaaH', '0593758461', 'https://avatars0.githubusercontent.com/u/45401690?s=400&u=9fb9456428ddb1944ffc48b77792182594037360&v=4', 'Hebron', 'web-developer'),
-    ('2', 'Munir Alsharif', 'muniralsharif@gmail.com', 'https://github.com/Muniralsharif',  '0598752349','', 'Hebron', 'web-developer'),
-    ('2', 'Rand Inaim', 'randInaim@gmail.com', 'https://github.com/RandInaim', '0568463198',  'https://avatars2.githubusercontent.com/u/31932786?s=400&u=b306afabb2045c30b3a2217ca4fe3181bfe2a0cf&v=4','Hebron', 'web-developer'),
-    ('2', 'Saja Lahaleeh', 'sajalahaleeh@gmail.com', 'https://github.com/SajaLahaleeh','0597527596', 'https://avatars1.githubusercontent.com/u/45894766?s=400&u=eeeb7f4f8d0f7fca83c9b11a46dc962ddd98a568&v=4',  'Hebron', 'web-developer'),
-    ('2', 'Someya Altous', 'somaeyeAltous@gmail.com', 'https://github.com/someyaaltous',  '0592384910','https://avatars2.githubusercontent.com/u/36266244?s=400&u=3da8c12e07f834c2c451141ec1f31d44e09d3b51&v=4', 'Bethlehem', 'web-developer'),
-    ('2', 'Yaqoot Turman', 'yaqoot.gmail.com', 'https://github@com/yaqootturman', '0599385697',  'https://avatars3.githubusercontent.com/u/27896127?s=400&u=c4defda2b61b4f1dfb79a04e308cd50c03ff7af2&v=4','Hebron', 'web-developer'),
-    ('2', 'Yousef Qwasmeh', 'yousefqwasmeh@gmail.com', 'https://github.com/YousefQwasmeh',  '0569285726','', 'Hebron', 'web-developer'),
-    ('2', 'sahar Adem', 'saharadem@gmail.com', ' https://github.com/saharAdem', '0599482475', '', 'Hebron', 'web-developer'),
-    ('2', 'Sara Abu-awad', 'sara@gmail.com', ' https://github.com/sara219', '0598274500', '','Hebron', 'web-developer'),
-    ('2', 'Nadeen Shaheen', 'nadeen@gmail.com', ' https://github.com/Nadeen123', '0592498640',  'https://avatars2.githubusercontent.com/u/48320569?s=400&u=d739fa4ee95e50624a6ba7ab2ac6d938fe86b1ac&v=4','Hebron', 'web-developer');
+    ('2', 'Rawan A-Rajabi', 'rawan@gmail.com', 'https://github.com/95Rawan', '0599999999','https://avatars3.githubusercontent.com/u/47659847?s=460&u=a3b4c38218d09e979ed131460c32759395c9bcc9&v=4', 'Hebron', 'web-developer'),
+    ('2', 'Duaa Halaiqa', 'duaah@gmail.com', 'https://github.com/DuaaH', '0599999999', 'https://avatars0.githubusercontent.com/u/45401690?s=400&u=9fb9456428ddb1944ffc48b77792182594037360&v=4', 'Hebron', 'web-developer'),
+    ('2', 'Munir Alsharif', 'muniralsharif@gmail.com', 'https://github.com/Muniralsharif',  '0599999999','https://avatars2.githubusercontent.com/u/44524993?s=460&v=4', 'Hebron', 'web-developer'),
+    ('2', 'Rand Inaim', 'randInaim@gmail.com', 'https://github.com/RandInaim', '0599999999',  'https://avatars2.githubusercontent.com/u/31932786?s=400&u=b306afabb2045c30b3a2217ca4fe3181bfe2a0cf&v=4','Hebron', 'web-developer'),
+    ('2', 'Saja Lahaleeh', 'sajalahaleeh@gmail.com', 'https://github.com/SajaLahaleeh','0599999999', 'https://avatars1.githubusercontent.com/u/45894766?s=400&u=eeeb7f4f8d0f7fca83c9b11a46dc962ddd98a568&v=4',  'Hebron', 'web-developer'),
+    ('2', 'Someya Altous', 'somaeyeAltous@gmail.com', 'https://github.com/someyaaltous',  '0599999999','https://avatars2.githubusercontent.com/u/36266244?s=400&u=3da8c12e07f834c2c451141ec1f31d44e09d3b51&v=4', 'Bethlehem', 'web-developer'),
+    ('2', 'Yaqoot Turman', 'yaqoot.gmail.com', 'https://github@com/yaqootturman', '0599999999',  'https://avatars3.githubusercontent.com/u/27896127?s=400&u=c4defda2b61b4f1dfb79a04e308cd50c03ff7af2&v=4','Hebron', 'web-developer'),
+    ('2', 'Yousef Qwasmeh', 'yousefqwasmeh@gmail.com', 'https://github.com/YousefQwasmeh',  '0599999999','', 'Hebron', 'web-developer'),
+    ('2', 'sahar Adem', 'saharadem@gmail.com', ' https://github.com/saharAdem', '0599999999', '', 'Hebron', 'web-developer'),
+    ('2', 'Sara Abu-awad', 'sara@gmail.com', ' https://github.com/sara219', '0599999999', '','Hebron', 'web-developer'),
+    ('2', 'Nadeen Shaheen', 'nadeen@gmail.com', ' https://github.com/Nadeen123', '0599999999',  'https://avatars2.githubusercontent.com/u/48320569?s=400&u=d739fa4ee95e50624a6ba7ab2ac6d938fe86b1ac&v=4','Hebron', 'web-developer');
 
 
 
