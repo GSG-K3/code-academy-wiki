@@ -41,7 +41,7 @@ class CohortDetails extends Component {
       <div>
         {!cohortInfo.length ? (
           <Loading />
-          ) : (
+        ) : (
           <div>
             <section className='cohort-section'>
               <img src={cohortImg} alt='cohort' />
@@ -52,12 +52,16 @@ class CohortDetails extends Component {
               </div>
             </section>
 
-            <h2 className='slide-cohort'> Cohort Projects</h2>
-            <Slideshow projects={cohortProjects} />
-            <h2 className='slide-cohort'> Cohort Students</h2>
-            <Slideshow students={cohortstd} />
-            <h2 className='slide-cohort'> Cohort Mentors</h2>
-            <Slideshow mentors={cohortMentor} />
+            <div className='cohort-slide-section'>
+              <h2 className='slide-cohort'> Cohort Projects</h2>
+              <Slideshow projects={cohortProjects} />
+            </div>
+              <h2 className='slide-cohort'> Cohort Students</h2>
+              <Slideshow students={cohortstd} />
+            <div className='cohort-slide-section'>
+              <h2 className='slide-cohort'> Cohort Mentors</h2>
+              <Slideshow mentors={cohortMentor} />
+            </div>
           </div>
         )}
       </div>
