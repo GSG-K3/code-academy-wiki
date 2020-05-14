@@ -1,5 +1,5 @@
 .profile-container {
-  margin: 130px 0 50px;
+  margin: 130px 0px;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -60,16 +60,15 @@
   height: 40px;
   margin: 0 20px 0 40px;
 }
-.student-projects-container{
+.student-projects-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 800px;
-  padding: 0 10px ;
+  padding: 0 10px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
   height: 480px;
-
 }
 .student-projects {
   display: flex;
@@ -78,7 +77,6 @@
   margin-bottom: 15px;
   border-radius: 6px;
 }
-
 
 .projects-title {
   font-family: 'Montserrat', sans-serif;
