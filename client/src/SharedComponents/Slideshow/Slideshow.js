@@ -11,7 +11,7 @@ class Slideshow extends Component {
 
     const projectSlide = projects.map((project) => {
       return (
-        <Link to={`/project/${project.project_id}`} key={project.project_id}>
+        <Link to={`/project/${project.project_id}`} key={project.project_id} className='project-link'>
           <ProjectView
             key={project.project_id}
             projectImg={project.project_image}

@@ -1,7 +1,7 @@
 .profile-container {
-  margin: 150px 0;
+  margin: 130px 0 50px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
@@ -60,29 +60,36 @@
   height: 40px;
   margin: 0 20px 0 40px;
 }
+.student-projects-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  padding: 0 10px ;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+  height: 480px;
 
+}
 .student-projects {
-  position: relative;
-  width: 600px;
-  padding: 0 50px 35px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 15px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
 }
+
 
 .projects-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 40px;
-  height: 100px;
+  height: 80px;
   margin-top: 10px;
   color: #405f73;
 }
 
 @media only screen and (max-width: 1110px) {
-  .student-projects {
+  .student-projects-container {
     margin: 30px 10px 100px;
   }
   .student-card {
@@ -91,8 +98,9 @@
 }
 
 @media only screen and (max-width: 760px) {
-  .student-projects {
+  .student-projects-container {
     width: 400px;
+    height: 800px;
     margin: 30px 0 100px;
     padding: 0;
     justify-content: space-around;
@@ -108,7 +116,7 @@
 }
 
 @media only screen and (max-width: 450px) {
-  .student-projects {
+  .student-projects-container {
     width: 300px;
   }
   .student-card {

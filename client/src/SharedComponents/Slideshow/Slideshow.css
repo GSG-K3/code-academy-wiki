@@ -1,3 +1,7 @@
 .slide-container {
   margin: 50px 100px ;
 }
+
+.project-link{
+  outline: none;
+}
