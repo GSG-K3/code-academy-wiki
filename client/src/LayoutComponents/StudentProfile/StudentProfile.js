@@ -85,9 +85,9 @@ class StudentProfile extends Component {
                 </div>
               </div>
             </div>
-            <div className='student-projects'>
+            <div className='student-projects-container'>
               <p className='projects-title'>{studentInfo.name} Projects</p>
-              {projects}
+            <div className='student-projects'> {projects}</div> 
             </div>
           </div>
         )}

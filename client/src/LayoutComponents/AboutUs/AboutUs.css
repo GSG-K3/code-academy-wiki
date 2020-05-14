@@ -30,6 +30,8 @@
     align-items: center;
     text-align: center;
     color: #405F73;
+    margin-bottom: 30px;
+
 }
 .team-img{
  margin-left:50px ;
@@ -37,15 +39,22 @@
 
 } 
 .learnMore-btn{
-    width: 180px;
-    height: 53px;
-    border-style: none;
-   background: #F29422;
-   margin-top: 20px;
-   font-family: 'Lato';
-   font-style: normal;
-   font-weight: bold;
-   font-size: 30px;
-   color: #FFFFFF;
-   text-decoration: none;
+    width: 200px;
+    padding: 15px 0;
+    background: #f29422;
+    border: none;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.25s ease-out;
+    outline: none;
+}
+
+.learnMore-btn:hover,
+.learnMore-btn:focus {
+  transform: scale(1.05);
 }
