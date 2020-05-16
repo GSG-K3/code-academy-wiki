@@ -63,13 +63,4 @@ CREATE TABLE std_projects
   FOREIGN KEY(project_id) REFERENCES projects(id)
 );
 
-CREATE TABLE coh_projects
-(
-  cohort_id INT,
-  project_id INT,
-  FOREIGN KEY (cohort_id) REFERENCES cohorts(id),
-  FOREIGN KEY(project_id) REFERENCES projects(id)
-);
-
-
 COMMIT;
