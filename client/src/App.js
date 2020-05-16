@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Footer from './SharedComponents/Footer';
 import NavBar from './SharedComponents/NavBar/NavBar';
@@ -12,23 +12,31 @@ import AllStudents from './LayoutComponents/AllStudents';
 import pageNotFound from './LayoutComponents/pageNotFound';
 import AboutUs from './LayoutComponents/AboutUs';
 
-const App = () => (
-  <Router>
-    <React.Fragment>
-      <NavBar />
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/cohorts/:city' component={Cohorts} />
-        <Route exact path='/students' component={AllStudents} />
-        <Route exact path='/project/:id' component={ProjectDetails} />
-        <Route exact path='/student/:id' component={StudentProfile} />
-        <Route exact path='/cohortinfo/:cohortID' component={CohortDetails} />
-        <Route component={pageNotFound} />
-        <Route exact path='/About' component={AboutUs} />
-      </Switch>
-      <Footer />
-    </React.Fragment>
-  </Router>
-);
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <React.Fragment>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/cohorts/:city' component={Cohorts} />
+            <Route exact path='/students' component={AllStudents} />
+            <Route exact path='/project/:id' component={ProjectDetails} />
+            <Route exact path='/student/:id' component={StudentProfile} />
+            <Route
+              exact
+              path='/cohortinfo/:cohortID'
+              component={CohortDetails}
+            />
+            <Route exact path='/About' component={AboutUs} />
+            <Route component={pageNotFound} />;
+          </Switch>
+          <NavBar />
+          <Footer />
+        </React.Fragment>
+      </Router>
+    );
+  }
+}
 
 export default App;
