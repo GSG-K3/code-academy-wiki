@@ -1,5 +1,5 @@
 .cohort-section {
-  margin-top: 100px;
+  margin-top: 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -14,7 +14,7 @@
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 50px;
   color: #405f73;
 }
 .slide-cohort {
@@ -23,14 +23,20 @@
   font-weight: bold;
   font-size: 35px;
   color: #405f73;
-  padding-top: 100px;
 }
 .cohort-details {
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
-  font-size: 22px;
+  font-size: 30px;
   color: #405f73;
   width: 450px;
   margin: 20px 0px;
+}
+
+.cohort-slide-section {
+  background: rgba(64, 95, 115, 0.0738);
+  margin: 160px 0 100px;
+  height: 350px;
+  padding: 20px;
 }

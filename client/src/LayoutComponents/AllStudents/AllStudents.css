@@ -32,7 +32,13 @@
 .students-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   margin-bottom: 60px;
-  width: 80vw;
+  width: 90vw;
+}
+
+.student-card-link {
+  text-decoration: none;
+  outline: none;
+  width: 30%;
 }
