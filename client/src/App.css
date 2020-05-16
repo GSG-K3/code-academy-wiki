@@ -3,3 +3,10 @@
   margin: 0;
 }
 
+.error-page ~ .header {
+  display: none;
+}
+
+.error-page ~ .main-footer {
+  display: none;
+}
