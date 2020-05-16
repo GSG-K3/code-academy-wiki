@@ -6,7 +6,6 @@
   text-decoration: none;
   transition: transform 0.25s ease-out;
   outline: none;
-  padding: 0px 80px;
 }
 .student-card-container:hover,
 .student-card-container:focus {
