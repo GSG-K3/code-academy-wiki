@@ -1,8 +1,11 @@
 import React from 'react';
+import Navbar from '../../SharedComponents/NavBar/index';
 import image from '../../images/error.png';
-import style from './index.css';
-
 const ErrorImage = () => {
-  return <img src={image} />;
+  return (
+    <div className='error-page'>
+      <img src={image} />;
+    </div>
+  );
 };
 export default ErrorImage;
