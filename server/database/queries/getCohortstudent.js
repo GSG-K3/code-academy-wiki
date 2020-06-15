@@ -1,4 +1,4 @@
-const db_connection = require('../config/db_connection');
+const dbconnection = require('../config/dbConnection');
 const getCohortData = (cohortID) => {
   const sql = {
     text:

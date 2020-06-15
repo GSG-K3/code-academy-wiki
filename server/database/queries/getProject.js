@@ -1,4 +1,4 @@
-const connection = require('../config/db_connection');
+const dbconnection = require('../config/dbConnection');
 const project = (id) => {
   const sql = {
     text:
