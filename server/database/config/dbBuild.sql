@@ -1,6 +1,6 @@
 BEGIN;
-  DROP TABLE IF EXISTS  students,cohorts,projects,std_projects,coh_members,gsg_members
-  
+  DROP TABLE IF EXISTS  students,cohorts,projects,std_projects,coh_members,gsg_members, users
+  CASCADE;
 
 
 
