@@ -1,6 +1,6 @@
 BEGIN;
   DROP TABLE IF EXISTS  students,cohorts,projects,std_projects,coh_members,gsg_members
-  CASCADE;
+  
 
 
 
@@ -68,8 +68,7 @@ CREATE TABLE users
   id SERIAL PRIMARY KEY,
   username VARCHAR(50) NOT NULL,
   email VARCHAR(255) NOT NULL,
-  password TEXT NOT NULL,
-  status VARCHAR(50),
+  password VARCHAR(255) NOT NULL,
   type VARCHAR(50)
   );
 
