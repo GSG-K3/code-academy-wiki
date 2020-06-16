@@ -6,7 +6,7 @@ const addUser = (userinfo) => {
   const hash = bcrypt.hashSync(password, 10);
   const sql = {
     text:
-      "INSERT INTO users(username,email,password,type) VALUES($1,$2,$3,$4,$5)",
+      "INSERT INTO users(username,email,password,type) VALUES($1,$2,$3,$4)",
     values: [username, email, hash, "subadmin"],
   };
   return dbconnection.query(sql.text, sql.values);
