@@ -2,23 +2,22 @@ const postUserQuery = require("../database/queries/addUsers");
 
 const joi = require("@hapi/joi");
 const validationObject = {
-  username: joi
+  username: joi // username should be string and at least it contains 2 characters
     .string()
     .min(2)
     .max(40),
-  email: joi
+  email: joi // email should be string and valid and its tld should be .com
     .string()
     .email({
       minDomainSegments: 2,
       tlds: { allow: ["com"] },
     })
     .min(10),
-  password: joi
+  password: joi // password must be string, at least have 6 characters contains capital letters, small letter and numbers
     .string()
     .alphanum()
     .min(6)
     .pattern(new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])")),
-  verifiedPassword: joi.ref("password"),
 };
 
 const schema = joi.object(validationObject);
