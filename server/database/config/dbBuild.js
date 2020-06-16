@@ -1,12 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
-const dbConnection = require('./db_connection');
+const dbConnection = require('./dbConnection');
 
-const sql = fs.readFileSync(path.join(__dirname, 'db_build.sql')).toString();
-const sql2 = fs.readFileSync(path.join(__dirname, 'dummy_data.sql')).toString();
+const sql = fs.readFileSync(path.join(__dirname, 'dbBuild.sql')).toString();
+const sql2 = fs.readFileSync(path.join(__dirname, 'dummyData.sql')).toString();
 
-const runDbBuild = (sql, sql2) => {
+const runDbBuild = (sql) => {
   return dbConnection
     .query(sql)
     .then((res) => {

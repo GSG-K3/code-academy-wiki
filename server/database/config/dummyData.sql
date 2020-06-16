@@ -243,3 +243,8 @@ VALUES
     ('13', '3'),
     ('8', '3'),
     ('6', '3');
+
+INSERT INTO users
+    (username,email,password, status,type)
+VALUES
+    ('admin', 'admin@gazaskygeeks.com', 'Gsg@2020','','admin');

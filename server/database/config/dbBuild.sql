@@ -1,5 +1,5 @@
 BEGIN;
-  DROP TABLE IF EXISTS  students,cohorts,projects,std_projects,coh_members,gsg_members
+  DROP TABLE IF EXISTS  students,cohorts,projects,std_projects,coh_members,gsg_members, users
   CASCADE;
 
 
@@ -62,5 +62,16 @@ CREATE TABLE std_projects
   FOREIGN KEY (student_id) REFERENCES students(id),
   FOREIGN KEY(project_id) REFERENCES projects(id)
 );
+
+CREATE TABLE users
+(
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(50) NOT NULL UNIQUE,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  status VARCHAR(50),
+  type VARCHAR(50)
+  );
+
 
 COMMIT;

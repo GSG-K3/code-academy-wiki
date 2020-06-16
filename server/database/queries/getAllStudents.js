@@ -1,4 +1,4 @@
-const dbconnection = require('../config/db_connection');
+const dbconnection = require('../config/dbConnection');
 
 const getallstudents = () => {
   const sql = 'select * from students;';
