@@ -8,6 +8,8 @@ const { cohortsByCity} = require('./getCohortsByCity');
 const { getCohortstudent } = require('./getCohortstudents');
 const { getMentorData } = require('./getMentorData');
 const { getCohortProjects } = require('./getCohortProjects');
+const { clientError } = require('./errors');
+const { serverError } = require('./errors');
 const {postUser}= require('./postUser');
 router.get('/api/cohortinfo/:cohortID', getCohortData);
 router.get('/api/students', getAllStudents);
@@ -19,6 +21,8 @@ router.get('/api/cohortstd/:cohortID', getCohortstudent);
 router.get('/api/cohortMentor/:cohortID', getMentorData);
 router.get('/api/cohortProjects/:cohortID', getCohortProjects);
 router.post('/api/signup', postUser);
+router.use(clientError);
+router.use(serverError);
 module.exports = router;
 
 
