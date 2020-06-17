@@ -8,7 +8,7 @@ import Project from "../../SharedComponents/ProjectView";
 import { Link } from "react-router-dom";
 import "./StudentProfile.css";
 import Loading from "../../SharedComponents/Loading";
-import PageNotFound from "../pageNotFound";
+import PageNotFound from "../PageNotFound";
 
 class StudentProfile extends Component {
   state = {
@@ -25,7 +25,6 @@ class StudentProfile extends Component {
     axios
       .get(`/api/students/${params.id}`)
       .then((res) => {
-        console.log(res.status);
         this.setState({
           studentInfo: res.data[0],
           studentProjects: res.data,
