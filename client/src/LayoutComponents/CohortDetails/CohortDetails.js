@@ -4,13 +4,14 @@ import cohortImg from '../../images/cohort.svg';
 import './CohortDetails.css';
 import axios from 'axios';
 import Loading from '../../SharedComponents/Loading';
-
+import PageNotFound from '../PageNotFound';
 class CohortDetails extends Component {
   state = {
     cohortInfo: [],
     cohortstd: [],
     cohortMentor: [],
     cohortProjects: [],
+    notFound: false , 
   };
 
   componentDidMount = () => {
@@ -32,11 +33,22 @@ class CohortDetails extends Component {
           });
         })
       )
-      .catch((err) => err);
+      .catch((error) => {
+        if(error.response.status === 404) {
+          this.setState({
+           notFound: true
+          });
+         }
+         else return error;
+        });
   };
 
   render() {
-    const { cohortInfo, cohortstd, cohortMentor, cohortProjects } = this.state;
+    const { cohortInfo, cohortstd, cohortMentor, cohortProjects , notFound } = this.state;
+    if(notFound){
+      return <PageNotFound/>;
+    }
+    else {
     return (
       <div>
         {!cohortInfo.length ? (
@@ -68,5 +80,5 @@ class CohortDetails extends Component {
     );
   }
 }
-
+}
 export default CohortDetails;
