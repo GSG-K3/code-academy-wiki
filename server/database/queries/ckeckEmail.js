@@ -1,7 +1,6 @@
 const dbconnection = require("../config/dbConnection");
 
 const checkEmail = (email) => {
-  console.log(email);
   const sql = {
     text: "select * from users where email=$1;",
     values: [email],

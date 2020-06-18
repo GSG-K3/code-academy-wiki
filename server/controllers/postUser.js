@@ -65,5 +65,5 @@ exports.postUser = (req, res) => {
         res.status(400).json({ message: "email already exists!" });
       }
     })
-    .catch((err) => console.log(err));
+    .catch((err) => err);
 };
