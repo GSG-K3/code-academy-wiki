@@ -9,5 +9,4 @@ const getUserInfo = (id) => {
     .then((res) => res.rows)
     .catch((err) => err);
 };
-
 module.exports = getUserInfo;
