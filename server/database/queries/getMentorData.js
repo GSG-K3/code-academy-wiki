@@ -5,7 +5,7 @@ const getMentorData = (cohortID) => {
       'select g.* from gsg_members g,cohorts c,coh_members cm where cm.mem_id=g.id AND c.id=cm.coh_id AND c.id=$1;',
     values: [cohortID],
   };
-  return db_connection
+  return dbconnection
     .query(sql)
     .then((result) => result.rows)
     .catch((error) => error);
