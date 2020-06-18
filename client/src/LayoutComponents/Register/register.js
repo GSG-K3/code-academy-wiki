@@ -51,7 +51,7 @@ class register extends Component {
             required
           />
           <div className='form-text'>
-            <label onChange={this.changeInput}>
+            <label>
               <input
                 required
                 // characters that allowed in email field
@@ -64,6 +64,7 @@ class register extends Component {
                 placeholder='User name:'
                 autoComplete='off'
                 value={email}
+                onChange={this.changeInput}
               />
               <label for='emailField' className='static-value'>
                 @gazaskygeeks.com

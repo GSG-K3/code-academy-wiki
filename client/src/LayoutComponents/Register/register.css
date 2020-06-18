@@ -22,7 +22,8 @@
   height: 40px;
   width: 70px;
   margin: 7px 0 7px 0;
-  background-color: yellow;
+  background-color: #f29422;
+  color: aliceblue;
   border-radius: 20%;
   border: none;
 }
