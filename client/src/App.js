@@ -9,7 +9,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import ProjectDetails from './LayoutComponents/ProjectDetails';
 import StudentProfile from './LayoutComponents/StudentProfile';
 import AllStudents from './LayoutComponents/AllStudents';
-import pageNotFound from './LayoutComponents/pageNotFound';
+import PageNotFound from './LayoutComponents/PageNotFound';
 import AboutUs from './LayoutComponents/AboutUs';
 
 class App extends Component {
@@ -29,7 +29,7 @@ class App extends Component {
               component={CohortDetails}
             />
             <Route exact path='/About' component={AboutUs} />
-            <Route component={pageNotFound} />;
+            <Route component={PageNotFound} />;
           </Switch>
           <NavBar />
           <Footer />
