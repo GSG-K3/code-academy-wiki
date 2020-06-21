@@ -6,7 +6,7 @@ class register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      username: '',
       email: '',
       password: '',
       repassword: '',
@@ -20,23 +20,26 @@ class register extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const gsg = '@gazaskygeeks.com';
-    const { name, email, password, repassword } = this.state;
+    const { username, email, password, repassword } = this.state;
     // make new object to concatenate between user name and @gazaskygeeks.com and send them to back end side
     const info = {
-      name,
+      username,
       email: email + gsg,
       password,
       repassword,
     };
 
     axios
-      .post('/api/signup', info)
-      .then(() => console.log('this info form'))
-      .catch((err) => err);
+      .post('/api/signup', info )
+   
+        .then((res) => console.log(res, 'rrrrrrrrrrrrrr'))
+        .catch((err) => console.log(err))
+      
+
   };
 
   render() {
-    const { name, email, password, repassword } = this.state;
+    const { username, email, password, repassword } = this.state;
 
     return (
       <div>
@@ -45,13 +48,13 @@ class register extends Component {
             className='FormInput'
             placeholder='Name'
             label='Name'
-            name='name'
-            value={name}
+            name='username'
+            value={username}
             onChange={this.changeInput}
             required
           />
           <div className='form-text'>
-            <label onChange={this.changeInput}>
+            <label>
               <input
                 required
                 // characters that allowed in email field
@@ -64,8 +67,9 @@ class register extends Component {
                 placeholder='User name:'
                 autoComplete='off'
                 value={email}
+                onChange={this.changeInput}
               />
-              <label for='emailField' className='static-value'>
+              <label htmlFor='emailField' className='static-value'>
                 @gazaskygeeks.com
               </label>
             </label>
