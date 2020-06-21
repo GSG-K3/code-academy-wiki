@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import "./Cohorts.css";
-import CohortCard from "../../SharedComponents/CohortCard";
-import Slideshow from "../../SharedComponents/Slideshow";
-import axios from "axios";
-import Loading from "../../SharedComponents/Loading";
-import PageNotFound from "../PageNotFound";
+import React, { Component } from 'react';
+import './Cohorts.css';
+import CohortCard from '../../SharedComponents/CohortCard';
+import Slideshow from '../../SharedComponents/Slideshow';
+import axios from 'axios';
+import Loading from '../../SharedComponents/Loading';
+import PageNotFound from '../PageNotFound';
 
 class Cohorts extends Component {
   constructor(props) {
@@ -50,11 +50,11 @@ class Cohorts extends Component {
       });
 
       return (
-        <div className="cohort">
-          <div className="coh_card">
+        <div className='cohort'>
+          <div className='coh_card'>
             <CohortCard id={cohort.cohort_id} name={cohort.cohort_name} />
           </div>
-          <div className="coh_slide_show">
+          <div className='coh_slide_show'>
             <Slideshow projects={projectsSlide} />
           </div>
         </div>
@@ -69,7 +69,7 @@ class Cohorts extends Component {
             <Loading />
           ) : (
             <div>
-              <h1 className="city_title">{`${cityName} cohorts`}</h1>
+              <h1 className='city_title'>{`${cityName} cohorts`}</h1>
               <div>{cohortList}</div>
             </div>
           )}
