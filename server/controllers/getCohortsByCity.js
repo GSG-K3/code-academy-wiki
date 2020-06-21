@@ -1,4 +1,4 @@
-const { getCohortsByCity } = require("../database/queries/getCohortByCity");
+const { getCohortsByCity } = require('../database/queries/getCohortByCity');
 
 exports.cohortsByCity = (req, res) => {
   getCohortsByCity(req.params.city)
@@ -6,7 +6,7 @@ exports.cohortsByCity = (req, res) => {
       if (data.length != 0) {
         res.json(data);
       } else {
-        res.status(404).json({ message: " Cohort Project Not Found 404" });
+        res.status(404).json({ message: ' Cohort Project Not Found 404' });
       }
     })
     .catch((err) => err);
