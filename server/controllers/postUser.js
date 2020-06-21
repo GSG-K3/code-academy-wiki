@@ -1,24 +1,23 @@
-const postUserQuery = require("../database/queries/addUsers");
-const emailVerification = require("./emailVerification")
-const joi = require("@hapi/joi");
+const postUserQuery = require('../database/queries/addUsers');
+
+const joi = require('@hapi/joi');
 const validationObject = {
   username: joi // username should be string and at least it contains 2 characters
-  .string()
-  .min(2)
-  .max(40),
+    .string()
+    .min(2)
+    .max(40),
   email: joi // email should be string and valid and its tld should be .com
-  .string()
-  .email({
-    minDomainSegments: 2,
-    tlds: { allow: ["com"] },
-  })
-  .min(10),
+    .string()
+    .email({
+      minDomainSegments: 2,
+      tlds: { allow: ['com'] },
+    })
+    .min(10),
   password: joi // password must be string, at least have 6 characters contains capital letters, small letter and numbers
-  .string()
-  .alphanum()
-  .min(6)
-  .pattern(new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])")),
-  repassword: joi.ref("password"),
+    .string()
+    .alphanum()
+    .min(6)
+    .pattern(new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])')),
 };
 
 const schema = joi.object(validationObject);
@@ -37,9 +36,9 @@ exports.postUser = (req, res) => {
         password,
       };
       postUserQuery(userInfo);
-      res.status(200).json({ message: "user  created succefully" });
+      res.status(200).json({ message: 'user  created succefully' });
     } catch (err) {
-      res.status(400).json({ message: "There is no valid information" });
+      res.status(400).json({ message: 'There is no valid information' });
     }
   }
 };
