@@ -1,6 +1,6 @@
-const postUserQuery = require("../database/queries/addUsers");
-const checkEmail = require("../database/queries/ckeckEmail");
-const checkValidation = require("./validation");
+const postUserQuery = require('../database/queries/addUsers');
+const checkEmail = require('../database/queries/ckeckEmail');
+const checkValidation = require('./validation');
 
 exports.postUser = (req, res) => {
   const { email } = req.body;
@@ -25,20 +25,20 @@ exports.postUser = (req, res) => {
                 password,
               };
               postUserQuery(userInfo);
-              res.status(200).json({ message: "user  created succefully" });
+              res.status(200).json({ message: 'user  created succefully' });
             } catch (err) {
               res
                 .status(400)
-                .json({ message: "There is no valid information" });
+                .json({ message: 'There is no valid information' });
             }
           }
         } else {
           res
             .status(400)
-            .json({ error: "email domain must be gazaskygeeks.com" });
+            .json({ error: 'email domain must be gazaskygeeks.com' });
         }
       } else {
-        res.status(400).json({ message: "email already exists!" });
+        res.status(400).json({ message: 'email already exists!' });
       }
     })
     .catch((err) => err);
