@@ -5,7 +5,6 @@ const { idleCount } = require('../database/config/dbConnection');
 
 module.exports = (req, res) => {
   const { email, password } = req.body;
-  console.log('request bodey', req.body);
   getUserInfo(email)
     .then((result) => {
       if (result.rowCount == 0) {
@@ -13,7 +12,6 @@ module.exports = (req, res) => {
       } else {
         const hasPassword = result.rows[0].password;
         bcrypt.compare(password, hasPassword).then((comprslt) => {
-          console.log('compare result', comprslt);
           if (comprslt) {
             return res
               .status(200)
