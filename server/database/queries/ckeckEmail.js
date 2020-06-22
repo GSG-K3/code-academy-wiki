@@ -5,11 +5,7 @@ const checkEmail = (email) => {
     text: 'select * from users where email=$1;',
     values: [email],
   };
-
-  return dbconnection
-    .query(sql.text, sql.values)
-    .then((res) => res)
-    .catch((err) => err);
+  return dbconnection.query(sql.text, sql.values);
 };
 
 module.exports = checkEmail;
