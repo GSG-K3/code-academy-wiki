@@ -8,14 +8,16 @@ exports.postUser = (req, res) => {
     return res.status(400).json({ message: error.details[0].message });
   }
   // store user information to datbase
-  try {
-    postUserQuery(req.body, (postError) => {
-      if (postError) {
-        return res.status(400).json({ message: postError.message });
+  postUserQuery(req.body)
+    .then((result) => {
+      if (result.rowCount === 1) {
+        return res.status(200).json({ message: 'user  created successfully' });
       }
-      return res.status(200).json({ message: 'user  created successfully' });
-    });
-  } catch (err) {
-    res.status(400).json({ message: 'There is no valid information' });
-  }
+      return res
+        .status(200)
+        .json({ message: 'There is an error in adding new user!' });
+    })
+    .catch((err) =>
+      res.status(400).json({ message: 'There is no valid information' })
+    );
 };
