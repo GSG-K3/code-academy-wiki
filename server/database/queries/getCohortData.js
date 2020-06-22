@@ -5,7 +5,7 @@ const getCohortData = (cohortID) => {
       'select  name cohort_name,details cohort_details,id cohort_id  from cohorts where id=$1;',
     values: [cohortID],
   };
-  return db_connection
+  return dbconnection
     .query(sql)
     .then((result) => result.rows)
     .catch((error) => error);
