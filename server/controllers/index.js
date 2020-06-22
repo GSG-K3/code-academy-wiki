@@ -24,6 +24,12 @@ router.get('/api/cohortstd/:cohortID', getCohortstudent);
 router.get('/api/cohortMentor/:cohortID', getMentorData);
 router.get('/api/cohortProjects/:cohortID', getCohortProjects);
 router.post('/api/signup', checkUsername, checkEmail, postUser);
+
+router.get('/verify', function(req, res) {
+  console.log(req.query.id);
+  console.log('email is verified');
+  res.send('<h1>Email is been Successfully verified</h1>');
+});
 router.use(clientError);
 router.use(serverError);
 module.exports = router;
