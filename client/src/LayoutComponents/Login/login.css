@@ -13,3 +13,19 @@
   border-radius: 20%;
   border: none;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+  padding-top: 15px;
+}
+.form-title {
+  color: #f29422;
+  padding: 5px;
+  margin-bottom: 20px;
+  font-family: Bold,'Times New Roman', Times, serif;
+}
+/* .form-image {
+} */
