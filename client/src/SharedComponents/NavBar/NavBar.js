@@ -19,23 +19,24 @@ class NavBar extends Component {
       <nav className='header'>
         <div className='nav_bar'>
           <div className='nav_container'>
-          <Link to = '/'>
-            <img className='nav_logo' src={logo} alt='logo' />
-          </Link>
+            <Link to='/'>
+              <img className='nav_logo' src={logo} alt='logo' />
+            </Link>
+
             <ul className='list_items '>
-              <Link to='/' className = 'nav_item'>
-                <li className = 'nav_item'>home</li>
+              <Link to='/' className='nav_item'>
+                <li className='nav_item'>home</li>
               </Link>
 
-              <Link to='/students' className = 'nav_item'>
-                <li className = 'nav_item'>
+              <Link to='/students' className='nav_item'>
+                <li className='nav_item'>
                   <a rel='' href='#' className='nav_item'>
                     students
                   </a>
                 </li>
               </Link>
               <li
-                className = 'nav_item'
+                className='nav_item'
                 page='cohorts'
                 onMouseEnter={(e) => {
                   this.showMenu(e);
@@ -46,7 +47,7 @@ class NavBar extends Component {
               >
                 {this.state.openMenu ? (
                   <ul className='drop_down'>
-                    <Link to='/cohorts/khalel' className = 'nav_item'>
+                    <Link to='/cohorts/khalel' className='nav_item'>
                       <li
                         className='menu_items'
                         onClick='window.location.reload()'
@@ -54,18 +55,28 @@ class NavBar extends Component {
                         khalel
                       </li>
                     </Link>
-                    <Link to='/cohorts/gaza' className = 'nav_item'>
-                      <li 
-                      className='menu_items'
-                      onClick='window.location.reload()'
-                      >gaza</li>
+                    <Link to='/cohorts/gaza' className='nav_item'>
+                      <li
+                        className='menu_items'
+                        onClick='window.location.reload()'
+                      >
+                        gaza
+                      </li>
                     </Link>
                   </ul>
-                ) : (null)}
+                ) : null}
                 cohorts
               </li>
-              <Link to='/About' className = 'nav_item'>
-                <li className = 'nav_item'>about</li>
+              <Link to='/About' className='nav_item'>
+                <li className='nav_item'>about</li>
+              </Link>
+
+              <Link to='/login' className='nav_item'>
+                <li className='nav_item'>Login</li>
+              </Link>
+
+              <Link to='/register' className='nav_item'>
+                <li className='nav_item'>Register</li>
               </Link>
             </ul>
           </div>
