@@ -8,16 +8,16 @@ module.exports = (req, res) => {
   getUserInfo(email)
     .then((result) => {
       if (result.rowCount == 0) {
-        return res.status(400).json({ msg: 'password or email inccorect' });
+        return res.status(400).json({ msg: 'Password or Email Inccorect' });
       } else {
         const hasPassword = result.rows[0].password;
         bcrypt.compare(password, hasPassword).then((comprslt) => {
           if (comprslt) {
             return res
               .status(200)
-              .json({ msg: 'hello you are loged in successfully' });
+              .json({ msg: 'Hello you are loged in successfully !' });
           } else {
-            return res.status(400).json({ msg: 'password incorrect' });
+            return res.status(400).json({ msg: 'Password Incorrect' });
           }
         });
       }
