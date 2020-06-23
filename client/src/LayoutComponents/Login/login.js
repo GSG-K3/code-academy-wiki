@@ -19,15 +19,16 @@ class login extends Component {
   goLogedin = (event) => {
     event.preventDefault();
     const { email, password } = this.state;
-    const { page } = this.props;
 
     axios
       .post('/api/login', { email, password })
-      .then((res) => console.log(res.data.msg))
-      .catch((err) => console.log(err.response.data));
+      .then((res) => {
+        this.setState({ errorMsg: res.data.msg });
+      })
+      .catch((err) => {
+        this.setState({ errorMsg: err.response.data.msg });
+      });
   };
-
-
 
   render() {
     const { email, password, errorMsg } = this.state;
@@ -57,7 +58,7 @@ class login extends Component {
             <button className='login-button' type='submit'>
               login
             </button>
-            {errorMsg && <p className='invalidMsg'>{errorMsg}</p>}
+            <p className='form-error'> {this.state.errorMsg}</p>
           </div>
         </form>
       </div>
