@@ -4,7 +4,7 @@ import cohortImg from '../../images/cohort.svg';
 import './CohortDetails.css';
 import axios from 'axios';
 import Loading from '../../SharedComponents/Loading';
-import PageNotFound from '../PageNotFound';
+import PageNotFound from '../pageNotFound';
 class CohortDetails extends Component {
   state = {
     cohortInfo: [],

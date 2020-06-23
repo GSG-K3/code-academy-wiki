@@ -8,7 +8,7 @@ import Project from '../../SharedComponents/ProjectView';
 import { Link } from 'react-router-dom';
 import './StudentProfile.css';
 import Loading from '../../SharedComponents/Loading';
-import PageNotFound from '../PageNotFound';
+import PageNotFound from '../pageNotFound';
 
 class StudentProfile extends Component {
   state = {

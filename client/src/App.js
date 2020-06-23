@@ -9,7 +9,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import ProjectDetails from './LayoutComponents/ProjectDetails';
 import StudentProfile from './LayoutComponents/StudentProfile';
 import AllStudents from './LayoutComponents/AllStudents';
-import PageNotFound from './LayoutComponents/PageNotFound';
+import PageNotFound from './LayoutComponents/pageNotFound';
 import AboutUs from './LayoutComponents/AboutUs';
 import login from './LayoutComponents/Login';
 import register from './LayoutComponents/Register';
