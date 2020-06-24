@@ -6,7 +6,7 @@ class register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      username: '',
       email: '',
       password: '',
       repassword: '',
@@ -22,10 +22,10 @@ class register extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const gsg = '@gazaskygeeks.com';
-    const { name, email, password, repassword } = this.state;
+    const { username, email, password, repassword } = this.state;
     // make new object to concatenate between user name and @gazaskygeeks.com and send them to back end side
     const info = {
-      name,
+      username,
       email: email + gsg,
       password,
       repassword,
@@ -34,7 +34,6 @@ class register extends Component {
     axios
       .post('/api/signup', info)
       .then((res) => {
-        console.log(res.data);
         if (res.status == 200) {
           this.setState({ registered: true });
         } else {
@@ -43,11 +42,11 @@ class register extends Component {
           });
         }
       })
-      .catch((err) => this.setState({ errorMsg: err.response.data.msg }));
+      .catch((err) => this.setState({ errorMsg: err.response.data.message }));
   };
 
   render() {
-    const { name, email, password, repassword } = this.state;
+    const { username, email, password, repassword } = this.state;
 
     return (
       <div>
@@ -57,8 +56,8 @@ class register extends Component {
             className='FormInput'
             placeholder='Name'
             label='Name'
-            name='name'
-            value={name}
+            name='username'
+            value={username}
             onChange={this.changeInput}
             required
           />
@@ -107,8 +106,8 @@ class register extends Component {
           <button type='submit' className='SignBtn' name='sign up'>
             sign Up
           </button>
-          <p>{this.state.errorMsg}</p>
         </form>
+        <p>{this.state.errorMsg}</p>
       </div>
     );
   }
