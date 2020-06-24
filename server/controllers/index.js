@@ -9,7 +9,7 @@ const { getCohortstudent } = require('./getCohortstudents');
 const { getMentorData } = require('./getMentorData');
 const { getCohortProjects } = require('./getCohortProjects');
 const login = require('./login');
-
+const logout = require('./logout')
 const { clientError } = require('./errors');
 const { serverError } = require('./errors');
 const { postUser } = require('./postUser');
@@ -24,6 +24,7 @@ router.get('/api/cohortMentor/:cohortID', getMentorData);
 router.get('/api/cohortProjects/:cohortID', getCohortProjects);
 router.post('/api/signup', postUser);
 router.post('/api/login', login);
+router.post('/api/logout', logout);
 router.use(clientError);
 router.use(serverError);
 module.exports = router;
