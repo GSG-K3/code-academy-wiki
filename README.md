@@ -34,7 +34,7 @@ User will use our website to to view all cohorts that have been enrolled in Code
 - admin should recieve an email with a link to verify his/her account
 - admin can log in using his/her email and password
 - admin can log out and redirected tolog in page after that.
-P.S. We wanted to give the admin the ability to make changes on database(add/update/delete),and that was the purpose of the admin panel, but we couldn't do that because of the shortage of time.
+* P.S. We wanted to give the admin the ability to make changes on database(add/update/delete),and that was the purpose of the admin panel, but we couldn't do that because of the shortage of time.
 
 ## How To Use Our Website
 - Clone this repo to your local machine using terminal:
