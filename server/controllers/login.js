@@ -1,12 +1,38 @@
-const query = require('../queries/getUserinfo');
-exports.checkvalidation = (req, res) => {
-  query(req.parmas.id)
-    .then((data) => {
-      if (data.length != 0) {
-        res.json(data);
+const getUserInfo = require('../database/queries/getUserInfo');
+const bcrypt = require('bcryptjs');
+let jwt = require('jsonwebtoken');
+ require('env2')('./config.env');
+const createToken = (email , password) => {
+  return jwt.sign({ email, password} , process.env.SECRET)
+}
+module.exports = (req, res) => {
+  const { email, password } = req.body;
+  getUserInfo(email)
+    .then((result) => {
+      if (result.rowCount == 0) {
+        return res.status(400).json({ msg: 'password or email inccorect' });
       } else {
-        res.status(404).json({ message: ' User not found 404' });
+        const hasPassword = result.rows[0].password;
+        bcrypt.compare(password, hasPassword).then((comprslt) => {
+          if (comprslt) {
+            const token = createToken(email, password)
+            return res
+              .cookie('token', token, { maxAge: 900000, httpOnly: true })
+              .status(200)
+              .json({ msg: 'hello you are loged in successfully' });
+          } else {
+            return res.status(400).json({ msg: 'password incorrect' });
+          }
+         
+         
+          
+            
+
+        });
       }
+
+     
+           
     })
-    .catch(() => res.status(500).json({ err: 'Error for get User' }));
+   
 };
