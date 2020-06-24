@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
+  padding-top: 15px;
+}
+
+.key {
+  margin-top: 150px;
+  height: 100px;
+  width: 100px;
+}
+
+.FormInput {
+  height: 40px;
+  width: 300px;
+  margin: 7px 0 7px 0;
+}
+
+.SignBtn {
+  height: 40px;
+  width: 70px;
+  margin: 7px 0 7px 0;
+  background-color: #f29422;
+  color: aliceblue;
+  border-radius: 20%;
+  border: none;
+}
+.email {
+  text-align: start;
+}
+.static-value {
+  position: absolute;
+  left: 180px;
+  padding: 3px;
+  font-weight: bold;
+  font-size: 0.8em;
+  color: rgb(3, 3, 3);
+  top: 20px;
+}
+.form-text {
+  position: relative;
+}
+.form-title {
+  color: #f29422;
+  padding: 5px;
+  margin-bottom: 20px;
+  font-family: Bold, 'Times New Roman', Times, serif;
+}
