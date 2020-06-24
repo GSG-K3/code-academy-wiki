@@ -1,6 +1,6 @@
 const checkUsernameQuery = require('../database/queries/checkUsername');
 
-module.exports = (req, res, next) => {
+exports.checkUsername = (req, res, next) => {
   // check if username exists in database
   const { username } = req.body;
   checkUsernameQuery(username)

@@ -1,7 +1,7 @@
 const getUserInfo = require('../database/queries/getUserInfo');
 const bcrypt = require('bcryptjs');
 
-module.exports = (req, res) => {
+exports.login = (req, res) => {
   const { email, password } = req.body;
   getUserInfo(email)
     .then((result) => {
