@@ -13,6 +13,7 @@ import PageNotFound from './LayoutComponents/PageNotFound';
 import AboutUs from './LayoutComponents/AboutUs';
 import login from './LayoutComponents/Login';
 import register from './LayoutComponents/Register';
+import Logout from './LayoutComponents/Logout';
 class App extends Component {
   render() {
     return (
@@ -25,6 +26,7 @@ class App extends Component {
             <Route exact path='/project/:id' component={ProjectDetails} />
             <Route exact path='/student/:id' component={StudentProfile} />
             <Route exact path='/login' component={login} />
+            <Route exact path='/Logout' component={Logout} />
             <Route exact path='/register' component={register} />
             <Route
               exact
@@ -34,7 +36,7 @@ class App extends Component {
             <Route exact path='/About' component={AboutUs} />
             <Route component={PageNotFound} />;
           </Switch>
-          <NavBar />
+          {/* <NavBar /> */}
           <Footer />
         </React.Fragment>
       </Router>
