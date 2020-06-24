@@ -1,4 +1,5 @@
 const checkEmailQuery = require('../database/queries/ckeckEmail');
+const checkValidation = require('../helpers/validation');
 
 module.exports = (req, res, next) => {
   // check if email exists in database
@@ -14,6 +15,12 @@ module.exports = (req, res, next) => {
         return res
           .status(400)
           .json({ message: 'email domain must be gazaskygeeks.com' });
+      }
+
+      //validate user information
+      const { error } = checkValidation(req.body);
+      if (error) {
+        return res.status(400).json({ message: error.details[0].message });
       }
       return next();
     })

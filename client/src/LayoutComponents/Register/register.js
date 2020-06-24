@@ -10,6 +10,8 @@ class register extends Component {
       email: '',
       password: '',
       repassword: '',
+      errorMsg: '',
+      registered: false,
     };
   }
 
@@ -24,20 +26,35 @@ class register extends Component {
     // make new object to concatenate between user name and @gazaskygeeks.com and send them to back end side
     const info = {
       username,
-      email: email + gsg,
+      email: (email + gsg).toLowerCase(),
       password,
       repassword,
     };
 
     axios
-      .post('/api/signup', info)
+      .post('/api/signup', info, {
+        withCredentials: true,
+        credentials: 'include',
+      })
 
-      .then((res) => console.log(res.data.message))
-      .catch((err) => console.log(err.response.data.message));
+      .then((res) => {
+        console.log(res.status);
+        res.data.message
+          ? this.setState({ registered: true })
+          : this.setState({ errorMsg: 'there is a problem in register!' });
+      })
+      .catch((err) => this.setState({ errorMsg: err.response.data.message }));
   };
 
   render() {
-    const { username, email, password, repassword } = this.state;
+    const {
+      username,
+      email,
+      password,
+      repassword,
+      errorMsg,
+      registered,
+    } = this.state;
 
     return (
       <div>
@@ -56,7 +73,7 @@ class register extends Component {
               <input
                 required
                 // characters that allowed in email field
-                pattern='^[a-zA-Z0-9]((?!(\.|))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$'
+                pattern='^[a-zA-Z0-9]((?!(\.|))|\.(?!(_|\.))|[a-zA-Z0-9]){4,255}[a-zA-Z0-9]$'
                 className='FormInput , email'
                 id='emailField'
                 label='Email'
@@ -97,6 +114,12 @@ class register extends Component {
             sign Up
           </button>
         </form>
+        <span>{errorMsg}</span>
+        <span>
+          {registered
+            ? 'check your email and verify your account so you can log in!'
+            : ''}
+        </span>
       </div>
     );
   }

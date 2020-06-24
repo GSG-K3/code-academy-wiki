@@ -4,7 +4,6 @@ require('env2')('./config.env');
 async function sendEmail(email, host) {
   //creates a random number for verification
   const verificationCode = Math.floor(Math.random() * 100000);
-  console.log(verificationCode, 'vcode');
   //creates a transporter object using SMTP transporter
   //SMTP is the main transport in Nodemailer for delivering messages. SMTP is also the protocol used between different email hosts
   let transporter = nodeMailer.createTransport({
@@ -26,10 +25,12 @@ async function sendEmail(email, host) {
       to: 'rahaf.hawamdeh96@gmail.com',
       subject: 'Code acadimy wiki verification ✔',
       html:
-        'Hello,<br> Please Click on the link to verify your email.<br><a href=' +
+        'Hello,<br> Please Click on the link to verify your email.<br> <a href=' +
         link +
-        '>Click here to verify</a>',
+        '>Click here to verify</a>' +
+        verificationCode,
     });
+    return verificationCode;
   } catch (err) {
     console.log({ ...err }, 'nodemailerError');
   }

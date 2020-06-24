@@ -1,4 +1,5 @@
 const router = require('express').Router();
+
 const { cohorts } = require('./cohorts');
 const { getCohortData } = require('./getCohortData');
 const { getStudent } = require('./student');
@@ -13,7 +14,9 @@ const { serverError } = require('../helpers/errors');
 const { postUser } = require('./postUser');
 const checkEmail = require('../middlewares/checkEmail');
 const checkUsername = require('../middlewares/checkUsername');
-
+const login = require('./login');
+const verifyToken = require('./verifyToken');
+const verifyEmail = require('../middlewares/verifyEmail');
 router.get('/api/cohortinfo/:cohortID', getCohortData);
 router.get('/api/students', getAllStudents);
 router.get('/api/students/:id', getStudent);
@@ -23,13 +26,12 @@ router.get('/api/cohorts/projects/:city', cohorts);
 router.get('/api/cohortstd/:cohortID', getCohortstudent);
 router.get('/api/cohortMentor/:cohortID', getMentorData);
 router.get('/api/cohortProjects/:cohortID', getCohortProjects);
-router.post('/api/signup', checkUsername, checkEmail, postUser);
+router.post('/api/signup', checkUsername, checkEmail, verifyEmail, postUser);
 
-router.get('/verify', function(req, res) {
-  console.log(req.query.id);
-  console.log('email is verified');
-  res.send('<h1>Email is been Successfully verified</h1>');
-});
+router.get('/verify', verifyToken);
+
+router.post('/api/login', login);
+
 router.use(clientError);
 router.use(serverError);
 module.exports = router;
