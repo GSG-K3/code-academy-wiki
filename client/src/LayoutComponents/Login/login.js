@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './login.css';
-
-class login extends Component {
+import './Login.css';
+import Logout from '../Logout'
+class Login extends Component {
   state = {
     email: '',
     password: '',
@@ -19,7 +19,6 @@ class login extends Component {
   goLogedin = (event) => {
     event.preventDefault();
     const { email, password } = this.state;
-
     axios
       .post('/api/login', { email, password })
       .then((res) => {
@@ -31,7 +30,11 @@ class login extends Component {
   };
 
   render() {
-    const { email, password, statusMsg } = this.state;
+    const { email, password, statusMsg , login } = this.state;
+    if(login){
+    return <Logout/>;
+    }
+    else{
     return (
       <div>
         <form onSubmit={this.goLogedin}>
@@ -65,5 +68,6 @@ class login extends Component {
     );
   }
 }
+}
 
-export default login;
+export default Login;
