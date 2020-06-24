@@ -1,7 +1,5 @@
 const getUserInfo = require('../database/queries/getUserInfo');
 const bcrypt = require('bcryptjs');
-let jwt = require('jsonwebtoken');
-const { idleCount } = require('../database/config/dbConnection');
 
 module.exports = (req, res) => {
   const { email, password } = req.body;
