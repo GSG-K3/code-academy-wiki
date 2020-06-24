@@ -1,5 +1,6 @@
 const postUserQuery = require('../database/queries/addUsers');
 const checkValidation = require('../helpers/validation');
+const emailVerification = require('../helpers/emailVerification')
 
 exports.postUser = (req, res) => {
   //validate user information
@@ -9,6 +10,7 @@ exports.postUser = (req, res) => {
   }
   // store user information to datbase
   postUserQuery(req.body)
+  emailVerification(req.body.email)
     .then((result) => {
       if (result.rowCount === 1) {
         return res.status(200).json({ message: 'user  created successfully' });

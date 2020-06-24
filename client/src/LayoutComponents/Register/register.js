@@ -77,7 +77,7 @@ class register extends Component {
                 value={email}
                 onChange={this.changeInput}
               />
-              <label for='emailField' className='static-value'>
+              <label htmlFor='emailField' className='static-value'>
                 @gazaskygeeks.com
               </label>
             </label>
