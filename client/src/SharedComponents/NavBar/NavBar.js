@@ -29,11 +29,7 @@ class NavBar extends Component {
               </Link>
 
               <Link to='/students' className='nav_item'>
-                <li className='nav_item'>
-                  <a rel='' href='#' className='nav_item'>
-                    students
-                  </a>
-                </li>
+                <li className='nav_item'>students</li>
               </Link>
               <li
                 className='nav_item'

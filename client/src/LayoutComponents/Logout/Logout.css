@@ -1,4 +1,4 @@
-.logout{
+.logout {
   height: 40px;
   width: 70px;
   margin: 150px 0 7px 0;
@@ -6,4 +6,7 @@
   color: aliceblue;
   border-radius: 20%;
   border: none;
+}
+.admin-page {
+  margin-top: 200px;
 }

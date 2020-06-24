@@ -3,7 +3,7 @@ import image from '../../images/error.png';
 const ErrorImage = () => {
   return (
     <div className='error-page'>
-      <img src={image} alt='image' />;
+      <img src={image} alt='' />;
     </div>
   );
 };

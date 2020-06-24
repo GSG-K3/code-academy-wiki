@@ -21,7 +21,9 @@
   align-self: center;
   margin: 20px 0;
 }
-
+.student-github-link:hover {
+  color: #f29422;
+}
 .student-card-name {
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;

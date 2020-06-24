@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './register.css';
+import './Register.css';
 import axios from 'axios';
 
-class register extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +16,10 @@ class register extends Component {
   }
 
   changeInput = ({ target: { value, name } }) => {
-    this.setState({ [name]: value });
+    if (!value) {
+      alert("input shouldn't be empty");
+    }
+    this.setState({ [name]: value.trim() });
   };
 
   handleSubmit = (e) => {
@@ -26,7 +29,7 @@ class register extends Component {
     // make new object to concatenate between user name and @gazaskygeeks.com and send them to back end side
     const info = {
       username,
-      email: email + gsg,
+      email: (email + gsg).toLowerCase(),
       password,
       repassword,
     };
@@ -34,7 +37,7 @@ class register extends Component {
     axios
       .post('/api/signup', info)
       .then((res) => {
-        if (res.status == 200) {
+        if (res.status === 200) {
           this.setState({ registered: true });
         } else {
           this.setState({
@@ -46,7 +49,14 @@ class register extends Component {
   };
 
   render() {
-    const { username, email, password, repassword, errorMsg } = this.state;
+    const {
+      username,
+      email,
+      password,
+      repassword,
+      errorMsg,
+      registered,
+    } = this.state;
 
     return (
       <div>
@@ -66,7 +76,6 @@ class register extends Component {
               <input
                 required
                 // characters that allowed in email field
-                pattern='^[a-zA-Z0-9]((?!(\.|))|\.(?!(_|\.))|[a-zA-Z0-9]){4,255}[a-zA-Z0-9]$'
                 className='FormInput , email'
                 id='emailField'
                 label='Email'
@@ -107,10 +116,15 @@ class register extends Component {
             sign Up
           </button>
         </form>
-        <p>{errorMsg}</p>
+        <span>{errorMsg}</span>
+        <span>
+          {registered
+            ? 'check your email and verify your account so you can log in!'
+            : ''}
+        </span>
       </div>
     );
   }
 }
 
-export default register;
+export default Register;

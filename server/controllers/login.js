@@ -1,13 +1,17 @@
 const getUserInfo = require('../database/queries/getUserInfo');
+const checkUserStatus = require('../database/queries/getUserStatus');
+
 const bcrypt = require('bcryptjs');
 let jwt = require('jsonwebtoken');
 require('env2')('./config.env');
-const createToken = (email, password) => {
-  return jwt.sign({ email, password }, process.env.SECRET);
-};
 
 exports.login = (req, res) => {
   const { email, password } = req.body;
+  const createToken = (email, password) => {
+    return jwt.sign({ email, password }, process.env.SECRET);
+  };
+  const token = createToken(email, password);
+
   getUserInfo(email)
     .then((result) => {
       if (result.rowCount == 0) {
@@ -16,11 +20,21 @@ exports.login = (req, res) => {
         const hasPassword = result.rows[0].password;
         bcrypt.compare(password, hasPassword).then((comprslt) => {
           if (comprslt) {
-            const token = createToken(email, password);
-            return res
-              .cookie('token', token, { maxAge: 900000, httpOnly: true })
-              .status(200)
-              .json({ msg: 'hello you are loged in successfully' });
+            checkUserStatus(email)
+              .then((statusRes) => {
+                const userStatus = statusRes[0].status;
+                if (userStatus === 'verified') {
+                  return res
+                    .cookie('token', token, { maxAge: 900000, httpOnly: true })
+                    .status(200)
+                    .json({ msg: 'hello you are loged in successfully' });
+                } else {
+                  return res.status(400).json({
+                    msg: 'you should verify your account first!',
+                  });
+                }
+              })
+              .catch((e) => e);
           } else {
             return res.status(400).json({ msg: 'password incorrect' });
           }
