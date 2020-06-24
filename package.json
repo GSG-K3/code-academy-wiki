@@ -1,7 +1,7 @@
 {
   "name": "code-academy-wiki",
   "version": "1.0.0",
-  "description": "[Figma Design](https://www.figma.com/file/DGkBLGal9IYhEDyjqpflsj/GSG-CA-Wiki?node-id=0%3A1)",
+  "description": "[Figma Design](https://www.figma.com/file/DGkBLGal9IYhEDyjqpflsj/GSG-CA-Wiki?node-id=0%3A1",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/index.js",
@@ -33,6 +33,7 @@
     "env2": "^2.2.2",
     "express": "^4.17.1",
     "includes": "0.0.7",
+    "jsonwebtoken": "^8.5.1",
     "nodemon": "^2.0.3",
     "pg": "^7.17.7",
     "pgsql": "^1.0.0",

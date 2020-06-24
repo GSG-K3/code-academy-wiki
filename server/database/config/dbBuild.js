@@ -6,11 +6,11 @@ const dbConnection = require('./dbConnection');
 const sql = fs.readFileSync(path.join(__dirname, 'dbBuild.sql')).toString();
 const sql2 = fs.readFileSync(path.join(__dirname, 'dummyData.sql')).toString();
 
-const runDbBuild = (sql) => {
+const runDbBuild = (sql, sql2) => {
   return dbConnection
     .query(sql)
     .then((res) => {
-      dbConnection.query(sql2).then((res) => res);
+      dbConnection.query(sql2).then((result) => result);
     })
     .catch((err) => err);
 };

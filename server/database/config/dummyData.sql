@@ -245,6 +245,6 @@ VALUES
     ('6', '3');
 
 INSERT INTO users
-    (username,email,password, status,type)
+    (username,email,password,type)
 VALUES
-    ('admin', 'admin@gazaskygeeks.com', 'Gsg@2020','','admin');
+    ('Admin', 'admin@gazaskygeeks.com', 'Gsg2020','admin');
