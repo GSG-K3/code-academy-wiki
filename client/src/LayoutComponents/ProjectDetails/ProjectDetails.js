@@ -7,7 +7,7 @@ import StudentCard from '../../SharedComponents/StudentCard';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Loading from '../../SharedComponents/Loading';
-import PageNotFound from '../pageNotFound';
+import PageNotFound from '../PageNotFound';
 class ProjectDetails extends Component {
   constructor(props) {
     super(props);

@@ -4,7 +4,7 @@ import CohortCard from '../../SharedComponents/CohortCard';
 import Slideshow from '../../SharedComponents/Slideshow';
 import axios from 'axios';
 import Loading from '../../SharedComponents/Loading';
-import PageNotFound from '../pageNotFound';
+import PageNotFound from '../PageNotFound';
 
 class Cohorts extends Component {
   constructor(props) {
