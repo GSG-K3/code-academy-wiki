@@ -83,6 +83,7 @@ class StudentProfile extends Component {
                         href={studentInfo.github}
                         target='_blank'
                         rel='noopener noreferrer'
+                        className='student-github-link'
                       >
                         {studentInfo.name} github
                       </a>

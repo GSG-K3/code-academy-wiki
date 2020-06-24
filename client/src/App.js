@@ -11,8 +11,8 @@ import StudentProfile from './LayoutComponents/StudentProfile';
 import AllStudents from './LayoutComponents/AllStudents';
 import PageNotFound from './LayoutComponents/PageNotFound';
 import AboutUs from './LayoutComponents/AboutUs';
-import login from './LayoutComponents/Login';
-import register from './LayoutComponents/Register';
+import Login from './LayoutComponents/Login';
+import Register from './LayoutComponents/Register';
 class App extends Component {
   render() {
     return (
@@ -24,8 +24,8 @@ class App extends Component {
             <Route exact path='/students' component={AllStudents} />
             <Route exact path='/project/:id' component={ProjectDetails} />
             <Route exact path='/student/:id' component={StudentProfile} />
-            <Route exact path='/login' component={login} />
-            <Route exact path='/register' component={register} />
+            <Route exact path='/Login' component={Login} />
+            <Route exact path='/register' component={Register} />
             <Route
               exact
               path='/cohortinfo/:cohortID'

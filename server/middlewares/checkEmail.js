@@ -1,7 +1,7 @@
 const checkEmailQuery = require('../database/queries/ckeckEmail');
 const checkValidation = require('../helpers/validation');
 
-module.exports = (req, res, next) => {
+exports.checkEmail = (req, res, next) => {
   // check if email exists in database
   const { email } = req.body;
   checkEmailQuery(email)

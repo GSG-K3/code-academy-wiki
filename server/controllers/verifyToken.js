@@ -3,7 +3,7 @@ const verifyUserQuery = require('../database/queries/verifyUser');
 
 require('env2')('./config.env');
 
-module.exports = (req, res) => {
+exports.verifyToken = (req, res) => {
   //compare the token in cookies with the code from the request
   jwt.verify(req.cookies.verification, process.env.SECRET, (err, decoded) => {
     if (err) res.status(400).send('<h1>Not Authorized</h1>');

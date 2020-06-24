@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './register.css';
+import './Register.css';
 import axios from 'axios';
 
-class register extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,13 +10,16 @@ class register extends Component {
       email: '',
       password: '',
       repassword: '',
-      errorMsg: '',
       registered: false,
+      errorMsg: '',
     };
   }
 
   changeInput = ({ target: { value, name } }) => {
-    this.setState({ [name]: value });
+    if (!value) {
+      alert("input shouldn't be empty");
+    }
+    this.setState({ [name]: value.trim() });
   };
 
   handleSubmit = (e) => {
@@ -32,16 +35,15 @@ class register extends Component {
     };
 
     axios
-      .post('/api/signup', info, {
-        withCredentials: true,
-        credentials: 'include',
-      })
-
+      .post('/api/signup', info)
       .then((res) => {
-        console.log(res.status);
-        res.data.message
-          ? this.setState({ registered: true })
-          : this.setState({ errorMsg: 'there is a problem in register!' });
+        if (res.status === 200) {
+          this.setState({ registered: true });
+        } else {
+          this.setState({
+            errorMsg: 'There is somthing wrong in registration proccess',
+          });
+        }
       })
       .catch((err) => this.setState({ errorMsg: err.response.data.message }));
   };
@@ -59,6 +61,7 @@ class register extends Component {
     return (
       <div>
         <form className='form' onSubmit={this.handleSubmit}>
+          <h1 className='form-title'>Register as admin</h1>
           <input
             className='FormInput'
             placeholder='Name'
@@ -73,7 +76,6 @@ class register extends Component {
               <input
                 required
                 // characters that allowed in email field
-                pattern='^[a-zA-Z0-9]((?!(\.|))|\.(?!(_|\.))|[a-zA-Z0-9]){4,255}[a-zA-Z0-9]$'
                 className='FormInput , email'
                 id='emailField'
                 label='Email'
@@ -125,4 +127,4 @@ class register extends Component {
   }
 }
 
-export default register;
+export default Register;

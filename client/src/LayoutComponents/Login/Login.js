@@ -1,36 +1,42 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './login.css';
-import AdminPage from '../AdminPage';
-class login extends Component {
+import './Login.css';
+import Logout from '../Logout';
+class Login extends Component {
   state = {
     email: '',
     password: '',
-    errorMsg: '',
+    statusMsg: '',
     login: false,
   };
 
   changName = (event) => {
     const { target } = event;
     const { value, name } = target;
-    this.setState({ [name]: value });
+    if (!value) {
+      alert("input shouldn't be empty!");
+    }
+    this.setState({ [name]: value.trim() });
   };
 
   goLogedin = (event) => {
     event.preventDefault();
     const { email, password } = this.state;
-
     axios
       .post('/api/login', { email: email.toLowerCase(), password })
       .then((res) => {
-        this.setState({ login: true });
+        this.setState({ statusMsg: res.data.msg, login: true });
       })
-      .catch((err) => this.setState({ errorMsg: err.response.data.msg }));
+      .catch((err) => {
+        this.setState({ statusMsg: err.response.data.msg });
+      });
   };
 
   render() {
-    const { email, password, login, errorMsg } = this.state;
-    if (!login) {
+    const { email, password, statusMsg, login } = this.state;
+    if (login) {
+      return <Logout />;
+    } else {
       return (
         <div>
           <form onSubmit={this.goLogedin}>
@@ -57,15 +63,13 @@ class login extends Component {
               <button className='login-button' type='submit'>
                 login
               </button>
+              <p className='form-error'> {statusMsg}</p>
             </div>
           </form>
-          <span>{errorMsg}</span>
         </div>
       );
-    } else {
-      return <AdminPage />;
     }
   }
 }
 
-export default login;
+export default Login;

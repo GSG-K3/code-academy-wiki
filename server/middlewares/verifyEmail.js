@@ -1,8 +1,8 @@
-const verifyEmail = require('../controllers/emailVerification');
+const verifyEmail = require('../helpers/emailVerification');
 const jwt = require('jsonwebtoken');
 require('env2')('./config.env');
 
-module.exports = (req, res, next) => {
+exports.verifyEmail = (req, res, next) => {
   // check if email exists in database
   const { email } = req.body;
   verifyEmail(email, req.get('host'))
