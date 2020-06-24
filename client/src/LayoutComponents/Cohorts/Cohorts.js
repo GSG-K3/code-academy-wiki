@@ -4,6 +4,7 @@ import CohortCard from '../../SharedComponents/CohortCard';
 import Slideshow from '../../SharedComponents/Slideshow';
 import axios from 'axios';
 import Loading from '../../SharedComponents/Loading';
+import PageNotFound from '../PageNotFound';
 
 class Cohorts extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class Cohorts extends Component {
     this.state = {
       cohortInfo: [],
       cohortsProjects: [],
+      notFound: false,
     };
   }
   componentDidMount() {
@@ -29,12 +31,18 @@ class Cohorts extends Component {
           });
         })
       )
-      .catch((err) => err);
+      .catch((error) => {
+        if (error.response.status === 404) {
+          this.setState({
+            notFound: true,
+          });
+        } else return error;
+      });
   }
 
   render() {
     const cityName = this.props.match.params.city;
-    const { cohortInfo, cohortsProjects } = this.state;
+    const { cohortInfo, cohortsProjects, notFound } = this.state;
 
     const cohortList = cohortInfo.map((cohort) => {
       const projectsSlide = cohortsProjects.filter((project) => {
@@ -42,31 +50,32 @@ class Cohorts extends Component {
       });
 
       return (
-        <div className = "cohort">
-        <div className = 'coh_card'>
-        
-          <CohortCard  id = {cohort.cohort_id} name={cohort.cohort_name} />
-       
-        </div>
-          <div className = 'coh_slide_show'>
-          <Slideshow  projects={projectsSlide}/>
+        <div className='cohort'>
+          <div className='coh_card'>
+            <CohortCard id={cohort.cohort_id} name={cohort.cohort_name} />
+          </div>
+          <div className='coh_slide_show'>
+            <Slideshow projects={projectsSlide} />
           </div>
         </div>
       );
     });
-
-    return (
-      <div>
-      {!cohortInfo.length ? (
-        <Loading />
-         ):(
-           <div>
-      <h1 className = 'city_title'>{`${cityName} cohorts`}</h1>
-      <div>{cohortList}</div>
-      </div>
-    )}
-    </div>
-    )
+    if (notFound) {
+      return <PageNotFound />;
+    } else {
+      return (
+        <div>
+          {!cohortInfo.length ? (
+            <Loading />
+          ) : (
+            <div>
+              <h1 className='city_title'>{`${cityName} cohorts`}</h1>
+              <div>{cohortList}</div>
+            </div>
+          )}
+        </div>
+      );
+    }
   }
 }
 

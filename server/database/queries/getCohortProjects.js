@@ -5,7 +5,7 @@ const getCohortProjects = (cohortID) => {
       'select p.id project_id,p.image project_image from projects p,cohorts c where c.id=p.cohort_id AND c.id=$1;',
     values: [cohortID],
   };
-  return db_connection
+  return dbconnection
     .query(sql)
     .then((result) => result.rows)
     .catch((error) => error);

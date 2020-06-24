@@ -7,11 +7,13 @@ import StudentCard from '../../SharedComponents/StudentCard';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Loading from '../../SharedComponents/Loading';
+import PageNotFound from '../PageNotFound';
 class ProjectDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
       projects: [],
+      notFound: false,
     };
   }
   componentDidMount() {
@@ -27,11 +29,22 @@ class ProjectDetails extends Component {
           projects: resultArray,
         });
       })
-      .catch((error) => error.response);
+      .catch((error) => {
+       if(error.response.status === 404) {
+         this.setState({
+          notFound: true
+         });
+        }
+        else return error;
+       });
+      
   }
   render() {
-    const { projects } = this.state;
-
+    const { projects, notFound} = this.state;
+    if (notFound){
+   return<PageNotFound/> 
+    }
+    else {
     return (
       <div className='projectdetails-container'>
         {!projects.length ? (
@@ -102,5 +115,5 @@ class ProjectDetails extends Component {
     );
   }
 }
-
+}
 export default ProjectDetails;
