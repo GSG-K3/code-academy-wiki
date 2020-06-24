@@ -11,7 +11,7 @@ const Logout = () => {
     <div className='admin-page'>
       <h1>WELCOME!!!!!!!!</h1>
       <button type='submit' onClick={handlevent} className='logout'>
-        logout{' '}
+        logout
       </button>
     </div>
   );
