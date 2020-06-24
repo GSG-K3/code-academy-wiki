@@ -6,7 +6,7 @@ class login extends Component {
   state = {
     email: '',
     password: '',
-    errorMsg: '',
+    statusMsg: '',
     login: false,
   };
 
@@ -23,15 +23,15 @@ class login extends Component {
     axios
       .post('/api/login', { email, password })
       .then((res) => {
-        this.setState({ errorMsg: res.data.msg });
+        this.setState({ statusMsg: res.data.msg, login: true });
       })
       .catch((err) => {
-        this.setState({ errorMsg: err.response.data.msg });
+        this.setState({ statusMsg: err.response.data.msg });
       });
   };
 
   render() {
-    const { email, password, errorMsg } = this.state;
+    const { email, password, statusMsg } = this.state;
     return (
       <div>
         <form onSubmit={this.goLogedin}>
@@ -58,7 +58,7 @@ class login extends Component {
             <button className='login-button' type='submit'>
               login
             </button>
-            <p className='form-error'> {this.state.errorMsg}</p>
+            <p className='form-error'> {statusMsg}</p>
           </div>
         </form>
       </div>
