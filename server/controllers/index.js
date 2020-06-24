@@ -8,11 +8,13 @@ const { cohortsByCity } = require('./getCohortsByCity');
 const { getCohortstudent } = require('./getCohortstudents');
 const { getMentorData } = require('./getMentorData');
 const { getCohortProjects } = require('./getCohortProjects');
-const login = require('./login');
-const logout = require('./logout')
-const { clientError } = require('./errors');
-const { serverError } = require('./errors');
+const {logout} = require('./logout')
+const { clientError } = require('../helpers/errors');
+const { serverError } = require('../helpers/errors');
 const { postUser } = require('./postUser');
+const { login } = require('./login');
+const { checkEmail } = require('../middlewares/checkEmail');
+const { checkUsername } = require('../middlewares/checkUsername');
 router.get('/api/cohortinfo/:cohortID', getCohortData);
 router.get('/api/students', getAllStudents);
 router.get('/api/students/:id', getStudent);
@@ -25,6 +27,7 @@ router.get('/api/cohortProjects/:cohortID', getCohortProjects);
 router.post('/api/signup', postUser);
 router.post('/api/login', login);
 router.post('/api/logout', logout);
+router.post('/api/signup', checkUsername, checkEmail, postUser);
 router.use(clientError);
 router.use(serverError);
 module.exports = router;

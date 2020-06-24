@@ -6,10 +6,12 @@ class register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      username: '',
       email: '',
       password: '',
       repassword: '',
+      registered: false,
+      errorMsg: '',
     };
   }
 
@@ -20,10 +22,10 @@ class register extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const gsg = '@gazaskygeeks.com';
-    const { name, email, password, repassword } = this.state;
+    const { username, email, password, repassword } = this.state;
     // make new object to concatenate between user name and @gazaskygeeks.com and send them to back end side
     const info = {
-      name,
+      username,
       email: email + gsg,
       password,
       repassword,
@@ -31,22 +33,31 @@ class register extends Component {
 
     axios
       .post('/api/signup', info)
-      .then(() => console.log('this info form'))
-      .catch((err) => err);
+      .then((res) => {
+        if (res.status == 200) {
+          this.setState({ registered: true });
+        } else {
+          this.setState({
+            errorMsg: 'There is somthing wrong in registration proccess',
+          });
+        }
+      })
+      .catch((err) => this.setState({ errorMsg: err.response.data.message }));
   };
 
   render() {
-    const { name, email, password, repassword } = this.state;
+    const { username, email, password, repassword, errorMsg } = this.state;
 
     return (
       <div>
         <form className='form' onSubmit={this.handleSubmit}>
+          <h1 className='form-title'>Register as admin</h1>
           <input
             className='FormInput'
             placeholder='Name'
             label='Name'
-            name='name'
-            value={name}
+            name='username'
+            value={username}
             onChange={this.changeInput}
             required
           />
@@ -55,7 +66,7 @@ class register extends Component {
               <input
                 required
                 // characters that allowed in email field
-                pattern='^[a-zA-Z0-9]((?!(\.|))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$'
+                pattern='^[a-zA-Z0-9]((?!(\.|))|\.(?!(_|\.))|[a-zA-Z0-9]){4,255}[a-zA-Z0-9]$'
                 className='FormInput , email'
                 id='emailField'
                 label='Email'
@@ -96,6 +107,7 @@ class register extends Component {
             sign Up
           </button>
         </form>
+        <p>{errorMsg}</p>
       </div>
     );
   }

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 150px;
   padding-top: 15px;
 }
 
@@ -41,4 +41,10 @@
 }
 .form-text {
   position: relative;
+}
+.form-title {
+  color: #f29422;
+  padding: 5px;
+  margin-bottom: 20px;
+  font-family: Bold, 'Times New Roman', Times, serif;
 }

@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './login.css';
+import './Login.css';
 import Logout from '../Logout'
-import { Link } from 'react-router-dom';
-class login extends Component {
+class Login extends Component {
   state = {
     email: '',
     password: '',
-    errorMsg: '',
+    statusMsg: '',
     login: false,
   };
 
@@ -20,19 +19,18 @@ class login extends Component {
   goLogedin = (event) => {
     event.preventDefault();
     const { email, password } = this.state;
-    const { page } = this.props;
-
     axios
       .post('/api/login', { email, password })
-      .then((res) => { if(res.status= 200)
-        this.setState({login: true})
+      .then((res) => {
+        this.setState({ statusMsg: res.data.msg, login: true });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        this.setState({ statusMsg: err.response.data.msg });
+      });
   };
 
   render() {
-    const {history} =this.props; 
-    const { email, password, errorMsg , login } = this.state;
+    const { email, password, statusMsg , login } = this.state;
     if(login){
     return <Logout/>;
     }
@@ -60,11 +58,10 @@ class login extends Component {
               onChange={this.changName}
               required
             />
-
             <button className='login-button' type='submit'>
               login
             </button>
-            {errorMsg && <p className='invalidMsg'>{errorMsg}</p>}
+            <p className='form-error'> {statusMsg}</p>
           </div>
         </form>
       </div>
@@ -73,4 +70,4 @@ class login extends Component {
 }
 }
 
-export default login;
+export default Login;
