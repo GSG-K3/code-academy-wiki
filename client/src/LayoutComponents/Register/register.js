@@ -46,7 +46,7 @@ class register extends Component {
   };
 
   render() {
-    const { username, email, password, repassword } = this.state;
+    const { username, email, password, repassword, errorMsg } = this.state;
 
     return (
       <div>
@@ -107,7 +107,7 @@ class register extends Component {
             sign Up
           </button>
         </form>
-        <p>{this.state.errorMsg}</p>
+        <p>{errorMsg}</p>
       </div>
     );
   }
