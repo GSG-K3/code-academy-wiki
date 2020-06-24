@@ -10,6 +10,8 @@ class register extends Component {
       email: '',
       password: '',
       repassword: '',
+      registered: false,
+      errorMsg: '',
     };
   }
 
@@ -31,8 +33,17 @@ class register extends Component {
 
     axios
       .post('/api/signup', info)
-      .then(() => console.log('this info form'))
-      .catch((err) => err);
+      .then((res) => {
+        console.log(res.data);
+        if (res.status == 200) {
+          this.setState({ registered: true });
+        } else {
+          this.setState({
+            errorMsg: 'There is somthing wrong in registration proccess',
+          });
+        }
+      })
+      .catch((err) => this.setState({ errorMsg: err.response.data.msg }));
   };
 
   render() {
@@ -41,6 +52,7 @@ class register extends Component {
     return (
       <div>
         <form className='form' onSubmit={this.handleSubmit}>
+          <h1 className='form-title'>Register as admin</h1>
           <input
             className='FormInput'
             placeholder='Name'
@@ -55,7 +67,7 @@ class register extends Component {
               <input
                 required
                 // characters that allowed in email field
-                pattern='^[a-zA-Z0-9]((?!(\.|))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$'
+                pattern='^[a-zA-Z0-9]((?!(\.|))|\.(?!(_|\.))|[a-zA-Z0-9]){4,255}[a-zA-Z0-9]$'
                 className='FormInput , email'
                 id='emailField'
                 label='Email'
@@ -95,6 +107,7 @@ class register extends Component {
           <button type='submit' className='SignBtn' name='sign up'>
             sign Up
           </button>
+          <p>{this.state.errorMsg}</p>
         </form>
       </div>
     );
