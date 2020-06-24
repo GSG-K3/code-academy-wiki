@@ -8,11 +8,13 @@ const { cohortsByCity } = require('./getCohortsByCity');
 const { getCohortstudent } = require('./getCohortstudents');
 const { getMentorData } = require('./getMentorData');
 const { getCohortProjects } = require('./getCohortProjects');
+const { login } = require('./login');
+
+const { postUser } = require('./postUser');
 const { clientError } = require('../helpers/errors');
 const { serverError } = require('../helpers/errors');
-const { postUser } = require('./postUser');
-const checkEmail = require('../middlewares/checkEmail');
-const checkUsername = require('../middlewares/checkUsername');
+const { checkEmail } = require('../middlewares/checkEmail');
+const { checkUsername } = require('../middlewares/checkUsername');
 
 router.get('/api/cohortinfo/:cohortID', getCohortData);
 router.get('/api/students', getAllStudents);
@@ -23,6 +25,7 @@ router.get('/api/cohorts/projects/:city', cohorts);
 router.get('/api/cohortstd/:cohortID', getCohortstudent);
 router.get('/api/cohortMentor/:cohortID', getMentorData);
 router.get('/api/cohortProjects/:cohortID', getCohortProjects);
+router.post('/api/login', login);
 router.post('/api/signup', checkUsername, checkEmail, postUser);
 router.use(clientError);
 router.use(serverError);

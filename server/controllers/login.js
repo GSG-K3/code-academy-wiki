@@ -1,12 +1,24 @@
-const query = require('../queries/getUserinfo');
-exports.checkvalidation = (req, res) => {
-  query(req.parmas.id)
-    .then((data) => {
-      if (data.length != 0) {
-        res.json(data);
+const getUserInfo = require('../database/queries/getUserInfo');
+const bcrypt = require('bcryptjs');
+
+exports.login = (req, res) => {
+  const { email, password } = req.body;
+  getUserInfo(email)
+    .then((result) => {
+      if (result.rowCount == 0) {
+        return res.status(400).json({ msg: 'Password or Email Inccorect' });
       } else {
-        res.status(404).json({ message: ' User not found 404' });
+        const hasPassword = result.rows[0].password;
+        bcrypt.compare(password, hasPassword).then((comprslt) => {
+          if (comprslt) {
+            return res
+              .status(200)
+              .json({ msg: 'Hello you are loged in successfully !' });
+          } else {
+            return res.status(400).json({ msg: 'Password Incorrect' });
+          }
+        });
       }
     })
-    .catch(() => res.status(500).json({ err: 'Error for get User' }));
+    .catch((err) => err);
 };
