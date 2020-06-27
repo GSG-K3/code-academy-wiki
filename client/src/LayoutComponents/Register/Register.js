@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Register.css';
 import axios from 'axios';
+import swal from 'sweetalert2'
 
 class Register extends Component {
   constructor(props) {
@@ -16,14 +17,10 @@ class Register extends Component {
   }
 
   changeInput = ({ target: { value, name } }) => {
-    if (!value) {
-      alert("input shouldn't be empty");
-    }
     this.setState({ [name]: value.trim() });
   };
 
   handleSubmit = (e) => {
-    e.preventDefault();
     const gsg = '@gazaskygeeks.com';
     const { username, email, password, repassword } = this.state;
     // make new object to concatenate between user name and @gazaskygeeks.com and send them to back end side
@@ -33,6 +30,8 @@ class Register extends Component {
       password,
       repassword,
     };
+    
+    e.preventDefault();
 
     axios
       .post('/api/signup', info)
@@ -46,7 +45,22 @@ class Register extends Component {
         }
       })
       .catch((err) => this.setState({ errorMsg: err.response.data.message }));
+      const reg = this.state.registered
+      this.alert(reg)
   };
+
+
+  alert=(reg)=>{
+    reg? swal.fire({
+      icon: 'success',
+      text:"check your email and verify your account so you can log in!",
+      confirmButtonColor : '#f29422' ,
+    }): swal.fire({
+      icon:  'error',
+      text : this.state.errorMsg,
+      confirmButtonColor : '#f29422' ,
+    })
+  }
 
   render() {
     const {
@@ -116,13 +130,9 @@ class Register extends Component {
             sign Up
           </button>
         </form>
-        <span>{errorMsg}</span>
-        <span>
-          {registered
-            ? 'check your email and verify your account so you can log in!'
-            : ''}
-        </span>
-      </div>
+        
+    </div>
+
     );
   }
 }
